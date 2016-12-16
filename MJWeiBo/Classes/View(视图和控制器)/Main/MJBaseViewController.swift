@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MJBaseViewController.swift
 //  MJWeiBo
 //
 //  Created by YXCZ on 16/12/16.
@@ -8,18 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MJBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
+extension MJBaseViewController{
+    
+    func setupUI() {
+        view.backgroundColor = UIColor.cz_random()
+    }
+    
+}
