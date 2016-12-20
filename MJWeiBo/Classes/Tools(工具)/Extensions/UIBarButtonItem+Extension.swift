@@ -1,14 +1,14 @@
 //
-//  UIBarButtonItem+Extensions.swift
-//  传智微博
+//  UIBarButtonItem+Extension.swift
+//  MJWeiBo
 //
-//  Created by apple on 16/6/29.
-//  Copyright © 2016年 itcast. All rights reserved.
+//  Created by YXCZ on 16/12/20.
+//  Copyright © 2016年 林民敬. All rights reserved.
 //
 
 import UIKit
 
-extension UIBarButtonItem {
+extension UIBarButtonItem{
     
     /// 创建 UIBarButtonItem
     ///
@@ -19,8 +19,10 @@ extension UIBarButtonItem {
     /// - parameter isBack:   是否是返回按钮，如果是加上箭头
     ///
     /// - returns: UIBarButtonItem
-    convenience init(title: String, fontSize: CGFloat = 16, target: AnyObject?, action: Selector, isBack: Bool = false) {
-        let btn: UIButton = UIButton.cz_textButton(title, fontSize: fontSize, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
+    
+    convenience init(title:String,fontSize:CGFloat = 16,target:Any? ,action: Selector,isBack: Bool = false) {
+        
+        let btn:UIButton = UIButton.cz_textButton(title, fontSize: fontSize, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
         
         if isBack {
             let imageName = "navigationbar_back_withtext"
@@ -33,7 +35,9 @@ extension UIBarButtonItem {
         
         btn.addTarget(target, action: action, for: .touchUpInside)
         
-        // self.init 实例化 UIBarButtonItem
-        self.init(customView: btn)
+         // self.init 实例化 UIBarButtonItem
+        self.init(customView:btn)
     }
+    
+    
 }

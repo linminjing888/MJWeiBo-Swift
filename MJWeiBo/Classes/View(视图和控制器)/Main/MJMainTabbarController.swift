@@ -15,11 +15,18 @@ class MJMainTabbarController: UITabBarController {
         setUpChildController()
         setUpcomposeButton()
     }
-   
+    
     // MARK: 监听方法
     // FIXME: 没有实现（提醒）
     func composeStatus()  {
         print("写微博")
+        
+//        let vc = UIViewController()
+//        
+//        let nav  = UINavigationController(rootViewController: vc)
+//        
+//        
+//        present(nav, animated: true, completion: nil)
     }
     
     // 懒加载
@@ -65,7 +72,7 @@ extension MJMainTabbarController{
         viewControllers = arrM
             
         }
-    /// 使用字典创建控制器
+    /// 使用字典创建控制器 反射
     /// - parameter dict:信息字典[clsName ,title ,imageName]
     /// - returns : 子控制器
     private func controller(dict:[String:String]) -> UIViewController {

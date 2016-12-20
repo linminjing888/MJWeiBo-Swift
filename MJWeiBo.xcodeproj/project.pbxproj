@@ -30,8 +30,8 @@
 		AE7037881E03C7BE003F49D3 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70377B1E03C7BE003F49D3 /* UIView+CZAddition.m */; };
 		AE7037891E03C7BE003F49D3 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70377D1E03C7BE003F49D3 /* UIViewController+CZAddition.m */; };
 		AE70378F1E03D18D003F49D3 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70378D1E03D18D003F49D3 /* Bundle+Extensions.swift */; };
-		AE7037901E03D18D003F49D3 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70378E1E03D18D003F49D3 /* UIBarButtonItem+Extensions.swift */; };
 		AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */; };
+		AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,8 +74,8 @@
 		AE70377D1E03C7BE003F49D3 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		AE70378B1E03C83B003F49D3 /* MJWeiBo-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MJWeiBo-Bridge.h"; sourceTree = "<group>"; };
 		AE70378D1E03D18D003F49D3 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
-		AE70378E1E03D18D003F49D3 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJDemoViewController.swift; sourceTree = "<group>"; };
+		AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				AE70378D1E03D18D003F49D3 /* Bundle+Extensions.swift */,
-				AE70378E1E03D18D003F49D3 /* UIBarButtonItem+Extensions.swift */,
+				AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,12 +331,12 @@
 				AE70378F1E03D18D003F49D3 /* Bundle+Extensions.swift in Sources */,
 				AE7037811E03C7BE003F49D3 /* NSString+CZBase64.m in Sources */,
 				AE70375E1E03C38B003F49D3 /* MJHomeViewController.swift in Sources */,
+				AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */,
 				AE7037601E03C38B003F49D3 /* MJMainTabbarController.swift in Sources */,
 				AE70375F1E03C38B003F49D3 /* MJBaseViewController.swift in Sources */,
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
 				AE7037871E03C7BE003F49D3 /* UIScreen+CZAddition.m in Sources */,
 				AE7037611E03C38B003F49D3 /* MJNavigationController.swift in Sources */,
-				AE7037901E03D18D003F49D3 /* UIBarButtonItem+Extensions.swift in Sources */,
 				AE7037801E03C7BE003F49D3 /* NSObject+CZRuntime.m in Sources */,
 				AE7037631E03C38B003F49D3 /* MJPrefileViewController.swift in Sources */,
 				AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */,
@@ -502,6 +502,7 @@
 				AE70374B1E03C293003F49D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
