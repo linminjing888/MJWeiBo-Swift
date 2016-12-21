@@ -18,8 +18,20 @@ class MJHomeViewController: MJBaseViewController {
     
     ///加载数据
     override func loadData() {
-        for i in 0..<15 {
-            statusList.insert(i.description, at: 0)
+        
+        //模拟“延时”加载数据
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            for i in 0..<15 {
+                if self.isPullUp{
+                    self.statusList.append("上拉\(i)")
+                }else{
+                    self.statusList.insert(i.description, at: 0)
+                }
+            }
+            
+            self.refreshControl?.endRefreshing()
+            self.isPullUp = false
+            self.tableView?.reloadData()
         }
         
     }
@@ -58,7 +70,7 @@ extension MJHomeViewController{
         super.setupUI()
         
         navItem.leftBarButtonItem = UIBarButtonItem(title:"好友" , target: self, action: #selector(showFriends))
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
+        tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
         
     }
 }
