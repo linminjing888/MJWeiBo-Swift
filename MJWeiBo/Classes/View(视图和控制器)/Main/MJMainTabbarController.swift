@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//
+//  ---------------33
 
 import UIKit
 
@@ -55,38 +55,51 @@ extension MJMainTabbarController{
     }
     
     func setUpChildController() {
-            
+        
+        //很多应用程序中，界面的创建都依赖于网络的 json
         let array = [
-          ["clsName":"MJHomeViewController","title":"首页","imageName":"home"],
-          ["clsName":"MJMessageViewController","title":"消息","imageName":"message_center"],
+          ["clsName":"MJHomeViewController","title":"首页","imageName":"home","visitorInfo":["imageName":"","message":"关注一些人，有惊喜"]],
+          
+          ["clsName":"MJMessageViewController","title":"消息","imageName":"message_center","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后，这里可以收到通知"]],
+          
           ["clsName":"UIViewcontroller"],
-          ["clsName":"MJDisCoverViewController","title":"发现","imageName":"discover"],
-          ["clsName":"MJPrefileViewController","title":"我","imageName":"profile"],
+          
+          ["clsName":"MJDisCoverViewController","title":"发现","imageName":"discover","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后，不会在与事实擦肩而过"]],
+          ["clsName":"MJPrefileViewController","title":"我","imageName":"profile","visitorInfo":["imageName":"visitordiscover_image_profile","message":"登录后，你将会展示给别人"]],
         ]
+        
+        //测试数据格式是否正确 - 转换成Plist文件
+        (array as NSArray).write(toFile: "/Users/lmj/Desktop/demo.plist", atomically: true)
         
         var arrM = [UIViewController]()
         for dict in array {
-           arrM.append(controller(dict: dict))
+           arrM.append(controller(dict: dict as [String : AnyObject]))
         }
         
         viewControllers = arrM
             
         }
     /// 使用字典创建控制器 反射
-    /// - parameter dict:信息字典[clsName ,title ,imageName]
+    /// - parameter dict:信息字典[clsName ,title ,imageName,visitorInfo]
     /// - returns : 子控制器
-    private func controller(dict:[String:String]) -> UIViewController {
+    private func controller(dict:[String:AnyObject]) -> UIViewController {
         
-        guard let clsName = dict["clsName"],
-            let title = dict["title"],
-            let imageName = dict["imageName"],
-            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+        guard let clsName = dict["clsName"] as? String,
+            let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? MJBaseViewController.Type,
+        let visitorDic = dict["visitorInfo"] as? [String:String]
+        
             else {
                 return UIViewController()
         }
         
+        //创建视图控制器
         let vc = cls.init()
         vc.title = title
+        
+        //设置访客视图
+        vc.visitorInfoDic = visitorDic
         
         //设置图像
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)

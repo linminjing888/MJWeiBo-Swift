@@ -22,10 +22,13 @@ class MJVisitorView: UIView {
             tipLabel.text = message
             
             if imageName == "" {
+                
+                startAnimation()
                 return
             }
             
             iconImage.image = UIImage(named: imageName)
+            hourseImage.isHidden = true
         }
     }
     
@@ -38,6 +41,22 @@ class MJVisitorView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //旋转图标动画
+    func startAnimation() {
+        
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * M_PI
+        anim.duration = 15
+        anim.repeatCount = MAXFLOAT
+        
+        //动画完成不删除 如果iconImage 被释放，动画会一起销毁 
+        //此方法对连续动画非常重要
+        anim.isRemovedOnCompletion = false
+        
+        iconImage.layer.add(anim, forKey: nil)
+        
     }
     
     //MARK: - 私有控件
@@ -144,12 +163,12 @@ extension MJVisitorView{
         
         addConstraint(NSLayoutConstraint(
             item: registerBtn,
-            attribute: .left,
+            attribute: .right,
             relatedBy: .equal,
             toItem: tipLabel,
-            attribute: .left,
+            attribute: .centerX,
             multiplier: 1.0,
-            constant: 0))
+            constant: -20))
         addConstraint(NSLayoutConstraint(
             item: registerBtn,
             attribute: .top,
@@ -169,12 +188,12 @@ extension MJVisitorView{
         
         addConstraint(NSLayoutConstraint(
             item: loginBtn,
-            attribute: .right,
+            attribute: .left,
             relatedBy: .equal,
             toItem: tipLabel,
-            attribute: .right,
+            attribute: .centerX,
             multiplier: 1.0,
-            constant: 0))
+            constant: 20))
         addConstraint(NSLayoutConstraint(
             item: loginBtn,
             attribute: .top,
