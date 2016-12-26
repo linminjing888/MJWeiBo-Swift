@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C11427F49A18111DD4EDFFC /* Pods_MJWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */; };
 		AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70373A1E03C293003F49D3 /* AppDelegate.swift */; };
 		AE7037401E03C293003F49D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE70373E1E03C293003F49D3 /* Main.storyboard */; };
 		AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7037411E03C293003F49D3 /* Assets.xcassets */; };
@@ -33,9 +34,13 @@
 		AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */; };
 		AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */; };
 		AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78D38F1E0A30EB00B577E9 /* MJVisitorView.swift */; };
+		AECB76531E10C42A0099BD32 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = AECB76521E10C42A0099BD32 /* main.json */; };
+		AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB76551E111A010099BD32 /* MJNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7037371E03C293003F49D3 /* MJWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE70373A1E03C293003F49D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE70373F1E03C293003F49D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +83,9 @@
 		AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJDemoViewController.swift; sourceTree = "<group>"; };
 		AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		AE78D38F1E0A30EB00B577E9 /* MJVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJVisitorView.swift; sourceTree = "<group>"; };
+		AECB76521E10C42A0099BD32 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		AECB76551E111A010099BD32 /* MJNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJNetworkManager.swift; sourceTree = "<group>"; };
+		C7FB7A8DDD4F1314B29CF924 /* Pods-MJWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +93,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C11427F49A18111DD4EDFFC /* Pods_MJWeiBo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3509A97681B6563F71DD6F2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */,
+				C7FB7A8DDD4F1314B29CF924 /* Pods-MJWeiBo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		65B3485E3CE10482F2528AD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE70372E1E03C293003F49D3 = {
 			isa = PBXGroup;
 			children = (
 				AE7037391E03C293003F49D3 /* MJWeiBo */,
 				AE7037381E03C293003F49D3 /* Products */,
+				3509A97681B6563F71DD6F2E /* Pods */,
+				65B3485E3CE10482F2528AD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +169,7 @@
 		AE70374E1E03C38B003F49D3 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				AECB76541E1119C10099BD32 /* MJNetwork */,
 				AE70378C1E03CDF7003F49D3 /* Extensions */,
 				AE7037641E03C7BE003F49D3 /* Additions */,
 			);
@@ -178,6 +207,7 @@
 		AE7037541E03C38B003F49D3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AECB76521E10C42A0099BD32 /* main.json */,
 				AE7037561E03C38B003F49D3 /* MJMainTabbarController.swift */,
 				AE7037571E03C38B003F49D3 /* MJNavigationController.swift */,
 				AE7037551E03C38B003F49D3 /* MJBaseViewController.swift */,
@@ -252,6 +282,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AECB76541E1119C10099BD32 /* MJNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				AECB76551E111A010099BD32 /* MJNetworkManager.swift */,
+			);
+			path = MJNetwork;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,9 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE7037491E03C293003F49D3 /* Build configuration list for PBXNativeTarget "MJWeiBo" */;
 			buildPhases = (
+				864349C6719D595A650DBFAE /* Check Pods Manifest.lock */,
 				AE7037331E03C293003F49D3 /* Sources */,
 				AE7037341E03C293003F49D3 /* Frameworks */,
 				AE7037351E03C293003F49D3 /* Resources */,
+				BED8EAA3CB9096B799066577 /* Embed Pods Frameworks */,
+				790EA8AA1341993BE6FE6037 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,12 +354,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECB76531E10C42A0099BD32 /* main.json in Resources */,
 				AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */,
 				AE7037401E03C293003F49D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		790EA8AA1341993BE6FE6037 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		864349C6719D595A650DBFAE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BED8EAA3CB9096B799066577 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE7037331E03C293003F49D3 /* Sources */ = {
@@ -328,6 +418,7 @@
 				AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */,
 				AE7037851E03C7BE003F49D3 /* UIColor+CZAddition.m in Sources */,
 				AE70377E1E03C7BE003F49D3 /* NSArray+Log.m in Sources */,
+				AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */,
 				AE70375D1E03C38B003F49D3 /* MJDisCoverViewController.swift in Sources */,
 				AE7037861E03C7BE003F49D3 /* UILabel+CZAddition.m in Sources */,
 				AE70377F1E03C7BE003F49D3 /* NSAttributedString+CZAdditon.m in Sources */,
@@ -459,6 +550,7 @@
 		};
 		AE70374A1E03C293003F49D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -474,6 +566,7 @@
 		};
 		AE70374B1E03C293003F49D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7FB7A8DDD4F1314B29CF924 /* Pods-MJWeiBo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

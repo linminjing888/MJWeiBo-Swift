@@ -10,6 +10,21 @@ import UIKit
 
 class MJVisitorView: UIView {
 
+    
+    lazy var registerBtn:UIButton = UIButton.cz_textButton(
+        "注册",
+        fontSize: 16,
+        normalColor: UIColor.orange,
+        highlightedColor: UIColor.darkGray,
+        backgroundImageName: "common_button_white_disable")
+    
+    lazy var loginBtn:UIButton = UIButton.cz_textButton(
+        "登录",
+        fontSize: 16,
+        normalColor: UIColor.darkGray,
+        highlightedColor: UIColor.darkGray,
+        backgroundImageName: "common_button_white_disable")
+    
     /// 使用字典设置访客视图的信息 [imageName / message]
     ///提示：如果是首页 imageName =""
     var visitorInfo: [String:String]?{
@@ -59,30 +74,17 @@ class MJVisitorView: UIView {
         
     }
     
-    //MARK: - 私有控件
+    //私有控件
     //懒加载
-    lazy var iconImage = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    fileprivate lazy var iconImage = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
     
-    lazy var hourseImage = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
+    fileprivate lazy var hourseImage = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     
-    lazy var tipLabel:UILabel = UILabel.cz_label(
+    fileprivate lazy var tipLabel:UILabel = UILabel.cz_label(
         withText: "关注一些人,回来看看有什么收获",
         fontSize: 14,
         color: UIColor.darkGray)
     
-    lazy var registerBtn:UIButton = UIButton.cz_textButton(
-        "注册",
-        fontSize: 16,
-        normalColor: UIColor.orange,
-        highlightedColor: UIColor.darkGray,
-        backgroundImageName: "common_button_white_disable")
-    
-    lazy var loginBtn:UIButton = UIButton.cz_textButton(
-        "登录",
-        fontSize: 16,
-        normalColor: UIColor.darkGray,
-        highlightedColor: UIColor.darkGray,
-        backgroundImageName: "common_button_white_disable")
 }
 
 extension MJVisitorView{

@@ -17,7 +17,24 @@ class MJHomeViewController: MJBaseViewController {
     lazy var statusList = [String]()
     
     ///加载数据
+    
     override func loadData() {
+        
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let params = ["access_token":"2.00hsqXpF0DC7l_ca9bc4964eCiHeME"]
+        
+        
+        MJNetworkManager.shared.request(method: .GET, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+            
+            if isSuccess{
+                print(json ?? "")
+            }else
+            {
+                print("------------")
+            }
+            
+        }
+        
         
         //模拟“延时”加载数据
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
@@ -66,11 +83,10 @@ extension MJHomeViewController{
 // MARK: - 设置界面
 extension MJHomeViewController{
     //重写父类的方法
-    override func setupUI() {
-        super.setupUI()
+    override func setUpTableView() {
         
+        super.setUpTableView()
         navItem.leftBarButtonItem = UIBarButtonItem(title:"好友" , target: self, action: #selector(showFriends))
         tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
-        
     }
 }

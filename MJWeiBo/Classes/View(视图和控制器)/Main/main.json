@@ -1,0 +1,41 @@
+[
+  {
+    "clsName" : "MJHomeViewController",
+    "title" : "首页",
+    "visitorInfo" : {
+      "imageName" : "",
+      "message" : "关注一些人，有惊喜"
+    },
+    "imageName" : "home"
+  },
+  {
+    "clsName" : "MJMessageViewController",
+    "title" : "消息",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "message" : "登录后，这里可以收到通知"
+    },
+    "imageName" : "message_center"
+  },
+  {
+    "clsName" : "UIViewcontroller"
+  },
+  {
+    "clsName" : "MJDisCoverViewController",
+    "title" : "发现",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "message" : "登录后，不会在与事实擦肩而过"
+    },
+    "imageName" : "discover"
+  },
+  {
+    "clsName" : "MJPrefileViewController",
+    "title" : "我",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_profile",
+      "message" : "登录后，你将会展示给别人"
+    },
+    "imageName" : "profile"
+  }
+]

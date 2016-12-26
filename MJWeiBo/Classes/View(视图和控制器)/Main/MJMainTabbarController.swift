@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  ---------------33
+//  ---------------10
 
 import UIKit
 
@@ -56,23 +56,49 @@ extension MJMainTabbarController{
     
     func setUpChildController() {
         
+        //获取沙盒json 路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+        // 加载data
+        var data = NSData(contentsOfFile: jsonPath)
+        
+        //判断json 是否有内容
+        if data == nil {
+            
+            //从bundle 加载配置的 json
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            data = NSData(contentsOfFile: path!)
+        }
+        
+        //反序列化转换成数组  throw 抛出异常
+        //try ? 如果解析成功，就有值，否则，为nil
+        guard let array = try? JSONSerialization.jsonObject(with: data as! Data, options: []) as? [[String:AnyObject]]
+            else {
+            return
+        }
+        
         //很多应用程序中，界面的创建都依赖于网络的 json
-        let array = [
-          ["clsName":"MJHomeViewController","title":"首页","imageName":"home","visitorInfo":["imageName":"","message":"关注一些人，有惊喜"]],
-          
-          ["clsName":"MJMessageViewController","title":"消息","imageName":"message_center","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后，这里可以收到通知"]],
-          
-          ["clsName":"UIViewcontroller"],
-          
-          ["clsName":"MJDisCoverViewController","title":"发现","imageName":"discover","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后，不会在与事实擦肩而过"]],
-          ["clsName":"MJPrefileViewController","title":"我","imageName":"profile","visitorInfo":["imageName":"visitordiscover_image_profile","message":"登录后，你将会展示给别人"]],
-        ]
+//        let array = [
+//          ["clsName":"MJHomeViewController","title":"首页","imageName":"home","visitorInfo":["imageName":"","message":"关注一些人，有惊喜"]],
+//          
+//          ["clsName":"MJMessageViewController","title":"消息","imageName":"message_center","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后，这里可以收到通知"]],
+//          
+//          ["clsName":"UIViewcontroller"],
+//          
+//          ["clsName":"MJDisCoverViewController","title":"发现","imageName":"discover","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后，不会在与事实擦肩而过"]],
+//          ["clsName":"MJPrefileViewController","title":"我","imageName":"profile","visitorInfo":["imageName":"visitordiscover_image_profile","message":"登录后，你将会展示给别人"]],
+//        ]
+//
         
         //测试数据格式是否正确 - 转换成Plist文件
-        (array as NSArray).write(toFile: "/Users/lmj/Desktop/demo.plist", atomically: true)
+//        (array as NSArray).write(toFile: "/Users/lmj/Desktop/demo.plist", atomically: true)
+        
+        //数组 -> json 序列化
+//        let data = try! JSONSerialization.data(withJSONObject: array, options: .prettyPrinted)
+//        (data as NSData).write(toFile: "/Users/lmj/Desktop/demo.json", atomically: true)
         
         var arrM = [UIViewController]()
-        for dict in array {
+        for dict in array! {
            arrM.append(controller(dict: dict as [String : AnyObject]))
         }
         

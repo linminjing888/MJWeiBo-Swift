@@ -31,8 +31,9 @@ class MJDemoViewController: MJBaseViewController {
 }
 
 extension MJDemoViewController{
-    override func setupUI() {
-        super.setupUI()
+    
+    override func setUpTableView() {
+        super.setUpTableView()
         
         navItem.rightBarButtonItem = UIBarButtonItem(title:"下一个" , target: self, action: #selector(showNext))
     }

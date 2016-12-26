@@ -39,7 +39,7 @@ class MJBaseViewController: UIViewController {
         
         setupUI()
         loadData()
-        
+
     }
     ///重写 title 的 didSet
     override var title: String?{
@@ -60,10 +60,21 @@ class MJBaseViewController: UIViewController {
     }
 }
 
+// MARK: - 设置视图监听方法
+extension MJBaseViewController{
+    func login(){
+        print("登录")
+    }
+    
+    func register(){
+        print("注册")
+    }
+}
+
 // MARK: - 设置界面
 extension MJBaseViewController{
     
-    func setupUI() {
+    fileprivate func setupUI() {
         view.backgroundColor = UIColor.white
         
         //取消自动缩进 - 如果隐藏了导航栏，会缩进 20 个点
@@ -74,8 +85,8 @@ extension MJBaseViewController{
         userLogon ? setUpTableView() : setUpVisitorView()
         
     }
-    ///表格视图
-    private func setUpTableView(){
+    ///表格视图 -- 用户登录之后执行
+    func setUpTableView(){
         tableView = UITableView(frame: view.bounds, style: .plain)
         
         view.insertSubview(tableView!, belowSubview: navigationBar)
@@ -99,6 +110,15 @@ extension MJBaseViewController{
         
         view.insertSubview(visitorView, belowSubview: navigationBar)
         visitorView.visitorInfo = visitorInfoDic
+        
+        //添加按钮监听方法
+        visitorView.loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
+        visitorView.registerBtn.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        //设置导航条按钮
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
+        
     }
     
     private func setUpNavigationBar(){
@@ -109,6 +129,8 @@ extension MJBaseViewController{
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         //设置 navBar 的字体颜色
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.darkGray]
+        //
+        navigationBar.tintColor = UIColor.orange 
     }
     
 }
