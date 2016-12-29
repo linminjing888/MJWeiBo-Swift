@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C11427F49A18111DD4EDFFC /* Pods_MJWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */; };
+		AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */; };
+		AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2631E14D9DE00201256 /* MJStatus.swift */; };
+		AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */; };
 		AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70373A1E03C293003F49D3 /* AppDelegate.swift */; };
 		AE7037401E03C293003F49D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE70373E1E03C293003F49D3 /* Main.storyboard */; };
 		AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7037411E03C293003F49D3 /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 /* Begin PBXFileReference section */
 		0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
+		AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJNetworkManager+Extension.swift"; sourceTree = "<group>"; };
+		AE67A2631E14D9DE00201256 /* MJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatus.swift; sourceTree = "<group>"; };
+		AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusListViewModel.swift; sourceTree = "<group>"; };
 		AE7037371E03C293003F49D3 /* MJWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE70373A1E03C293003F49D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE70373F1E03C293003F49D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		AE70374D1E03C38B003F49D3 /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				AE67A2631E14D9DE00201256 /* MJStatus.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -237,6 +244,7 @@
 		AE70375C1E03C38B003F49D3 /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				AECB76551E111A010099BD32 /* MJNetworkManager.swift */,
+				AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */,
 			);
 			path = MJNetwork;
 			sourceTree = "<group>";
@@ -416,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */,
+				AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */,
 				AE7037851E03C7BE003F49D3 /* UIColor+CZAddition.m in Sources */,
 				AE70377E1E03C7BE003F49D3 /* NSArray+Log.m in Sources */,
 				AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */,
@@ -428,6 +438,7 @@
 				AE70375E1E03C38B003F49D3 /* MJHomeViewController.swift in Sources */,
 				AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */,
 				AE7037601E03C38B003F49D3 /* MJMainTabbarController.swift in Sources */,
+				AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */,
 				AE70375F1E03C38B003F49D3 /* MJBaseViewController.swift in Sources */,
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
 				AE7037871E03C7BE003F49D3 /* UIScreen+CZAddition.m in Sources */,
@@ -439,6 +450,7 @@
 				AE7037831E03C7BE003F49D3 /* NSString+CZPath.m in Sources */,
 				AE7037881E03C7BE003F49D3 /* UIView+CZAddition.m in Sources */,
 				AE7037821E03C7BE003F49D3 /* NSString+CZHash.m in Sources */,
+				AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */,
 				AE7037621E03C38B003F49D3 /* MJMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

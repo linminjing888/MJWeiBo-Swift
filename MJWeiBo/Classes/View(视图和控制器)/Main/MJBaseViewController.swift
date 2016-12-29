@@ -17,7 +17,7 @@ import UIKit
 class MJBaseViewController: UIViewController {
 
     ///用户登入标记
-    var userLogon = false
+    var userLogon = true
     /// 方可视图字典
     var visitorInfoDic :[String:String]?
     

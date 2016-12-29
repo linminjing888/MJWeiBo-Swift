@@ -4,16 +4,21 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  ---------------10
+//  ---------------25--------------------
 
 import UIKit
 
 class MJMainTabbarController: UITabBarController {
 
+    
+    fileprivate var timer:Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpChildController()
         setUpcomposeButton()
+        setUpTimer()
+        
     }
     
     // MARK: 监听方法
@@ -32,12 +37,32 @@ class MJMainTabbarController: UITabBarController {
     // 懒加载
     lazy var composeBtn:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
     
+    deinit {
+        timer?.invalidate()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
+
+extension MJMainTabbarController{
+    func setUpTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
     
+    @objc private func updateTimer(){
+        
+        MJNetworkManager.shared.unreadCount { (count) in
+            print("\(count) 条新微博")
+            self.tabBar.items?[0].badgeValue = count>0 ? "\(count)" :nil
+        }
+    }
+}
+
+
 extension MJMainTabbarController{
     
     //设置撰写按钮
