@@ -37,6 +37,8 @@
 		AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */; };
 		AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */; };
 		AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78D38F1E0A30EB00B577E9 /* MJVisitorView.swift */; };
+		AEA0DBC91E163CD2000927F8 /* MJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DBC81E163CD2000927F8 /* MJCommon.swift */; };
+		AEA0DBCB1E164300000927F8 /* MJOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DBCA1E164300000927F8 /* MJOAuthViewController.swift */; };
 		AECB76531E10C42A0099BD32 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = AECB76521E10C42A0099BD32 /* main.json */; };
 		AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB76551E111A010099BD32 /* MJNetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJDemoViewController.swift; sourceTree = "<group>"; };
 		AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		AE78D38F1E0A30EB00B577E9 /* MJVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJVisitorView.swift; sourceTree = "<group>"; };
+		AEA0DBC81E163CD2000927F8 /* MJCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJCommon.swift; sourceTree = "<group>"; };
+		AEA0DBCA1E164300000927F8 /* MJOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJOAuthViewController.swift; sourceTree = "<group>"; };
 		AECB76521E10C42A0099BD32 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		AECB76551E111A010099BD32 /* MJNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJNetworkManager.swift; sourceTree = "<group>"; };
 		C7FB7A8DDD4F1314B29CF924 /* Pods-MJWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 				AECB76541E1119C10099BD32 /* MJNetwork */,
 				AE70378C1E03CDF7003F49D3 /* Extensions */,
 				AE7037641E03C7BE003F49D3 /* Additions */,
+				AEA0DBC81E163CD2000927F8 /* MJCommon.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				AE7037551E03C38B003F49D3 /* MJBaseViewController.swift */,
 				AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */,
 				AE78D38F1E0A30EB00B577E9 /* MJVisitorView.swift */,
+				AEA0DBCA1E164300000927F8 /* MJOAuthViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				AE7037811E03C7BE003F49D3 /* NSString+CZBase64.m in Sources */,
 				AE70375E1E03C38B003F49D3 /* MJHomeViewController.swift in Sources */,
 				AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */,
+				AEA0DBCB1E164300000927F8 /* MJOAuthViewController.swift in Sources */,
 				AE7037601E03C38B003F49D3 /* MJMainTabbarController.swift in Sources */,
 				AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */,
 				AE70375F1E03C38B003F49D3 /* MJBaseViewController.swift in Sources */,
@@ -448,6 +455,7 @@
 				AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */,
 				AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */,
 				AE7037831E03C7BE003F49D3 /* NSString+CZPath.m in Sources */,
+				AEA0DBC91E163CD2000927F8 /* MJCommon.swift in Sources */,
 				AE7037881E03C7BE003F49D3 /* UIView+CZAddition.m in Sources */,
 				AE7037821E03C7BE003F49D3 /* NSString+CZHash.m in Sources */,
 				AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */,
@@ -568,6 +576,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = H2538H4P3P;
 				INFOPLIST_FILE = MJWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.MJWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +593,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = H2538H4P3P;
 				INFOPLIST_FILE = MJWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.MJWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

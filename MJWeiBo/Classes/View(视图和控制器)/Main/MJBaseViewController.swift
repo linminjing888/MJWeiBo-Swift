@@ -16,8 +16,7 @@ import UIKit
 // MARK: - 所有主控制器的基类控制器
 class MJBaseViewController: UIViewController {
 
-    ///用户登入标记
-    var userLogon = true
+
     /// 方可视图字典
     var visitorInfoDic :[String:String]?
     
@@ -38,7 +37,9 @@ class MJBaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        loadData()
+        if MJNetworkManager.shared.userLogon {
+            loadData()
+        }
 
     }
     ///重写 title 的 didSet
@@ -62,11 +63,11 @@ class MJBaseViewController: UIViewController {
 
 // MARK: - 设置视图监听方法
 extension MJBaseViewController{
-    func login(){
-        print("登录")
+    @objc fileprivate func login(){
+        NotificationCenter.default.post(name:NSNotification.Name(rawValue: MJUserShouldLoginNotification) , object: nil)
     }
     
-    func register(){
+    @objc fileprivate func register(){
         print("注册")
     }
 }
@@ -82,7 +83,7 @@ extension MJBaseViewController{
         
         setUpNavigationBar()
         
-        userLogon ? setUpTableView() : setUpVisitorView()
+        MJNetworkManager.shared.userLogon ? setUpTableView() : setUpVisitorView()
         
     }
     ///表格视图 -- 用户登录之后执行

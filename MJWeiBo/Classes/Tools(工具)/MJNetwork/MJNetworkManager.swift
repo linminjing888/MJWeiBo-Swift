@@ -20,9 +20,14 @@ class MJNetworkManager: AFHTTPSessionManager {
     static let shared = MJNetworkManager()
     
     ///访问令牌
-    var accessToken:String? = "2.00hsqXpF0DC7l_ca9bc4964eCiHeME"
+    var accessToken:String? // = "2.00hsqXpF0DC7l_ca9bc4964eCiHeME"
     
     var uid:String? = "5365823342"
+    
+    var userLogon:Bool{
+        return accessToken != nil
+    }
+    
     
     func tokenRequest(method:MJHTTPMethod = .GET,URLString:String,parameters:[String:Any]?,completion:@escaping (_ json: Any?,_ isSuccess:Bool)->()) {
         

@@ -31,9 +31,6 @@ class MJHomeViewController: MJBaseViewController {
             }
         }
         
-        //模拟“延时”加载数据
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-//            }
         
     }
     

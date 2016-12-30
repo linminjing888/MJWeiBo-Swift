@@ -27,7 +27,7 @@ extension MJNetworkManager{
         tokenRequest(method: .GET, URLString: urlString, parameters: params ) { (json, isSuccess) in
             
             //如果 as？失败，result = nil
-            let result = (json as! NSDictionary)["statuses"] as? [[String:Any]]
+            let result = (json as? NSDictionary)?["statuses"] as? [[String:Any]]
             
             completion(result, isSuccess)
         }

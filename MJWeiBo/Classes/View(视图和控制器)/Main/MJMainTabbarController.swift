@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  ---------------25--------------------
+//  ---------------02--------------------
 
 import UIKit
 
@@ -19,9 +19,22 @@ class MJMainTabbarController: UITabBarController {
         setUpcomposeButton()
         setUpTimer()
         
+        delegate = self
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogon), name: NSNotification.Name(rawValue: MJUserShouldLoginNotification), object: nil)
+        
     }
     
     // MARK: 监听方法
+    @objc fileprivate func userLogon(n:Notification){
+    
+        let nav = UINavigationController(rootViewController: MJOAuthViewController())
+        
+        present(nav, animated: true, completion: nil)
+        
+    }
+    
     // FIXME: 没有实现（提醒）
     func composeStatus()  {
         print("写微博")
@@ -39,6 +52,8 @@ class MJMainTabbarController: UITabBarController {
     
     deinit {
         timer?.invalidate()
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,18 +65,53 @@ class MJMainTabbarController: UITabBarController {
 extension MJMainTabbarController{
     func setUpTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func updateTimer(){
         
+        if !MJNetworkManager.shared.userLogon {
+            return
+        }
+        
         MJNetworkManager.shared.unreadCount { (count) in
             print("\(count) 条新微博")
             self.tabBar.items?[0].badgeValue = count>0 ? "\(count)" :nil
+            
+            //需要申请通知权限
+            UIApplication.shared.applicationIconBadgeNumber = count
         }
     }
 }
 
+extension MJMainTabbarController:UITabBarControllerDelegate{
+    
+    //将要切换 tabbarItem
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        
+        print(" 切换到 \(viewController)")
+        let idx = (childViewControllers as NSArray).index(of: viewController)
+        
+        //当前索引是首页，同时idx 也是首页，重复点击首页按钮
+        if selectedIndex == 0 && idx == selectedIndex {
+            
+            let nav = childViewControllers[0] as! MJNavigationController
+            let vc = nav.childViewControllers[0] as! MJHomeViewController
+            
+            vc.tableView?.setContentOffset(CGPoint(x:0,y:-64), animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                vc.loadData()
+            })
+            
+        }
+        
+        
+        // isMember 是这个类，且不包含子类
+        return !viewController.isMember(of: UIViewController.self)
+    }
+}
 
 extension MJMainTabbarController{
     
@@ -71,6 +121,7 @@ extension MJMainTabbarController{
         
         let count = CGFloat(childViewControllers.count)
         //将向内缩进的宽度减小，能够让按钮的宽度变大，盖住容错点
+        //用代理方法的话 可以不减少宽度
         let w = tabBar.bounds.width / count - 1
         
         //CGRectInset 整数向内缩进，负数向外扩展
