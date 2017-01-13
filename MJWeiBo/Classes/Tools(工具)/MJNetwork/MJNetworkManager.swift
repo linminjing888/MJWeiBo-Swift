@@ -17,21 +17,24 @@ enum MJHTTPMethod {
 class MJNetworkManager: AFHTTPSessionManager {
 
     ///在第一次访问时，执行闭包，并且将结果保存在 shared 常量中
-    static let shared = MJNetworkManager()
+//    static let shared = MJNetworkManager()
+    static let shared:MJNetworkManager = {
+        let instance = MJNetworkManager()
+        
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        return instance;
+    }()
     
-    ///访问令牌
-    var accessToken:String? // = "2.00hsqXpF0DC7l_ca9bc4964eCiHeME"
-    
-    var uid:String? = "5365823342"
+   lazy var userAccount = MJUserAccount()
     
     var userLogon:Bool{
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
     
     
     func tokenRequest(method:MJHTTPMethod = .GET,URLString:String,parameters:[String:Any]?,completion:@escaping (_ json: Any?,_ isSuccess:Bool)->()) {
         
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             
             // FIXME: 发送通知，提示用户登入
             print("没有 token 需要登入")

@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  ---------------02--------------------
+//  ---------------17--------------------
 
 import UIKit
 
@@ -65,7 +65,7 @@ class MJMainTabbarController: UITabBarController {
 extension MJMainTabbarController{
     func setUpTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func updateTimer(){

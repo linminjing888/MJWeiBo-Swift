@@ -11,6 +11,7 @@
 		AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */; };
 		AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2631E14D9DE00201256 /* MJStatus.swift */; };
 		AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */; };
+		AE6E425E1E28D18B001C0268 /* MJUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E425D1E28D18B001C0268 /* MJUserAccount.swift */; };
 		AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70373A1E03C293003F49D3 /* AppDelegate.swift */; };
 		AE7037401E03C293003F49D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE70373E1E03C293003F49D3 /* Main.storyboard */; };
 		AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7037411E03C293003F49D3 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		AE67A2631E14D9DE00201256 /* MJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatus.swift; sourceTree = "<group>"; };
 		AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusListViewModel.swift; sourceTree = "<group>"; };
+		AE6E425D1E28D18B001C0268 /* MJUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJUserAccount.swift; sourceTree = "<group>"; };
 		AE7037371E03C293003F49D3 /* MJWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE70373A1E03C293003F49D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE70373F1E03C293003F49D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 				0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE6E425C1E28D12F001C0268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E425D1E28D18B001C0268 /* MJUserAccount.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AE70372E1E03C293003F49D3 = {
@@ -299,6 +309,7 @@
 		AECB76541E1119C10099BD32 /* MJNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				AE6E425C1E28D12F001C0268 /* Model */,
 				AECB76551E111A010099BD32 /* MJNetworkManager.swift */,
 				AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */,
 			);
@@ -430,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6E425E1E28D18B001C0268 /* MJUserAccount.swift in Sources */,
 				AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */,
 				AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */,
 				AE7037851E03C7BE003F49D3 /* UIColor+CZAddition.m in Sources */,

@@ -35,7 +35,7 @@ extension MJNetworkManager{
     
     
     func unreadCount(completion:@escaping (_ count:Int)->()) {
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             return
         }
         
@@ -50,5 +50,26 @@ extension MJNetworkManager{
         }
         
     }
+}
+
+extension MJNetworkManager{
     
+    func loadAccessToken(code:String){
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        
+        let params = ["client_id":MJAPPKEY,
+                      "client_secret":MJAPPSECRET,
+                      "grant_type":"authorization_code",
+                      "code":code,
+                      "redirect_uri":MJREDIRECTURL]
+        
+        request(method:.POST , URLString:urlString , parameters: params) { (json, isSuccess) in
+//            print(json ?? "")
+            //字典转模型  可选型 空字典[:]
+            self.userAccount.yy_modelSet(with:(json as? [String:Any]) ?? [:])
+            
+            print(self.userAccount)
+        }
+    }
+
 }
