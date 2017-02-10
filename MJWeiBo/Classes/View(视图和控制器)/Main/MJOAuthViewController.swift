@@ -49,7 +49,7 @@ class MJOAuthViewController: UIViewController {
     }
     
     @objc fileprivate func autofill() {
-        let js = "document.getElementById('userId').value = 'minjing_lin@sina.cn';" + "document.getElementById('passwd').value = '*******';"
+        let js = "document.getElementById('userId').value = 'minjing_lin@sina.cn';" + "document.getElementById('passwd').value = '*********';"
         webView.stringByEvaluatingJavaScript(from: js)
     }
   }
@@ -59,7 +59,7 @@ extension MJOAuthViewController:UIWebViewDelegate{
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         //请求地址是否包含MJREDIRECTURL
-//        print("url链接-- \(request.url?.absoluteString)")
+        print("url链接-- \(request.url?.absoluteString)")
         
         if request.url?.absoluteString.hasPrefix(MJREDIRECTURL) == false {
             return true
@@ -88,6 +88,12 @@ extension MJOAuthViewController:UIWebViewDelegate{
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+//        print(error)
+        close()
         SVProgressHUD.dismiss()
     }
 }

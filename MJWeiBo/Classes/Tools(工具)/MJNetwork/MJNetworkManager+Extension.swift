@@ -69,6 +69,8 @@ extension MJNetworkManager{
             self.userAccount.yy_modelSet(with:(json as? [String:Any]) ?? [:])
             
             print(self.userAccount)
+            
+            self.userAccount.saveAccount()
         }
     }
 
