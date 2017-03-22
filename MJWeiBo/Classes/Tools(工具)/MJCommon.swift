@@ -16,6 +16,8 @@ let MJAPPSECRET = "8625be95d57d920566f3678a644cc4df"
 
 let MJREDIRECTURL = "http://www.hao123.com"
 
-///登录通知
+///用户需要登录通知
 let MJUserShouldLoginNotification = "MJUserShouldLoginNotification"
-		
+
+///用户登录成功通知
+let MJUserLoginSuccessNotification = "MJUserLoginSuccessNotification"

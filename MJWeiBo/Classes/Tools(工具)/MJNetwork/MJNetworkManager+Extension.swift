@@ -54,7 +54,13 @@ extension MJNetworkManager{
 
 extension MJNetworkManager{
     
-    func loadAccessToken(code:String){
+    
+    /// 加载 AccessToken
+    ///
+    /// - Parameters:
+    ///   - code: 授权码
+    ///   - completion: 完成回调
+    func loadAccessToken(code:String,completion:@escaping (_ isSuccess:Bool)->()){
         let urlString = "https://api.weibo.com/oauth2/access_token"
         
         let params = ["client_id":MJAPPKEY,
@@ -71,7 +77,8 @@ extension MJNetworkManager{
             print(self.userAccount)
             
             self.userAccount.saveAccount()
+            
+            completion(isSuccess)
         }
     }
-
 }

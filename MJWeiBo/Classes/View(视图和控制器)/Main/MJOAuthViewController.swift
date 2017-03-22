@@ -49,7 +49,7 @@ class MJOAuthViewController: UIViewController {
     }
     
     @objc fileprivate func autofill() {
-        let js = "document.getElementById('userId').value = 'minjing_lin@sina.cn';" + "document.getElementById('passwd').value = '*********';"
+        let js = "document.getElementById('userId').value = 'minjing_lin@sina.cn';" + "document.getElementById('passwd').value = '********';"
         webView.stringByEvaluatingJavaScript(from: js)
     }
   }
@@ -78,7 +78,19 @@ extension MJOAuthViewController:UIWebViewDelegate{
             return true
         }
         print("授权码 - \(code)")
-        MJNetworkManager.shared.loadAccessToken(code: code)
+        MJNetworkManager.shared.loadAccessToken(code: code) { (isSuccess) in
+            if(!isSuccess){
+                SVProgressHUD.showInfo(withStatus: "网络请求失败")
+            }else{
+//              SVProgressHUD.showInfo(withStatus: "登录成功")
+                //登录成功，发送通知
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: MJUserLoginSuccessNotification),
+                    object: nil)
+                
+                self.close()
+            }
+        }
         
         return false
     }
@@ -93,7 +105,6 @@ extension MJOAuthViewController:UIWebViewDelegate{
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
 //        print(error)
-        close()
         SVProgressHUD.dismiss()
     }
 }

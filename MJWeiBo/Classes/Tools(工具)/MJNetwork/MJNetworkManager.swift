@@ -20,12 +20,12 @@ class MJNetworkManager: AFHTTPSessionManager {
 //    static let shared = MJNetworkManager()
     static let shared:MJNetworkManager = {
         let instance = MJNetworkManager()
-        
         instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
         return instance;
     }()
     
-   lazy var userAccount = MJUserAccount()
+    //懒加载
+    lazy var userAccount = MJUserAccount()
     
     var userLogon:Bool{
         return userAccount.access_token != nil
@@ -34,10 +34,13 @@ class MJNetworkManager: AFHTTPSessionManager {
     
     func tokenRequest(method:MJHTTPMethod = .GET,URLString:String,parameters:[String:Any]?,completion:@escaping (_ json: Any?,_ isSuccess:Bool)->()) {
         
+        //判断token是否nil
         guard let token = userAccount.access_token else {
             
-            // FIXME: 发送通知，提示用户登入
-            print("没有 token 需要登入")
+            // 发送通知，提示用户登入
+            print("没有 token 需要登录")
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: MJUserShouldLoginNotification), object: nil)
             
             completion(nil, false)
             return
@@ -78,7 +81,8 @@ class MJNetworkManager: AFHTTPSessionManager {
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("Token 过期了")
                 
-                // FIXME: 发送通知（本方法不知道被谁调用，谁接收到通知谁处理）
+                //发送通知（本方法不知道被谁调用，谁接收到通知谁处理）
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: MJUserShouldLoginNotification), object:"bad token")
             }
             
             print("网络请求失败 \(error)")

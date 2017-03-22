@@ -13,6 +13,7 @@ class MJDisCoverViewController: MJBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        MJNetworkManager.shared.userAccount.access_token = "nil"
         // Do any additional setup after loading the view.
     }
 

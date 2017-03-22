@@ -4,9 +4,10 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  ---------------17--------------------
+//  ---------------31--------------------
 
 import UIKit
+import SVProgressHUD
 
 class MJMainTabbarController: UITabBarController {
 
@@ -28,11 +29,21 @@ class MJMainTabbarController: UITabBarController {
     
     // MARK: 监听方法
     @objc fileprivate func userLogon(n:Notification){
-    
-        let nav = UINavigationController(rootViewController: MJOAuthViewController())
+        //判断 n.object是否有值，如有，token过期，提示用户重新登录
         
-        present(nav, animated: true, completion: nil)
+        var time = DispatchTime.now()
+        if n.object != nil{
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.showInfo(withStatus: "用户登录已经超时，需要重新登录")
+            time = DispatchTime.now()+2
+        }
         
+        DispatchQueue.main.asyncAfter(deadline:time) {
+            SVProgressHUD.setDefaultMaskType(.clear)
+            let nav = UINavigationController(rootViewController: MJOAuthViewController())
+            
+            self.present(nav, animated: true, completion: nil)
+        }
     }
     
     // FIXME: 没有实现（提醒）
@@ -65,7 +76,7 @@ class MJMainTabbarController: UITabBarController {
 extension MJMainTabbarController{
     func setUpTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func updateTimer(){

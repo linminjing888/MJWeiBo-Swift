@@ -37,10 +37,19 @@ class MJBaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        if MJNetworkManager.shared.userLogon {
-            loadData()
-        }
-
+        
+        MJNetworkManager.shared.userLogon ? loadData() :()
+        
+        //登录成功回调通知
+        NotificationCenter.default.addObserver(self,
+            selector:#selector(loginSuccess),
+            name: NSNotification.Name(rawValue: MJUserLoginSuccessNotification),
+            object: nil)
+        
+    }
+    deinit {
+        
+        NotificationCenter.default.removeObserver(self)
     }
     ///重写 title 的 didSet
     override var title: String?{
@@ -63,6 +72,21 @@ class MJBaseViewController: UIViewController {
 
 // MARK: - 设置视图监听方法
 extension MJBaseViewController{
+    
+    @objc fileprivate func loginSuccess(n:Notification){
+        print("登录成功\(n)")
+        //登录前左边是注册 右边是登录
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
+        //view声明周期 在访问view的getter时，如果view==nil 会调用loadView-> viewDidLoad
+        view = nil
+        
+        //重新执行viewDidLoad ，避免重复注册通知，注销通知
+        NotificationCenter.default.removeObserver(self)
+        
+    }
+    
     @objc fileprivate func login(){
         NotificationCenter.default.post(name:NSNotification.Name(rawValue: MJUserShouldLoginNotification) , object: nil)
     }
@@ -94,8 +118,10 @@ extension MJBaseViewController{
         
         tableView?.delegate = self
         tableView?.dataSource = self
-        
+        //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
+        //修改指示器的缩进
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         ///设置刷新控件
         refreshControl = UIRefreshControl()
