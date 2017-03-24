@@ -69,5 +69,22 @@ extension MJHomeViewController{
         super.setUpTableView()
         navItem.leftBarButtonItem = UIBarButtonItem(title:"好友" , target: self, action: #selector(showFriends))
         tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
+        
+        self.setupNavTitle()
+    }
+    
+    private func setupNavTitle(){
+        let title = MJNetworkManager.shared.userAccount.screen_name;
+        
+        let btn = MJTitleButton(title: title)
+        
+        navItem.titleView = btn
+        
+        btn.addTarget(self, action: #selector(clickTitleBtn(btn:)), for: .touchUpInside)
+        
+    }
+    
+    func clickTitleBtn(btn:UIButton)  {
+        btn.isSelected = !btn.isSelected
     }
 }

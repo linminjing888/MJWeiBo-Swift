@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MJWelcomeView" customModule="MJWeiBo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="fQm-2e-EbS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="XiO-vl-1HT">
+                    <rect key="frame" x="147" y="427" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="TvY-SF-w4b"/>
+                        <constraint firstAttribute="height" constant="80" id="rwj-kO-kNI"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XiO-vl-1HT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3y4-Hb-cOZ"/>
+                <constraint firstAttribute="bottom" secondItem="fQm-2e-EbS" secondAttribute="bottom" id="JsA-Lk-x8s"/>
+                <constraint firstItem="fQm-2e-EbS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="esp-6N-nVJ"/>
+                <constraint firstItem="fQm-2e-EbS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fVQ-Xm-GS1"/>
+                <constraint firstAttribute="bottom" secondItem="XiO-vl-1HT" secondAttribute="bottom" constant="160" id="nYc-ET-IA7"/>
+                <constraint firstAttribute="trailing" secondItem="fQm-2e-EbS" secondAttribute="trailing" id="yYa-W5-7bs"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="320" height="480"/>
+        <image name="avatar_default" width="50" height="50"/>
+    </resources>
+</document>

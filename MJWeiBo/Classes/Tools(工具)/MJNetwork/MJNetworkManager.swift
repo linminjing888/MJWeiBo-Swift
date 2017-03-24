@@ -31,7 +31,6 @@ class MJNetworkManager: AFHTTPSessionManager {
         return userAccount.access_token != nil
     }
     
-    
     func tokenRequest(method:MJHTTPMethod = .GET,URLString:String,parameters:[String:Any]?,completion:@escaping (_ json: Any?,_ isSuccess:Bool)->()) {
         
         //判断token是否nil

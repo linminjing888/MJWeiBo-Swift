@@ -49,7 +49,7 @@ class MJOAuthViewController: UIViewController {
     }
     
     @objc fileprivate func autofill() {
-        let js = "document.getElementById('userId').value = 'minjing_lin@sina.cn';" + "document.getElementById('passwd').value = '********';"
+        let js = "document.getElementById('userId').value = 'minjing_lin@sina.cn';" + "document.getElementById('passwd').value = '******';"
         webView.stringByEvaluatingJavaScript(from: js)
     }
   }

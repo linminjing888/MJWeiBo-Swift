@@ -26,6 +26,10 @@ class MJUserAccount: NSObject {
     
     ///过期日期
     var expiresDate :Date?
+    ///用户名
+    var screen_name :String?
+    ///用户头像大图
+    var avatar_large :String?
     
     override var description: String{
         return yy_modelDescription()

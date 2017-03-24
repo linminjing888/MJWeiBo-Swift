@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  ---------------31--------------------
+//  ---------------42--------------------
 
 import UIKit
 import SVProgressHUD
@@ -19,6 +19,8 @@ class MJMainTabbarController: UITabBarController {
         setUpChildController()
         setUpcomposeButton()
         setUpTimer()
+        
+        setupNewFeature()
         
         delegate = self
         
@@ -71,6 +73,38 @@ class MJMainTabbarController: UITabBarController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+/// 设置新特性
+extension MJMainTabbarController{
+    fileprivate func setupNewFeature() {
+        
+        ///如果没登陆就不显示新特性
+        if !MJNetworkManager.shared.userLogon {
+            return
+        }
+        
+        let vi = isNewVersion ? MJNewFeatureView() : MJWelcomeView.welcomeView()
+        view.addSubview(vi)
+    }
+    
+    ///构造函数：给属性分配空间 （计算型属性）
+    fileprivate var isNewVersion :Bool{
+        
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        
+        //去保存在 Document 目录中的版本号
+        let path = ("version" as NSString).cz_appendDocumentDir() ?? ""
+        
+        let sandboxVersion = (try? String(contentsOfFile: path)) ?? ""
+        
+        try? currentVersion?.write(toFile: path, atomically: true, encoding: .utf8)
+
+        print(path)
+        
+        return currentVersion != sandboxVersion
+    }
+    
 }
 
 extension MJMainTabbarController{

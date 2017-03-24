@@ -54,6 +54,24 @@ extension MJNetworkManager{
 
 extension MJNetworkManager{
     
+    func loadUserInfo(completion:@escaping (_ dict:[String:Any])->()) {
+        guard let uid = userAccount.uid else {
+            return
+        }
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        let params = ["uid":uid];
+        
+        tokenRequest(URLString: urlString, parameters: params) { (json, isSuccess) in
+//            print(json ?? [:])
+            
+            completion(json as! [String : Any])
+        }
+    }
+}
+
+extension MJNetworkManager{
     
     /// 加载 AccessToken
     ///
@@ -74,11 +92,18 @@ extension MJNetworkManager{
             //字典转模型  可选型 空字典[:]
             self.userAccount.yy_modelSet(with:(json as? [String:Any]) ?? [:])
             
-            print(self.userAccount)
+//            print(self.userAccount)
             
-            self.userAccount.saveAccount()
-            
-            completion(isSuccess)
+            self.loadUserInfo(completion: { (dict) in
+//                print(dict)
+                //使用用户信息设置用户账户信息
+                self.userAccount.yy_modelSet(with: dict)
+                //保存模型
+                self.userAccount.saveAccount()
+                print(self.userAccount)
+                //用户信息加载完成，在回调
+                completion(isSuccess)
+            })
         }
     }
 }
