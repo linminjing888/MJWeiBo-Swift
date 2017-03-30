@@ -53,8 +53,9 @@ extension MJHomeViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MJHomeStatusCell
+        cell.statusLabel?.text = listViewModel.statusList[indexPath.row].text
         
         return cell
         
@@ -68,7 +69,16 @@ extension MJHomeViewController{
         
         super.setUpTableView()
         navItem.leftBarButtonItem = UIBarButtonItem(title:"好友" , target: self, action: #selector(showFriends))
-        tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
+        
+        //注册cell
+//        tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "MJHomeStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        
+        //设置行高
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 300
+        
+        tableView?.separatorStyle = .none
         
         self.setupNavTitle()
     }

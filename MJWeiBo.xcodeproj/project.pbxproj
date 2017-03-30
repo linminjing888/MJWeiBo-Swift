@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C11427F49A18111DD4EDFFC /* Pods_MJWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */; };
+		AE5446F71E8B66BF00F7BF94 /* MJNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */; };
 		AE5E04001E83D07C004C78CE /* MJTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */; };
 		AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */; };
 		AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2631E14D9DE00201256 /* MJStatus.swift */; };
@@ -39,9 +40,14 @@
 		AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7037911E03FEB8003F49D3 /* MJDemoViewController.swift */; };
 		AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */; };
 		AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78D38F1E0A30EB00B577E9 /* MJVisitorView.swift */; };
+		AE8DC4C91E8A6C5400582735 /* MJWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB197941E84F35D00F46847 /* MJWelcomeView.swift */; };
 		AEA0DBC91E163CD2000927F8 /* MJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DBC81E163CD2000927F8 /* MJCommon.swift */; };
 		AEA0DBCB1E164300000927F8 /* MJOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0DBCA1E164300000927F8 /* MJOAuthViewController.swift */; };
-		AEB197951E84F35D00F46847 /* MJWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB197941E84F35D00F46847 /* MJWelcomeView.swift */; };
+		AEA219361E8CF40400EF7249 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA219351E8CF40400EF7249 /* UIImage+Extensions.swift */; };
+		AEA219381E8CF78D00EF7249 /* MJHomeStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA219371E8CF78D00EF7249 /* MJHomeStatusCell.swift */; };
+		AEA2193A1E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */; };
+		AEA2193E1E8D0BC800EF7249 /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA2193D1E8D0BC800EF7249 /* WBUser.swift */; };
+		AEA219401E8D0F9400EF7249 /* MJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */; };
 		AEB197971E84F37300F46847 /* MJNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB197961E84F37300F46847 /* MJNewFeatureView.swift */; };
 		AEB197991E85059B00F46847 /* MJWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB197981E85059B00F46847 /* MJWelcomeView.xib */; };
 		AECB76531E10C42A0099BD32 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = AECB76521E10C42A0099BD32 /* main.json */; };
@@ -51,6 +57,7 @@
 /* Begin PBXFileReference section */
 		0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
+		AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJNewFeatureView.xib; sourceTree = "<group>"; };
 		AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTitleButton.swift; sourceTree = "<group>"; };
 		AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		AE67A2631E14D9DE00201256 /* MJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatus.swift; sourceTree = "<group>"; };
@@ -100,6 +107,11 @@
 		AE78D38F1E0A30EB00B577E9 /* MJVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJVisitorView.swift; sourceTree = "<group>"; };
 		AEA0DBC81E163CD2000927F8 /* MJCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJCommon.swift; sourceTree = "<group>"; };
 		AEA0DBCA1E164300000927F8 /* MJOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJOAuthViewController.swift; sourceTree = "<group>"; };
+		AEA219351E8CF40400EF7249 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		AEA219371E8CF78D00EF7249 /* MJHomeStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJHomeStatusCell.swift; sourceTree = "<group>"; };
+		AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJHomeStatusNormalCell.xib; sourceTree = "<group>"; };
+		AEA2193D1E8D0BC800EF7249 /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
+		AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MJStatusViewModel.swift; path = "MJWeiBo/Classes/ViewModel(视图模型)/MJStatusViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		AEB197941E84F35D00F46847 /* MJWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJWelcomeView.swift; sourceTree = "<group>"; };
 		AEB197961E84F37300F46847 /* MJNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJNewFeatureView.swift; sourceTree = "<group>"; };
 		AEB197981E85059B00F46847 /* MJWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJWelcomeView.xib; sourceTree = "<group>"; };
@@ -140,6 +152,8 @@
 		AE5E03FE1E83CE89004C78CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AEA219371E8CF78D00EF7249 /* MJHomeStatusCell.swift */,
+				AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */,
 				AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */,
 			);
 			path = Views;
@@ -199,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				AE67A2631E14D9DE00201256 /* MJStatus.swift */,
+				AEA2193D1E8D0BC800EF7249 /* WBUser.swift */,
+				AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -320,6 +336,7 @@
 			children = (
 				AE70378D1E03D18D003F49D3 /* Bundle+Extensions.swift */,
 				AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */,
+				AEA219351E8CF40400EF7249 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +347,7 @@
 				AEB197941E84F35D00F46847 /* MJWelcomeView.swift */,
 				AEB197981E85059B00F46847 /* MJWelcomeView.xib */,
 				AEB197961E84F37300F46847 /* MJNewFeatureView.swift */,
+				AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -408,6 +426,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA2193A1E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib in Resources */,
+				AE5446F71E8B66BF00F7BF94 /* MJNewFeatureView.xib in Resources */,
 				AEB197991E85059B00F46847 /* MJWelcomeView.xib in Resources */,
 				AECB76531E10C42A0099BD32 /* main.json in Resources */,
 				AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */,
@@ -475,6 +495,7 @@
 				AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */,
 				AE5E04001E83D07C004C78CE /* MJTitleButton.swift in Sources */,
 				AE7037851E03C7BE003F49D3 /* UIColor+CZAddition.m in Sources */,
+				AEA219381E8CF78D00EF7249 /* MJHomeStatusCell.swift in Sources */,
 				AE70377E1E03C7BE003F49D3 /* NSArray+Log.m in Sources */,
 				AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */,
 				AE70375D1E03C38B003F49D3 /* MJDisCoverViewController.swift in Sources */,
@@ -484,8 +505,11 @@
 				AEB197971E84F37300F46847 /* MJNewFeatureView.swift in Sources */,
 				AE70378F1E03D18D003F49D3 /* Bundle+Extensions.swift in Sources */,
 				AE7037811E03C7BE003F49D3 /* NSString+CZBase64.m in Sources */,
+				AE8DC4C91E8A6C5400582735 /* MJWelcomeView.swift in Sources */,
 				AE70375E1E03C38B003F49D3 /* MJHomeViewController.swift in Sources */,
 				AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */,
+				AEA2193E1E8D0BC800EF7249 /* WBUser.swift in Sources */,
+				AEA219361E8CF40400EF7249 /* UIImage+Extensions.swift in Sources */,
 				AEA0DBCB1E164300000927F8 /* MJOAuthViewController.swift in Sources */,
 				AE7037601E03C38B003F49D3 /* MJMainTabbarController.swift in Sources */,
 				AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */,
@@ -493,9 +517,9 @@
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
 				AE7037871E03C7BE003F49D3 /* UIScreen+CZAddition.m in Sources */,
 				AE7037611E03C38B003F49D3 /* MJNavigationController.swift in Sources */,
+				AEA219401E8D0F9400EF7249 /* MJStatusViewModel.swift in Sources */,
 				AE7037801E03C7BE003F49D3 /* NSObject+CZRuntime.m in Sources */,
 				AE7037631E03C38B003F49D3 /* MJPrefileViewController.swift in Sources */,
-				AEB197951E84F35D00F46847 /* MJWelcomeView.swift in Sources */,
 				AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */,
 				AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */,
 				AE7037831E03C7BE003F49D3 /* NSString+CZPath.m in Sources */,

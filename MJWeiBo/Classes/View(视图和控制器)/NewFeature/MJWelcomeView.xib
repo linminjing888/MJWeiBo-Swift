@@ -18,23 +18,41 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="fQm-2e-EbS">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="XiO-vl-1HT">
-                    <rect key="frame" x="147" y="427" width="80" height="80"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irD-sb-Hb7">
+                    <rect key="frame" x="152" y="490" width="70" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="TvY-SF-w4b"/>
-                        <constraint firstAttribute="height" constant="80" id="rwj-kO-kNI"/>
+                        <constraint firstAttribute="height" constant="22" id="KNG-yb-nK7"/>
+                        <constraint firstAttribute="width" constant="70" id="XDb-g5-ywB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="o8c-7h-gE6">
+                    <rect key="frame" x="147" y="390" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="DT5-yc-izD"/>
+                        <constraint firstAttribute="width" constant="80" id="UB5-Qg-zRs"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="XiO-vl-1HT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3y4-Hb-cOZ"/>
+                <constraint firstAttribute="bottom" secondItem="o8c-7h-gE6" secondAttribute="bottom" constant="185" id="Hkb-6I-0sc"/>
+                <constraint firstItem="irD-sb-Hb7" firstAttribute="top" secondItem="o8c-7h-gE6" secondAttribute="bottom" constant="8" id="Hqi-AB-zz8"/>
                 <constraint firstAttribute="bottom" secondItem="fQm-2e-EbS" secondAttribute="bottom" id="JsA-Lk-x8s"/>
                 <constraint firstItem="fQm-2e-EbS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="esp-6N-nVJ"/>
                 <constraint firstItem="fQm-2e-EbS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fVQ-Xm-GS1"/>
-                <constraint firstAttribute="bottom" secondItem="XiO-vl-1HT" secondAttribute="bottom" constant="160" id="nYc-ET-IA7"/>
+                <constraint firstItem="irD-sb-Hb7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rNP-xi-RaR"/>
+                <constraint firstItem="o8c-7h-gE6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yVa-EJ-nDC"/>
                 <constraint firstAttribute="trailing" secondItem="fQm-2e-EbS" secondAttribute="trailing" id="yYa-W5-7bs"/>
             </constraints>
+            <connections>
+                <outlet property="bottomCons" destination="Hkb-6I-0sc" id="Vuc-lT-anN"/>
+                <outlet property="iconImage" destination="o8c-7h-gE6" id="uYT-bj-2xX"/>
+                <outlet property="tipLabel" destination="irD-sb-Hb7" id="W9g-z4-MMj"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
     <resources>

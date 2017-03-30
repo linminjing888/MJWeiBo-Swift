@@ -18,6 +18,9 @@ class MJStatus: NSObject {
     ///微博信息
     var text:String?
     
+    var user:WBUser?
+    
+    
     override var description: String{
         return yy_modelDescription()
     }

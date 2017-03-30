@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  ---------------42--------------------
+//  ---------------19--------------------
 
 import UIKit
 import SVProgressHUD
@@ -84,7 +84,7 @@ extension MJMainTabbarController{
             return
         }
         
-        let vi = isNewVersion ? MJNewFeatureView() : MJWelcomeView.welcomeView()
+        let vi = isNewVersion ? MJNewFeatureView.newFeatureView() : MJWelcomeView.welcomeView()
         view.addSubview(vi)
     }
     
@@ -143,12 +143,15 @@ extension MJMainTabbarController:UITabBarControllerDelegate{
             
             let nav = childViewControllers[0] as! MJNavigationController
             let vc = nav.childViewControllers[0] as! MJHomeViewController
-            
+            //表格滚动到原点
             vc.tableView?.setContentOffset(CGPoint(x:0,y:-64), animated: true)
-            
+            //刷新数据
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                 vc.loadData()
             })
+            //清除tabbarItem 的badge
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
             
         }
         
