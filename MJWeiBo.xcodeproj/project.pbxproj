@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3C11427F49A18111DD4EDFFC /* Pods_MJWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */; };
 		AE5446F71E8B66BF00F7BF94 /* MJNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */; };
+		AE5669F01E8E378D00F2E5DF /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */; };
+		AE5669F21E8E4AA500F2E5DF /* MJStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */; };
+		AE5669F41E8E67FB00F2E5DF /* MJStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669F31E8E67FB00F2E5DF /* MJStatusPictureView.swift */; };
 		AE5E04001E83D07C004C78CE /* MJTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */; };
 		AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */; };
 		AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2631E14D9DE00201256 /* MJStatus.swift */; };
@@ -58,6 +61,9 @@
 		0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJNewFeatureView.xib; sourceTree = "<group>"; };
+		AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
+		AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusToolBar.swift; sourceTree = "<group>"; };
+		AE5669F31E8E67FB00F2E5DF /* MJStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusPictureView.swift; sourceTree = "<group>"; };
 		AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTitleButton.swift; sourceTree = "<group>"; };
 		AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		AE67A2631E14D9DE00201256 /* MJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatus.swift; sourceTree = "<group>"; };
@@ -152,9 +158,11 @@
 		AE5E03FE1E83CE89004C78CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AEA219371E8CF78D00EF7249 /* MJHomeStatusCell.swift */,
 				AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */,
+				AEA219371E8CF78D00EF7249 /* MJHomeStatusCell.swift */,
 				AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */,
+				AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */,
+				AE5669F31E8E67FB00F2E5DF /* MJStatusPictureView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 				AE70378D1E03D18D003F49D3 /* Bundle+Extensions.swift */,
 				AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */,
 				AEA219351E8CF40400EF7249 /* UIImage+Extensions.swift */,
+				AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -508,6 +517,7 @@
 				AE8DC4C91E8A6C5400582735 /* MJWelcomeView.swift in Sources */,
 				AE70375E1E03C38B003F49D3 /* MJHomeViewController.swift in Sources */,
 				AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */,
+				AE5669F01E8E378D00F2E5DF /* UIimageView+WebImage.swift in Sources */,
 				AEA2193E1E8D0BC800EF7249 /* WBUser.swift in Sources */,
 				AEA219361E8CF40400EF7249 /* UIImage+Extensions.swift in Sources */,
 				AEA0DBCB1E164300000927F8 /* MJOAuthViewController.swift in Sources */,
@@ -525,8 +535,10 @@
 				AE7037831E03C7BE003F49D3 /* NSString+CZPath.m in Sources */,
 				AEA0DBC91E163CD2000927F8 /* MJCommon.swift in Sources */,
 				AE7037881E03C7BE003F49D3 /* UIView+CZAddition.m in Sources */,
+				AE5669F41E8E67FB00F2E5DF /* MJStatusPictureView.swift in Sources */,
 				AE7037821E03C7BE003F49D3 /* NSString+CZHash.m in Sources */,
 				AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */,
+				AE5669F21E8E4AA500F2E5DF /* MJStatusToolBar.swift in Sources */,
 				AE7037621E03C38B003F49D3 /* MJMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

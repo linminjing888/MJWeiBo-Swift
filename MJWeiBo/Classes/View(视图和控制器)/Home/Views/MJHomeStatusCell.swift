@@ -24,7 +24,31 @@ class MJHomeStatusCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     /// 正文
     @IBOutlet weak var statusLabel: UILabel!
+    ///
+    @IBOutlet weak var toolBar: MJStatusToolBar!
+    ///配图视图
+    @IBOutlet weak var pictureView: MJStatusPictureView!
+    ///配图视图 上面间距
+    @IBOutlet weak var pictureTopCons: NSLayoutConstraint!
     
+    var viewModel:MJStatusViewModel?{
+        didSet{
+            statusLabel.text = viewModel?.status.text
+            nameLabel.text = viewModel?.status.user?.screen_name
+            memberIconView.image = viewModel?.memberIcon
+            vipIconView.image = viewModel?.vipIcon
+            
+            iconView .mj_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default"),isAvatar:true)
+            
+            //设置底部工具栏
+            toolBar.viewModel = viewModel
+            
+            pictureView.heightCons.constant = 0
+            pictureTopCons.constant = 0
+            
+        }
+    }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

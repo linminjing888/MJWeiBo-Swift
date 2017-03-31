@@ -55,10 +55,11 @@ extension MJHomeViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MJHomeStatusCell
-        cell.statusLabel?.text = listViewModel.statusList[indexPath.row].text
+        
+        let viewModel = listViewModel.statusList[indexPath.row]
+        cell.viewModel = viewModel
         
         return cell
-        
     }
 }
 

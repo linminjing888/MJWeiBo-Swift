@@ -21,8 +21,8 @@ private var maxPullUpTimes = 3
 
 class MJStatusListViewModel {
     
-    //模型数组懒加载
-    lazy var statusList = [MJStatus]()
+    //微博视图模型数组懒加载
+    lazy var statusList = [MJStatusViewModel]()
     private var pullUpErrorTimes = 0
     
     /// 加载微博列表
@@ -40,22 +40,33 @@ class MJStatusListViewModel {
         }
         
         /// since_id 取出数组中第一条微博的id  下拉刷新
-        let since_id = pullUp ? 0 : (statusList.first?.id ?? 0)
+        let since_id = pullUp ? 0 : (statusList.first?.status.id ?? 0)
         
         ///上啦刷新
-        let max_id = !pullUp ? 0 :(statusList.last?.id ?? 0)
+        let max_id = !pullUp ? 0 :(statusList.last?.status.id ?? 0)
         
         
         MJNetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
-          guard  let array = NSArray.yy_modelArray(with:MJStatus.self , json: list ?? []) as? [MJStatus] else{
-            
-            completion(isSuccess,false)
-            return
-            
+            if !isSuccess{
+                completion(false,false)
+                
+                return
             }
+            //1.定义结果可变数组
+            var array = [MJStatusViewModel]()
             
-            print("刷新 \(array.count) 条数据")
+            //2.遍历服务器返回的字典数组，字典转模型
+            for dict in list ?? []{
+                //创建微博模型--如果创建失败，则继续遍历
+               guard let model = MJStatus.yy_model(with: dict) else{
+                    continue
+                }
+                
+                array.append(MJStatusViewModel(model: model))
+            }
+             print(array)
+//            print("刷新 \(array.count) 条数据")
             
             if pullUp{
                 //上啦刷新
