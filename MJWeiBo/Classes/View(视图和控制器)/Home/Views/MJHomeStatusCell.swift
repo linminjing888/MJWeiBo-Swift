@@ -28,8 +28,6 @@ class MJHomeStatusCell: UITableViewCell {
     @IBOutlet weak var toolBar: MJStatusToolBar!
     ///配图视图
     @IBOutlet weak var pictureView: MJStatusPictureView!
-    ///配图视图 上面间距
-    @IBOutlet weak var pictureTopCons: NSLayoutConstraint!
     
     var viewModel:MJStatusViewModel?{
         didSet{
@@ -43,8 +41,9 @@ class MJHomeStatusCell: UITableViewCell {
             //设置底部工具栏
             toolBar.viewModel = viewModel
             
-            pictureView.heightCons.constant = 0
-            pictureTopCons.constant = 0
+            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+          
+            pictureView.urls = viewModel?.status.pic_urls
             
         }
     }

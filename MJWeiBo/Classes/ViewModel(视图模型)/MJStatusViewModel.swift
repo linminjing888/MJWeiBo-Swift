@@ -30,6 +30,10 @@ class MJStatusViewModel:CustomStringConvertible{
     /// 喜欢
     var likeStr:String?
     
+    ///配图尺寸
+    var pictureViewSize = CGSize()
+    
+    
     
     /// 构造函数
     ///
@@ -60,9 +64,30 @@ class MJStatusViewModel:CustomStringConvertible{
         repostStr = countString(count: model.reposts_count, defauleStr: "转发")
         commentStr = countString(count: model.comments_count, defauleStr: "评论")
         likeStr = countString(count: model.attitudes_count, defauleStr: "赞")
+        
+        pictureViewSize = calcPictureViewSize(count:status.pic_urls?.count)
     }
     
-    func countString(count:Int ,defauleStr:String) -> String {
+    
+    ///  计算图片高度
+    ///
+    /// - Parameter count: 图片数量
+    /// - Returns: 尺寸
+    func calcPictureViewSize(count:Int?) -> CGSize {
+        
+        if count == 0 || count == nil{
+            return CGSize()
+        }
+        
+        let row = (count! - 1)/3 + 1
+        
+        let height = WBStatusPictureOutterMargin +
+            CGFloat(row) * WBstatusPictureItemWidth + CGFloat(row-1)*WBStatusPictureInnerMargin
+        
+        return CGSize(width: WBStatusPictureViewWidth, height: height)
+    }
+    
+    private func countString(count:Int ,defauleStr:String) -> String {
         
         if count < 1 {
             return defauleStr

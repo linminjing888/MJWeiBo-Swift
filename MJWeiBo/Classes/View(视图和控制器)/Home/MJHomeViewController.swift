@@ -9,7 +9,11 @@
 import UIKit
 
 // 定义全局变量，尽量使用 private 修饰，否则到处都可以访问
-private let cellId = "cellId"
+
+/// 正常微博 cell id
+private let originalCellId = "originalCellId"
+/// 转发微博id cell id
+private let retweetCellId = "retweetCellId"
 
 class MJHomeViewController: MJBaseViewController {
 
@@ -54,7 +58,8 @@ extension MJHomeViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MJHomeStatusCell
+        //FIXME :正常
+        let cell = tableView.dequeueReusableCell(withIdentifier: retweetCellId, for: indexPath) as! MJHomeStatusCell
         
         let viewModel = listViewModel.statusList[indexPath.row]
         cell.viewModel = viewModel
@@ -73,7 +78,9 @@ extension MJHomeViewController{
         
         //注册cell
 //        tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
-        tableView?.register(UINib(nibName: "MJHomeStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "MJHomeStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
+        
+        tableView?.register(UINib(nibName: "MJHomeStatusRetweetCell", bundle: nil), forCellReuseIdentifier: retweetCellId)
         
         //设置行高
         tableView?.rowHeight = UITableViewAutomaticDimension

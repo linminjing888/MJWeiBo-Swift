@@ -25,9 +25,15 @@ class MJStatus: NSObject {
     var attitudes_count : Int = 0
     
     var user:WBUser?
+    ///微博配图数组
+    var pic_urls:[MJStatusPicture]?
     
     
     override var description: String{
         return yy_modelDescription()
+    }
+    ///类函数 告诉第三方框架 YY_model 如果遇到数组类型的属性，数组中存放的对象是什么类
+    class func modelContainerPropertyGenericClass() -> [String:AnyClass] {
+        return["pic_urls":MJStatusPicture.self]
     }
 }
