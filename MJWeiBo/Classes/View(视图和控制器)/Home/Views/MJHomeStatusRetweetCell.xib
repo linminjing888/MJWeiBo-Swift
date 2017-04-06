@@ -76,7 +76,7 @@
                         <rect key="frame" x="0.0" y="96" width="370" height="251"/>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-PT-mPW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-PT-mPW">
                         <rect key="frame" x="12" y="108" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
@@ -215,13 +215,14 @@
                 <outlet property="memberIconView" destination="k0v-kK-tIO" id="yN6-ja-lxW"/>
                 <outlet property="nameLabel" destination="KUW-QE-aw8" id="fG4-jW-8Sm"/>
                 <outlet property="pictureView" destination="ELz-ED-4tj" id="2UH-2o-ya0"/>
+                <outlet property="retweetTerxtLab" destination="MMw-PT-mPW" id="1yA-Ou-U8S"/>
                 <outlet property="sourceLabel" destination="DoY-nd-Gfr" id="gMD-Wg-W6D"/>
                 <outlet property="statusLabel" destination="cwi-Wd-iUF" id="EF9-hS-AGc"/>
                 <outlet property="timeLabel" destination="a5N-4X-VJ0" id="RVW-K0-YPX"/>
                 <outlet property="toolBar" destination="zkD-cv-el9" id="5wy-Jh-z8Y"/>
                 <outlet property="vipIconView" destination="Edo-fu-B20" id="LKe-dT-yQ3"/>
             </connections>
-            <point key="canvasLocation" x="-88" y="-94"/>
+            <point key="canvasLocation" x="-250" y="-107"/>
         </tableViewCell>
     </objects>
     <resources>

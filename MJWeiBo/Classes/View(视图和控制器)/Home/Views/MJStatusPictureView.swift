@@ -10,11 +10,39 @@ import UIKit
 
 class MJStatusPictureView: UIView {
 
-    ///配图视图高度
-   @IBOutlet weak var heightCons:NSLayoutConstraint!
     
+    var viewModel:MJStatusViewModel? {
+        didSet{
+            calcViewSize()
+            
+            urls = viewModel?.picUrls
+        }
+    }
+    private func calcViewSize(){
+        
+        if viewModel?.picUrls?.count == 1 {
+            
+            let size = viewModel?.pictureViewSize ?? CGSize()
+            //获取第0个图像
+            let v = subviews[0]
+            
+            v.frame = CGRect(x: 0,
+                             y: WBStatusPictureOutterMargin,
+                             width: size.width,
+                             height: size.height - WBStatusPictureOutterMargin)
+        }else{
+            let v = subviews[0]
+            v.frame = CGRect(x: 0,
+                             y: WBStatusPictureOutterMargin,
+                             width: WBstatusPictureItemWidth,
+                             height: WBstatusPictureItemWidth)
+            
+        }
+        
+         heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+    }
     
-    var urls:[MJStatusPicture]? {
+    private var urls:[MJStatusPicture]? {
         didSet{
             
             // 隐藏视图数据
@@ -40,6 +68,8 @@ class MJStatusPictureView: UIView {
         }
     }
     
+    ///配图视图高度
+   @IBOutlet weak var heightCons:NSLayoutConstraint!
     
     override func awakeFromNib() {
         setupUI()

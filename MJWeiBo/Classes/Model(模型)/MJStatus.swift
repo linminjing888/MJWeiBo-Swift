@@ -23,8 +23,11 @@ class MJStatus: NSObject {
     var comments_count : Int = 0
     ///	表态数
     var attitudes_count : Int = 0
-    
+    ///微博用户
     var user:WBUser?
+    ///被转发的原创微博
+    var retweeted_status:MJStatus?
+    
     ///微博配图数组
     var pic_urls:[MJStatusPicture]?
     

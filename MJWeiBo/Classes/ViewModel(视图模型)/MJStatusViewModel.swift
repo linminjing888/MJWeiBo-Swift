@@ -33,6 +33,21 @@ class MJStatusViewModel:CustomStringConvertible{
     ///配图尺寸
     var pictureViewSize = CGSize()
     
+    ///转发微博文字
+    var retweetText:String?
+    
+    ///Cell 行高
+    var rowHeight:CGFloat = 0
+    
+    
+    ///计算型属性
+    var picUrls:[MJStatusPicture]?{
+        // 如果有被转发的微博，返回被转发微博的配图
+        // 如果没有被转发的微博，返回原创微博的数据
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    
+    
     
     
     /// 构造函数
@@ -65,9 +80,92 @@ class MJStatusViewModel:CustomStringConvertible{
         commentStr = countString(count: model.comments_count, defauleStr: "评论")
         likeStr = countString(count: model.attitudes_count, defauleStr: "赞")
         
-        pictureViewSize = calcPictureViewSize(count:status.pic_urls?.count)
+        pictureViewSize = calcPictureViewSize(count:picUrls?.count)
+        
+        retweetText = "@" + (status.user?.screen_name ?? "") + "：" + (status.retweeted_status?.text ?? "")
+        
+        updateRowHeight()
+    
     }
     
+    
+    /// 计算行高
+    func updateRowHeight()  {
+        //原创微博 顶部分割视图（12）+ 间距（12）+头像高度（34）+间距（12）+正文高度（计算）+配图视图高度（计算）+间距（12）+底部视图高度（35）
+        //转发微博 顶部分割视图（12）+ 间距（12）+头像高度（34）+间距（12）+正文高度（计算）+间距（12）+间距（12）+转发文本高度（计算）+配图视图高度（计算）+间距（12）+底部视图高度（35）
+        
+        let margin:CGFloat = 12
+        let iconHeight:CGFloat = 34
+        let toolBarHeight:CGFloat = 35
+        let textSize = CGSize(width: UIScreen.cz_screenWidth()-2*margin, height: CGFloat(MAXFLOAT))
+        let originFont = UIFont.systemFont(ofSize: 15)
+        let retweetFont = UIFont.systemFont(ofSize: 14)
+        
+        var height:CGFloat = 0
+        
+        //1.计算顶部位置
+        height = 2 * margin + iconHeight + margin
+        
+        //2.正文高度
+        if let text = status.text {
+            
+          height += (text as NSString).boundingRect(with: textSize,
+                                            options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName:originFont],
+                                            context: nil).height
+        }
+        //3.判断是否转发微博
+        if status.retweeted_status != nil {
+            
+            height += 2 * margin
+            
+            if let text = retweetText  {
+                
+              height += (text as NSString).boundingRect(with: textSize,
+                                                        options: [.usesLineFragmentOrigin],
+                                                        attributes: [NSFontAttributeName:retweetFont],
+                                                        context: nil).height
+            }
+        }
+        
+        //4.配图视图高度
+        height += pictureViewSize.height
+        height += margin
+        height += toolBarHeight
+        
+        //5.属性记录
+        rowHeight = height
+    }
+    
+    /// 根据单个图像，更新配图的大小
+    ///
+    /// - Parameter image: 网络缓存的单张图像
+    func updateSingleImageSize(image:UIImage)  {
+        
+        var size = image.size
+        
+        let maxWidth:CGFloat = 300
+        let minWidth:CGFloat = 30
+        
+        //过宽图像处理
+        if size.width > maxWidth {
+            size.width = maxWidth
+            
+            size.height = size.width * image.size.height / image.size.width
+        }
+        //过窄图像处理
+        if size.width < minWidth {
+            size.width = minWidth
+            //图片太长，特殊处理
+            size.height = size.width * image.size.height / image.size.width / 4
+        }
+        
+        size.height += WBStatusPictureOutterMargin
+        
+        pictureViewSize = size
+        //配图视图更新之后，行高也要更新
+        updateRowHeight()
+        
+    }
     
     ///  计算图片高度
     ///

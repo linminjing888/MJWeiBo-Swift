@@ -214,8 +214,8 @@
 		AE70374C1E03C38B003F49D3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AE70374D1E03C38B003F49D3 /* Model(模型) */,
 				AE70374F1E03C38B003F49D3 /* View(视图和控制器) */,
+				AE70374D1E03C38B003F49D3 /* Model(模型) */,
 				AE70375C1E03C38B003F49D3 /* ViewModel(视图模型) */,
 				AE70374E1E03C38B003F49D3 /* Tools(工具) */,
 			);
@@ -227,7 +227,6 @@
 			children = (
 				AE67A2631E14D9DE00201256 /* MJStatus.swift */,
 				AEA2193D1E8D0BC800EF7249 /* WBUser.swift */,
-				AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */,
 				AED7B87F1E8F5D0E00D27ECB /* MJStatusPicture.swift */,
 			);
 			path = "Model(模型)";
@@ -308,6 +307,7 @@
 		AE70375C1E03C38B003F49D3 /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */,
 				AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";

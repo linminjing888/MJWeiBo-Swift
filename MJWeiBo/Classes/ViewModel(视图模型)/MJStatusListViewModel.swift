@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SDWebImage
 /*
  父类的选择 swift
  
@@ -79,9 +79,66 @@ class MJStatusListViewModel {
                 self.pullUpErrorTimes += 1
                 completion(isSuccess,false)
             }else{
-                completion(isSuccess,true)
+                
+                //闭包可以当做参数传递
+                self.cacheSingleImage(list: array,finished: completion)
+                //真正有数据的回调
+//                completion(isSuccess,true)
             }
             
         }
+    }
+    
+    /// 缓存本次微博数据中的单张数组
+    ///
+    /// - Parameter list: 本次下载的视图模型数组
+    private func cacheSingleImage(list:[MJStatusViewModel],finished:@escaping (_ isSuccess:Bool,_ isRefresh:Bool)->()) {
+        
+        //1.>调度组
+        let group = DispatchGroup()
+        
+        //数据长度
+        var length = 0
+        
+        ///option + command + 左 折叠
+        for vm in list {
+            if vm.picUrls?.count != 1 {
+                continue
+            }
+            
+            guard  let picStr = vm.picUrls?[0].thumbnail_pic ,
+            let url = URL(string: picStr) else {
+                continue
+            }
+            
+//            print("要缓存的URL \(url)")
+            //2.>入组
+            group.enter()
+            ///图像下载完成之后，自动保存到沙盒中，文件路径是url的md5
+            SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
+            
+                //将图像转换为二进制数据
+                if let image = image,
+                    let data = UIImagePNGRepresentation(image){
+                    // NSdata 是 length属性
+                    length += data.count
+                    
+                    //图像缓存成功，更新配图视图的大小
+                    vm.updateSingleImageSize(image: image)
+                }
+                
+//                print("缓存的图像\(image) \(length)")
+                //3.>出组
+                group.leave()
+            })
+            
+        }
+        //4.>监听调度组情况
+        group.notify(queue: DispatchQueue.main) {
+            
+            print("图像下载完成\(length / 1024)KB")
+            finished(true,true)
+        }
+        
     }
 }

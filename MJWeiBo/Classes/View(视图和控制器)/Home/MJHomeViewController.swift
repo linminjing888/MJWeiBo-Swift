@@ -58,13 +58,20 @@ extension MJHomeViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //FIXME :正常
-        let cell = tableView.dequeueReusableCell(withIdentifier: retweetCellId, for: indexPath) as! MJHomeStatusCell
-        
         let viewModel = listViewModel.statusList[indexPath.row]
+        let cellID = (viewModel.status.retweeted_status != nil) ?retweetCellId : originalCellId
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MJHomeStatusCell
+        
         cell.viewModel = viewModel
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let viewModel = listViewModel.statusList[indexPath.row]
+        return viewModel.rowHeight
     }
 }
 
@@ -83,8 +90,9 @@ extension MJHomeViewController{
         tableView?.register(UINib(nibName: "MJHomeStatusRetweetCell", bundle: nil), forCellReuseIdentifier: retweetCellId)
         
         //设置行高
-        tableView?.rowHeight = UITableViewAutomaticDimension
-        tableView?.estimatedRowHeight = 300
+        //自动适配行高
+//        tableView?.rowHeight = UITableViewAutomaticDimension
+//        tableView?.estimatedRowHeight = 300
         
         tableView?.separatorStyle = .none
         

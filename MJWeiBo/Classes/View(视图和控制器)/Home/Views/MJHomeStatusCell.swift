@@ -28,6 +28,8 @@ class MJHomeStatusCell: UITableViewCell {
     @IBOutlet weak var toolBar: MJStatusToolBar!
     ///配图视图
     @IBOutlet weak var pictureView: MJStatusPictureView!
+    ///转发微博文字  原创微博 无此字段 用 ？
+    @IBOutlet weak var retweetTerxtLab: UILabel?
     
     var viewModel:MJStatusViewModel?{
         didSet{
@@ -40,10 +42,10 @@ class MJHomeStatusCell: UITableViewCell {
             
             //设置底部工具栏
             toolBar.viewModel = viewModel
+            //图像视图
+            pictureView.viewModel = viewModel
             
-            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
-          
-            pictureView.urls = viewModel?.status.pic_urls
+            retweetTerxtLab?.text = viewModel?.retweetText
             
         }
     }
@@ -51,7 +53,16 @@ class MJHomeStatusCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+        // 离屏渲染 -- 异步绘制
+        self.layer.drawsAsynchronously = true
+        
+        //栅格化 异步绘制之后，会生成一张独立的图像，cell在屏幕上滚动的时候，本质上滚动的是这张图片
+        // cell 优化，图层数量只有一层
+        self.layer.shouldRasterize = true
+        // 使用 栅格化 必须注意指定分辨率
+        self.layer.rasterizationScale = UIScreen.main.scale
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  -----------------9------------------
+//  -----------------35------------------
 
 import UIKit
 import SVProgressHUD
@@ -110,7 +110,7 @@ extension MJMainTabbarController{
 extension MJMainTabbarController{
     func setUpTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func updateTimer(){
