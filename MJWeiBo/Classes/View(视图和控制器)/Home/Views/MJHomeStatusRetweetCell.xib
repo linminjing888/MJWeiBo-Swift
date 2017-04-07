@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="370" height="382"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fP6-BS-fgf" id="Sh8-es-Ko5">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="381"/>
+                <rect key="frame" x="0.0" y="0.0" width="370" height="381.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t5P-5x-w2q" userLabel="头像">
@@ -67,17 +67,17 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwi-Wd-iUF" userLabel="正文">
-                        <rect key="frame" x="12" y="66" width="38" height="18"/>
+                        <rect key="frame" x="12" y="66" width="38" height="65"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9W-L0-rLs">
-                        <rect key="frame" x="0.0" y="96" width="370" height="251"/>
+                        <rect key="frame" x="0.0" y="143" width="370" height="204"/>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-PT-mPW">
-                        <rect key="frame" x="12" y="108" width="35.5" height="17"/>
+                        <rect key="frame" x="12" y="155" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -165,7 +165,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-ED-4tj" userLabel="配图视图" customClass="MJStatusPictureView" customModule="MJWeiBo" customModuleProvider="target">
-                        <rect key="frame" x="12" y="125" width="346" height="163"/>
+                        <rect key="frame" x="12" y="172" width="346" height="163"/>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.24313725489999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="163" id="mPZ-zF-O1f"/>
@@ -182,7 +182,7 @@
                     <constraint firstItem="zkD-cv-el9" firstAttribute="leading" secondItem="Sh8-es-Ko5" secondAttribute="leading" id="8Ic-bI-mKP"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cwi-Wd-iUF" secondAttribute="trailing" constant="11" id="9V4-n9-dji"/>
                     <constraint firstItem="zkD-cv-el9" firstAttribute="top" secondItem="p9W-L0-rLs" secondAttribute="bottom" id="B8n-ZQ-4R0"/>
-                    <constraint firstItem="zkD-cv-el9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ELz-ED-4tj" secondAttribute="bottom" constant="12" id="EBd-HA-4eX"/>
+                    <constraint firstItem="zkD-cv-el9" firstAttribute="top" secondItem="ELz-ED-4tj" secondAttribute="bottom" constant="12" id="EBd-HA-4eX"/>
                     <constraint firstItem="p9W-L0-rLs" firstAttribute="leading" secondItem="Sh8-es-Ko5" secondAttribute="leading" id="FNV-N2-APt"/>
                     <constraint firstItem="xe0-P4-tfN" firstAttribute="leading" secondItem="Sh8-es-Ko5" secondAttribute="leading" id="GDD-DO-uTh"/>
                     <constraint firstAttribute="bottom" secondItem="zkD-cv-el9" secondAttribute="bottom" id="GPH-EF-QWE"/>

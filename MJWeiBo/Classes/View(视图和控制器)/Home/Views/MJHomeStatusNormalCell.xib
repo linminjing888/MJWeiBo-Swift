@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="370" height="294"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fP6-BS-fgf" id="Sh8-es-Ko5">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="293"/>
+                <rect key="frame" x="0.0" y="0.0" width="370" height="293.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t5P-5x-w2q" userLabel="头像">
@@ -170,7 +170,7 @@
                     <constraint firstItem="t5P-5x-w2q" firstAttribute="top" secondItem="xe0-P4-tfN" secondAttribute="bottom" constant="12" id="7gQ-mH-veq"/>
                     <constraint firstItem="zkD-cv-el9" firstAttribute="leading" secondItem="Sh8-es-Ko5" secondAttribute="leading" id="8Ic-bI-mKP"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cwi-Wd-iUF" secondAttribute="trailing" constant="11" id="9V4-n9-dji"/>
-                    <constraint firstItem="zkD-cv-el9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ELz-ED-4tj" secondAttribute="bottom" constant="12" id="EBd-HA-4eX"/>
+                    <constraint firstItem="zkD-cv-el9" firstAttribute="top" secondItem="ELz-ED-4tj" secondAttribute="bottom" constant="12" id="EBd-HA-4eX"/>
                     <constraint firstItem="xe0-P4-tfN" firstAttribute="leading" secondItem="Sh8-es-Ko5" secondAttribute="leading" id="GDD-DO-uTh"/>
                     <constraint firstAttribute="bottom" secondItem="zkD-cv-el9" secondAttribute="bottom" id="GPH-EF-QWE"/>
                     <constraint firstItem="Edo-fu-B20" firstAttribute="centerY" secondItem="t5P-5x-w2q" secondAttribute="bottom" constant="-4" id="L07-EW-0TN"/>

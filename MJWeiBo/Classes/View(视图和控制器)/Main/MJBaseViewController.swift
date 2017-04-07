@@ -23,7 +23,7 @@ class MJBaseViewController: UIViewController {
     /// 表格视图 如果用户没有登入 就不创建
     var tableView: UITableView?
     ///刷新控件
-    var refreshControl: UIRefreshControl?
+    var refreshControl: MJRefreshControl?
     ///上拉刷新标记
     var isPullUp = false
     
@@ -124,7 +124,7 @@ extension MJBaseViewController{
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         ///设置刷新控件
-        refreshControl = UIRefreshControl()
+        refreshControl = MJRefreshControl()
         tableView?.addSubview(refreshControl!)
         
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)

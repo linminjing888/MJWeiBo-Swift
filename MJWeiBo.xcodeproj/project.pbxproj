@@ -17,6 +17,9 @@
 		AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2631E14D9DE00201256 /* MJStatus.swift */; };
 		AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */; };
 		AE6E425E1E28D18B001C0268 /* MJUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E425D1E28D18B001C0268 /* MJUserAccount.swift */; };
+		AE6E66691E973D9900EBEBF6 /* MJRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E66681E973D9900EBEBF6 /* MJRefreshControl.swift */; };
+		AE6E666B1E97703700EBEBF6 /* MJRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E666A1E97703700EBEBF6 /* MJRefreshView.swift */; };
+		AE6E666D1E97705000EBEBF6 /* MJRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E666C1E97705000EBEBF6 /* MJRefreshView.xib */; };
 		AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70373A1E03C293003F49D3 /* AppDelegate.swift */; };
 		AE7037401E03C293003F49D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE70373E1E03C293003F49D3 /* Main.storyboard */; };
 		AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7037411E03C293003F49D3 /* Assets.xcassets */; };
@@ -71,6 +74,9 @@
 		AE67A2631E14D9DE00201256 /* MJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatus.swift; sourceTree = "<group>"; };
 		AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusListViewModel.swift; sourceTree = "<group>"; };
 		AE6E425D1E28D18B001C0268 /* MJUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJUserAccount.swift; sourceTree = "<group>"; };
+		AE6E66681E973D9900EBEBF6 /* MJRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshControl.swift; sourceTree = "<group>"; };
+		AE6E666A1E97703700EBEBF6 /* MJRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshView.swift; sourceTree = "<group>"; };
+		AE6E666C1E97705000EBEBF6 /* MJRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJRefreshView.xib; sourceTree = "<group>"; };
 		AE7037371E03C293003F49D3 /* MJWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE70373A1E03C293003F49D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE70373F1E03C293003F49D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +186,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AE6E66671E973D7900EBEBF6 /* MJRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E66681E973D9900EBEBF6 /* MJRefreshControl.swift */,
+				AE6E666A1E97703700EBEBF6 /* MJRefreshView.swift */,
+				AE6E666C1E97705000EBEBF6 /* MJRefreshView.xib */,
+			);
+			path = MJRefreshControl;
+			sourceTree = "<group>";
+		};
 		AE70372E1E03C293003F49D3 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +251,7 @@
 		AE70374E1E03C38B003F49D3 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				AE6E66671E973D7900EBEBF6 /* MJRefreshControl */,
 				AECB76541E1119C10099BD32 /* MJNetwork */,
 				AE70378C1E03CDF7003F49D3 /* Extensions */,
 				AE7037641E03C7BE003F49D3 /* Additions */,
@@ -444,6 +461,7 @@
 				AEA2193A1E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib in Resources */,
 				AE5446F71E8B66BF00F7BF94 /* MJNewFeatureView.xib in Resources */,
 				AEB197991E85059B00F46847 /* MJWelcomeView.xib in Resources */,
+				AE6E666D1E97705000EBEBF6 /* MJRefreshView.xib in Resources */,
 				AED7B8821E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib in Resources */,
 				AECB76531E10C42A0099BD32 /* main.json in Resources */,
 				AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */,
@@ -529,8 +547,10 @@
 				AEA219361E8CF40400EF7249 /* UIImage+Extensions.swift in Sources */,
 				AEA0DBCB1E164300000927F8 /* MJOAuthViewController.swift in Sources */,
 				AE7037601E03C38B003F49D3 /* MJMainTabbarController.swift in Sources */,
+				AE6E666B1E97703700EBEBF6 /* MJRefreshView.swift in Sources */,
 				AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */,
 				AE70375F1E03C38B003F49D3 /* MJBaseViewController.swift in Sources */,
+				AE6E66691E973D9900EBEBF6 /* MJRefreshControl.swift in Sources */,
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
 				AE7037871E03C7BE003F49D3 /* UIScreen+CZAddition.m in Sources */,
 				AE7037611E03C38B003F49D3 /* MJNavigationController.swift in Sources */,
