@@ -12,6 +12,12 @@
 		AE5669F01E8E378D00F2E5DF /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */; };
 		AE5669F21E8E4AA500F2E5DF /* MJStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */; };
 		AE5669F41E8E67FB00F2E5DF /* MJStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669F31E8E67FB00F2E5DF /* MJStatusPictureView.swift */; };
+		AE5879271EB069FA00A96FCF /* MJMeiRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5879261EB069FA00A96FCF /* MJMeiRefreshView.swift */; };
+		AE5879291EB06A1C00A96FCF /* MJMeiRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5879281EB06A1C00A96FCF /* MJMeiRefreshView.xib */; };
+		AE58792C1EB09F1E00A96FCF /* MJComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58792B1EB09F1E00A96FCF /* MJComposeView.swift */; };
+		AE58792E1EB0A20200A96FCF /* MJComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE58792D1EB0A20200A96FCF /* MJComposeView.xib */; };
+		AE5C3DC71EB198790016DA3C /* MJComposeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C3DC61EB198790016DA3C /* MJComposeBtn.swift */; };
+		AE5C3DC91EB198880016DA3C /* MJComposeBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5C3DC81EB198880016DA3C /* MJComposeBtn.xib */; };
 		AE5E04001E83D07C004C78CE /* MJTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */; };
 		AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */; };
 		AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2631E14D9DE00201256 /* MJStatus.swift */; };
@@ -69,6 +75,12 @@
 		AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusToolBar.swift; sourceTree = "<group>"; };
 		AE5669F31E8E67FB00F2E5DF /* MJStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusPictureView.swift; sourceTree = "<group>"; };
+		AE5879261EB069FA00A96FCF /* MJMeiRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMeiRefreshView.swift; sourceTree = "<group>"; };
+		AE5879281EB06A1C00A96FCF /* MJMeiRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJMeiRefreshView.xib; sourceTree = "<group>"; };
+		AE58792B1EB09F1E00A96FCF /* MJComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJComposeView.swift; sourceTree = "<group>"; };
+		AE58792D1EB0A20200A96FCF /* MJComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJComposeView.xib; sourceTree = "<group>"; };
+		AE5C3DC61EB198790016DA3C /* MJComposeBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJComposeBtn.swift; sourceTree = "<group>"; };
+		AE5C3DC81EB198880016DA3C /* MJComposeBtn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJComposeBtn.xib; sourceTree = "<group>"; };
 		AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTitleButton.swift; sourceTree = "<group>"; };
 		AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		AE67A2631E14D9DE00201256 /* MJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatus.swift; sourceTree = "<group>"; };
@@ -165,6 +177,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE58792A1EB09EF600A96FCF /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				AE58792B1EB09F1E00A96FCF /* MJComposeView.swift */,
+				AE5C3DC61EB198790016DA3C /* MJComposeBtn.swift */,
+				AE58792D1EB0A20200A96FCF /* MJComposeView.xib */,
+				AE5C3DC81EB198880016DA3C /* MJComposeBtn.xib */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 		AE5E03FE1E83CE89004C78CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +214,9 @@
 			children = (
 				AE6E66681E973D9900EBEBF6 /* MJRefreshControl.swift */,
 				AE6E666A1E97703700EBEBF6 /* MJRefreshView.swift */,
+				AE5879261EB069FA00A96FCF /* MJMeiRefreshView.swift */,
 				AE6E666C1E97705000EBEBF6 /* MJRefreshView.xib */,
+				AE5879281EB06A1C00A96FCF /* MJMeiRefreshView.xib */,
 			);
 			path = MJRefreshControl;
 			sourceTree = "<group>";
@@ -263,6 +288,7 @@
 		AE70374F1E03C38B003F49D3 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				AE58792A1EB09EF600A96FCF /* Compose */,
 				AEB197931E84F33300F46847 /* NewFeature */,
 				AE7037541E03C38B003F49D3 /* Main */,
 				AE7037521E03C38B003F49D3 /* Home */,
@@ -464,7 +490,10 @@
 				AE6E666D1E97705000EBEBF6 /* MJRefreshView.xib in Resources */,
 				AED7B8821E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib in Resources */,
 				AECB76531E10C42A0099BD32 /* main.json in Resources */,
+				AE58792E1EB0A20200A96FCF /* MJComposeView.xib in Resources */,
 				AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */,
+				AE5879291EB06A1C00A96FCF /* MJMeiRefreshView.xib in Resources */,
+				AE5C3DC91EB198880016DA3C /* MJComposeBtn.xib in Resources */,
 				AE7037401E03C293003F49D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +568,7 @@
 				AEB197971E84F37300F46847 /* MJNewFeatureView.swift in Sources */,
 				AE70378F1E03D18D003F49D3 /* Bundle+Extensions.swift in Sources */,
 				AE7037811E03C7BE003F49D3 /* NSString+CZBase64.m in Sources */,
+				AE5879271EB069FA00A96FCF /* MJMeiRefreshView.swift in Sources */,
 				AE8DC4C91E8A6C5400582735 /* MJWelcomeView.swift in Sources */,
 				AE70375E1E03C38B003F49D3 /* MJHomeViewController.swift in Sources */,
 				AE76F3EA1E08D830002FE936 /* UIBarButtonItem+Extension.swift in Sources */,
@@ -554,6 +584,7 @@
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
 				AE7037871E03C7BE003F49D3 /* UIScreen+CZAddition.m in Sources */,
 				AE7037611E03C38B003F49D3 /* MJNavigationController.swift in Sources */,
+				AE5C3DC71EB198790016DA3C /* MJComposeBtn.swift in Sources */,
 				AEA219401E8D0F9400EF7249 /* MJStatusViewModel.swift in Sources */,
 				AE7037801E03C7BE003F49D3 /* NSObject+CZRuntime.m in Sources */,
 				AE7037631E03C38B003F49D3 /* MJPrefileViewController.swift in Sources */,
@@ -565,6 +596,7 @@
 				AE5669F41E8E67FB00F2E5DF /* MJStatusPictureView.swift in Sources */,
 				AED7B8801E8F5D0E00D27ECB /* MJStatusPicture.swift in Sources */,
 				AE7037821E03C7BE003F49D3 /* NSString+CZHash.m in Sources */,
+				AE58792C1EB09F1E00A96FCF /* MJComposeView.swift in Sources */,
 				AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */,
 				AE5669F21E8E4AA500F2E5DF /* MJStatusToolBar.swift in Sources */,
 				AE7037621E03C38B003F49D3 /* MJMessageViewController.swift in Sources */,

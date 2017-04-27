@@ -8,8 +8,7 @@
 
 import UIKit
 /// 刷新状态切换的临界点
-private let refreshOffSet:CGFloat = 60
-
+private let refreshOffSet:CGFloat = 120
 
 /// 刷新状态
 ///
@@ -21,7 +20,7 @@ enum MJRefreshStatus {
     case Pulling
     case WillRefresh
 }
-/// 自定义刷新控件
+/// 自定义刷新控件 负责逻辑处理，对外
 class MJRefreshControl: UIControl {
 
     /// 滚动视图的父视图  弱引用
@@ -45,7 +44,7 @@ class MJRefreshControl: UIControl {
     
     /**
      * will move addSubview 方法会调用
-     - 当添加到父视图的时候 ，newSuperview 是父视图
+     - 当添加到父视图的时候 ，newSuperview 是父视图（scrollView的子类）
      - 当父视图被移除，newSuperview 是nil
      */
     override func willMove(toSuperview newSuperview: UIView?) {
@@ -82,6 +81,8 @@ class MJRefreshControl: UIControl {
         if height < 0 {
             return
         }
+        //传递高度
+        refreshView.parentHeight = height
         
         //设置刷新控件的fream
         self.frame = CGRect(x: 0,
@@ -100,17 +101,45 @@ class MJRefreshControl: UIControl {
         }else{
             if refreshView.refreshStatus == .Pulling {
             
-                refreshView.refreshStatus = .WillRefresh
+                beginRefreshing()
+                
+                sendActions(for: .valueChanged)
             }
         }
 }
     
     func beginRefreshing() {
         print("begin")
+        
+        guard let sv = scrollView else {
+            return
+        }
+        //判断是否正在刷新，如果正在刷新，直接返回
+        if refreshView.refreshStatus == .WillRefresh {
+            return
+        }
+        refreshView.refreshStatus = .WillRefresh
+        
+        var inset = sv.contentInset
+        inset.top += refreshOffSet
+        sv.contentInset = inset
+        
     }
     
     func endRefreshing() {
         print("end")
+        
+        guard let sv = scrollView else {
+            return
+        }
+        if refreshView.refreshStatus != .WillRefresh {
+            return
+        }
+        
+        refreshView.refreshStatus = .Normal
+        var inset = sv.contentInset
+        inset.top -= refreshOffSet
+        sv.contentInset = inset
     }
 
 }
@@ -120,7 +149,8 @@ extension MJRefreshControl{
     fileprivate func setupUI() {
         
         //设置 refreshView 超出边界不显示
-        clipsToBounds = true
+//        clipsToBounds = true
+        
         backgroundColor = superview?.backgroundColor
         
         addSubview(refreshView)

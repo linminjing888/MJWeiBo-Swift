@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  -----------------11------------------
+//  -----------------50------------------
 
 import UIKit
 import SVProgressHUD
@@ -48,16 +48,11 @@ class MJMainTabbarController: UITabBarController {
         }
     }
     
-    // FIXME: 没有实现（提醒）
     func composeStatus()  {
-        print("写微博")
         
-//        let vc = UIViewController()
-//        
-//        let nav  = UINavigationController(rootViewController: vc)
-//        
-//        
-//        present(nav, animated: true, completion: nil)
+        let vc = MJComposeView.composeView()
+        
+        vc.show()
     }
     
     // 懒加载

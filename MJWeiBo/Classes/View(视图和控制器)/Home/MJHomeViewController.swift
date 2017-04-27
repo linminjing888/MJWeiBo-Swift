@@ -23,16 +23,20 @@ class MJHomeViewController: MJBaseViewController {
     ///加载数据
     override func loadData() {
     
+       refreshControl?.beginRefreshing()
        listViewModel.loadStatus(pullUp: isPullUp) { (isSuccess,isRefresh) in
-        
+        //FIXME:
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: { 
             //结束刷新
             self.refreshControl?.endRefreshing()
             //恢复上啦刷新标记
             self.isPullUp = false
-        
+            
             if isRefresh{
                 self.tableView?.reloadData()
             }
+        })
+        
         }
         
         
