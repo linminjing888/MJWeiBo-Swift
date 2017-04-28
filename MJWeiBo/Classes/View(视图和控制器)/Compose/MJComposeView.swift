@@ -18,8 +18,10 @@ class MJComposeView: UIView {
     //关闭按钮布局
     @IBOutlet weak var closeBtnCons: NSLayoutConstraint!
     
-    fileprivate let infoArr = [["imageName":"tabbar_compose_idea","title":"文字"],["imageName":"tabbar_compose_photo","title":"照片/视频"],["imageName":"tabbar_compose_weibo","title":"长微博"],["imageName":"tabbar_compose_lbs","title":"签到"],["imageName":"tabbar_compose_review","title":"点评"],["imageName":"tabbar_compose_more","title":"更多","actionName":"clickMore"],["imageName":"tabbar_compose_transfer","title":"好友圈"],["imageName":"tabbar_compose_wbcamera","title":"微博相机"],["imageName":"tabbar_compose_music","title":"音乐"],["imageName":"tabbar_compose_shooting","title":"拍摄"]]
+    fileprivate let infoArr = [["imageName":"tabbar_compose_idea","title":"文字","clsName":"MJComposeController"],["imageName":"tabbar_compose_photo","title":"照片/视频"],["imageName":"tabbar_compose_weibo","title":"长微博"],["imageName":"tabbar_compose_lbs","title":"签到"],["imageName":"tabbar_compose_review","title":"点评"],["imageName":"tabbar_compose_more","title":"更多","actionName":"clickMore"],["imageName":"tabbar_compose_transfer","title":"好友圈"],["imageName":"tabbar_compose_wbcamera","title":"微博相机"],["imageName":"tabbar_compose_music","title":"音乐"],["imageName":"tabbar_compose_shooting","title":"拍摄"]]
     
+    //动画完成回调Block
+    fileprivate var completionBlock:((_ clsName:String?)->())?
     
     class func composeView() -> MJComposeView {
         
@@ -34,7 +36,11 @@ class MJComposeView: UIView {
         setupUI()
     }
     
-    func show() {
+    //显示视图
+    //OC中的block 如果当前方法，不能执行，通常使用属性记录，在需要的时候执行
+    func show(completion:@escaping (_ clsName:String?)->()) {
+        
+        completionBlock = completion
         //尽量不要总是把视图添加到window上
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
@@ -66,10 +72,39 @@ class MJComposeView: UIView {
             self.returnBtn.alpha = 1
         })
     }
-    @objc fileprivate func clickBtn() {
-        print("wwww")
+    ///按钮监听方法
+    @objc fileprivate func clickBtn(selectedBtn:MJComposeBtn) {
+//        print("点击 \(btn)")
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+        
+        for (i,btn2) in v.subviews.enumerated() {
+            //放大、缩小动画
+            let scaleAnim:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            let scale = (selectedBtn == btn2) ? 2 : 0.3
+            let value = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            scaleAnim.toValue = value
+            scaleAnim.duration = 0.5
+            btn2.pop_add(scaleAnim, forKey: nil)
+            
+            //透明度动画
+            let alphaAnim:POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            alphaAnim.toValue = 0.3
+            alphaAnim.duration = 0.5
+            btn2.pop_add(alphaAnim, forKey: nil)
+            
+            //添加动画监听，时间是一样的，随便监听一个就好
+            if i==0 {
+                alphaAnim.completionBlock = {_,_ in
+                    print("动画完成")
+                    self.completionBlock?(selectedBtn.clsName)
+                }
+            }
+        }
+        
+        
     }
-    
+    /// 跟多按钮监听方法
     @objc fileprivate func clickMore(){
         
         scrollView.setContentOffset(CGPoint(x:scrollView.bounds.width,y:0), animated: true)
@@ -196,7 +231,11 @@ private extension MJComposeView{
             
             if let actionName = dict["actionName"] {
                 btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }else{
+                btn.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
             }
+            //设置要展现的类名
+            btn.clsName = dict["clsName"]
         }
         
         /// 布局按钮

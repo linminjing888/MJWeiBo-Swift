@@ -14,6 +14,8 @@ class MJComposeBtn: UIControl {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    ///控制器类属性
+    var clsName: String?
     
     class func composeBtn(imageName:String,title:String) -> MJComposeBtn {
         

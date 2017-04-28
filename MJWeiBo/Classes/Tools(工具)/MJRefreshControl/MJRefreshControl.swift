@@ -82,7 +82,9 @@ class MJRefreshControl: UIControl {
             return
         }
         //传递高度
-        refreshView.parentHeight = height
+        if refreshView.refreshStatus != .WillRefresh {
+            refreshView.parentHeight = height
+        }
         
         //设置刷新控件的fream
         self.frame = CGRect(x: 0,

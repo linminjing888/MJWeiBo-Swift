@@ -14,6 +14,10 @@ class MJStatus: NSObject {
     /// Int 类型 在64位的机器上是64位，在32位的机器上 就是32位
     ///如果不写 Int64 在ipad2、iphone4/4s/5/5c 都无法运行
     var id:Int64 = 0
+    ///创建时间
+    var created_at:String?
+    ///微博来源
+    var source:String?
     
     ///微博信息
     var text:String?
@@ -30,6 +34,8 @@ class MJStatus: NSObject {
     
     ///微博配图数组
     var pic_urls:[MJStatusPicture]?
+    
+    
     
     
     override var description: String{

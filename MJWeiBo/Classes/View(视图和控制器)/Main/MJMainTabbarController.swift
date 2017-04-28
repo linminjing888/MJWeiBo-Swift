@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 16/12/16.
 //  Copyright © 2016年 林民敬. All rights reserved.
-//  -----------------50------------------
+//  -----------------10------------------
 
 import UIKit
 import SVProgressHUD
@@ -47,12 +47,23 @@ class MJMainTabbarController: UITabBarController {
             self.present(nav, animated: true, completion: nil)
         }
     }
-    
+    ///撰写微博
     func composeStatus()  {
         
-        let vc = MJComposeView.composeView()
-        
-        vc.show()
+        let v = MJComposeView.composeView()
+        //显示视图 注意闭包的循环引用
+        v.show {[weak v](clsName) in
+            guard let clsName = clsName ,let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else{
+                v?.removeFromSuperview()
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            self.present(nav, animated: true, completion: { 
+                v?.removeFromSuperview()
+            })
+        }
     }
     
     // 懒加载

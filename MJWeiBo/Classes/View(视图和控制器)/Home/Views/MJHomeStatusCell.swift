@@ -46,6 +46,9 @@ class MJHomeStatusCell: UITableViewCell {
             pictureView.viewModel = viewModel
             
             retweetTerxtLab?.text = viewModel?.retweetText
+            //微博来源
+            sourceLabel.text = viewModel?.status.source
+            print(viewModel?.status.source)
             
         }
     }
