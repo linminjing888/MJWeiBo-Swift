@@ -17,7 +17,12 @@ class MJStatus: NSObject {
     ///创建时间
     var created_at:String?
     ///微博来源
-    var source:String?
+    var source:String?{
+        didSet{
+            //重新计算来源并且保存
+             source = "来自" + ( source?.mj_href()?.text ?? "")
+        }
+    }
     
     ///微博信息
     var text:String?

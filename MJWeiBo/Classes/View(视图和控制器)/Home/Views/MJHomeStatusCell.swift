@@ -33,7 +33,6 @@ class MJHomeStatusCell: UITableViewCell {
     
     var viewModel:MJStatusViewModel?{
         didSet{
-            statusLabel.text = viewModel?.status.text
             nameLabel.text = viewModel?.status.user?.screen_name
             memberIconView.image = viewModel?.memberIcon
             vipIconView.image = viewModel?.vipIcon
@@ -45,14 +44,12 @@ class MJHomeStatusCell: UITableViewCell {
             //图像视图
             pictureView.viewModel = viewModel
             
-            retweetTerxtLab?.text = viewModel?.retweetText
+            statusLabel.attributedText = viewModel?.statusAttrText
+            retweetTerxtLab?.attributedText = viewModel?.retweetAttrText
             //微博来源
             sourceLabel.text = viewModel?.status.source
-            print(viewModel?.status.source)
-            
         }
     }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

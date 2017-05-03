@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3C11427F49A18111DD4EDFFC /* Pods_MJWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */; };
+		AE4454BD1EB9C2B00080A9F5 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE4454BC1EB9C2B00080A9F5 /* HMEmoticon.bundle */; };
+		AE4454C11EB9C2C10080A9F5 /* MJEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4454BF1EB9C2C10080A9F5 /* MJEmoticon.swift */; };
+		AE4454C21EB9C2C10080A9F5 /* MJMoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4454C01EB9C2C10080A9F5 /* MJMoticonPackage.swift */; };
+		AE4454C61EB9D78B0080A9F5 /* MJEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4454C51EB9D78B0080A9F5 /* MJEmoticonManager.swift */; };
 		AE5446F71E8B66BF00F7BF94 /* MJNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */; };
 		AE5669F01E8E378D00F2E5DF /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */; };
 		AE5669F21E8E4AA500F2E5DF /* MJStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */; };
@@ -22,6 +26,7 @@
 		AE67A2621E14B0A700201256 /* MJNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */; };
 		AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2631E14D9DE00201256 /* MJStatus.swift */; };
 		AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */; };
+		AE69CF721EB83128001119F2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69CF711EB83128001119F2 /* String+Extension.swift */; };
 		AE6E425E1E28D18B001C0268 /* MJUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E425D1E28D18B001C0268 /* MJUserAccount.swift */; };
 		AE6E66691E973D9900EBEBF6 /* MJRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E66681E973D9900EBEBF6 /* MJRefreshControl.swift */; };
 		AE6E666B1E97703700EBEBF6 /* MJRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E666A1E97703700EBEBF6 /* MJRefreshView.swift */; };
@@ -72,6 +77,10 @@
 /* Begin PBXFileReference section */
 		0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
+		AE4454BC1EB9C2B00080A9F5 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		AE4454BF1EB9C2C10080A9F5 /* MJEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmoticon.swift; sourceTree = "<group>"; };
+		AE4454C01EB9C2C10080A9F5 /* MJMoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMoticonPackage.swift; sourceTree = "<group>"; };
+		AE4454C51EB9D78B0080A9F5 /* MJEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmoticonManager.swift; sourceTree = "<group>"; };
 		AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJNewFeatureView.xib; sourceTree = "<group>"; };
 		AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusToolBar.swift; sourceTree = "<group>"; };
@@ -86,6 +95,7 @@
 		AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		AE67A2631E14D9DE00201256 /* MJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatus.swift; sourceTree = "<group>"; };
 		AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusListViewModel.swift; sourceTree = "<group>"; };
+		AE69CF711EB83128001119F2 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AE6E425D1E28D18B001C0268 /* MJUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJUserAccount.swift; sourceTree = "<group>"; };
 		AE6E66681E973D9900EBEBF6 /* MJRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshControl.swift; sourceTree = "<group>"; };
 		AE6E666A1E97703700EBEBF6 /* MJRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshView.swift; sourceTree = "<group>"; };
@@ -177,6 +187,25 @@
 				0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE4454BB1EB9C2900080A9F5 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				AE4454C51EB9D78B0080A9F5 /* MJEmoticonManager.swift */,
+				AE4454BC1EB9C2B00080A9F5 /* HMEmoticon.bundle */,
+				AE4454BE1EB9C2C10080A9F5 /* Model */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		AE4454BE1EB9C2C10080A9F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE4454BF1EB9C2C10080A9F5 /* MJEmoticon.swift */,
+				AE4454C01EB9C2C10080A9F5 /* MJMoticonPackage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AE58792A1EB09EF600A96FCF /* Compose */ = {
@@ -278,6 +307,7 @@
 		AE70374E1E03C38B003F49D3 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				AE4454BB1EB9C2900080A9F5 /* Emoticon */,
 				AE6E66671E973D7900EBEBF6 /* MJRefreshControl */,
 				AECB76541E1119C10099BD32 /* MJNetwork */,
 				AE70378C1E03CDF7003F49D3 /* Extensions */,
@@ -394,6 +424,7 @@
 		AE70378C1E03CDF7003F49D3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AE69CF711EB83128001119F2 /* String+Extension.swift */,
 				AE70378D1E03D18D003F49D3 /* Bundle+Extensions.swift */,
 				AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */,
 				AEA219351E8CF40400EF7249 /* UIImage+Extensions.swift */,
@@ -499,6 +530,7 @@
 				AE5446F71E8B66BF00F7BF94 /* MJNewFeatureView.xib in Resources */,
 				AEB197991E85059B00F46847 /* MJWelcomeView.xib in Resources */,
 				AE6E666D1E97705000EBEBF6 /* MJRefreshView.xib in Resources */,
+				AE4454BD1EB9C2B00080A9F5 /* HMEmoticon.bundle in Resources */,
 				AED7B8821E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib in Resources */,
 				AECB76531E10C42A0099BD32 /* main.json in Resources */,
 				AE58792E1EB0A20200A96FCF /* MJComposeView.xib in Resources */,
@@ -575,6 +607,7 @@
 				AE70375D1E03C38B003F49D3 /* MJDisCoverViewController.swift in Sources */,
 				AE7037861E03C7BE003F49D3 /* UILabel+CZAddition.m in Sources */,
 				AE70377F1E03C7BE003F49D3 /* NSAttributedString+CZAdditon.m in Sources */,
+				AE4454C21EB9C2C10080A9F5 /* MJMoticonPackage.swift in Sources */,
 				AE7037891E03C7BE003F49D3 /* UIViewController+CZAddition.m in Sources */,
 				AEB197971E84F37300F46847 /* MJNewFeatureView.swift in Sources */,
 				AE70378F1E03D18D003F49D3 /* Bundle+Extensions.swift in Sources */,
@@ -593,6 +626,7 @@
 				AE70375F1E03C38B003F49D3 /* MJBaseViewController.swift in Sources */,
 				AE6E66691E973D9900EBEBF6 /* MJRefreshControl.swift in Sources */,
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
+				AE69CF721EB83128001119F2 /* String+Extension.swift in Sources */,
 				AE7037871E03C7BE003F49D3 /* UIScreen+CZAddition.m in Sources */,
 				AE7037611E03C38B003F49D3 /* MJNavigationController.swift in Sources */,
 				AE5C3DC71EB198790016DA3C /* MJComposeBtn.swift in Sources */,
@@ -601,8 +635,10 @@
 				AE7037631E03C38B003F49D3 /* MJPrefileViewController.swift in Sources */,
 				AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */,
 				AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */,
+				AE4454C11EB9C2C10080A9F5 /* MJEmoticon.swift in Sources */,
 				AE724D7E1EB2EEAE002FEFA5 /* MJComposeController.swift in Sources */,
 				AE7037831E03C7BE003F49D3 /* NSString+CZPath.m in Sources */,
+				AE4454C61EB9D78B0080A9F5 /* MJEmoticonManager.swift in Sources */,
 				AEA0DBC91E163CD2000927F8 /* MJCommon.swift in Sources */,
 				AE7037881E03C7BE003F49D3 /* UIView+CZAddition.m in Sources */,
 				AE5669F41E8E67FB00F2E5DF /* MJStatusPictureView.swift in Sources */,
