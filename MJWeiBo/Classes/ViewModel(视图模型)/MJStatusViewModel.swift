@@ -82,11 +82,10 @@ class MJStatusViewModel:CustomStringConvertible{
         
         pictureViewSize = calcPictureViewSize(count:picUrls?.count)
         
-        let originFont = UIFont.systemFont(ofSize: 15)
         let retweetFont = UIFont.systemFont(ofSize: 14)
+        let originFont = UIFont.systemFont(ofSize: 15)
         
         let rText = "@" + (status.user?.screen_name ?? "") + "：" + (status.retweeted_status?.text ?? "")
-        
         
         retweetAttrText = MJEmoticonManager.shared.emoticonString(string: rText, font: retweetFont)
         statusAttrText = MJEmoticonManager.shared.emoticonString(string:model.text ?? "",font:originFont)
@@ -113,12 +112,8 @@ class MJStatusViewModel:CustomStringConvertible{
         //2.正文高度
         if let text = statusAttrText {
         
-         height += text.boundingRect(with: textSize, options: [.usesLineFragmentOrigin], context: nil).height
+            height += text.boundingRect(with: textSize, options: [.usesLineFragmentOrigin], context: nil).height
             
-            
-//          height += (text as NSString).boundingRect(with: textSize,
-//                                            options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName:originFont],
-//                                            context: nil).height
         }
         //3.判断是否转发微博
         if status.retweeted_status != nil {
@@ -127,7 +122,7 @@ class MJStatusViewModel:CustomStringConvertible{
             
             if let text = retweetAttrText  {
                 
-              height += text.boundingRect(with: textSize, options: [.usesLineFragmentOrigin], context: nil).height
+              height += (text.boundingRect(with: textSize, options: [.usesLineFragmentOrigin], context: nil).height + 2)
             }
         }
         

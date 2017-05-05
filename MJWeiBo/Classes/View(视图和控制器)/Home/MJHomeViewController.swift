@@ -69,6 +69,8 @@ extension MJHomeViewController{
         
         cell.viewModel = viewModel
         
+        cell.delegate = self
+        
         return cell
     }
     
@@ -76,6 +78,17 @@ extension MJHomeViewController{
         
         let viewModel = listViewModel.statusList[indexPath.row]
         return viewModel.rowHeight
+    }
+}
+
+extension MJHomeViewController:MJHomeStatusCellDelegate{
+    
+    func MJHomeStatusCellDidSelectedUrling(cell: MJHomeStatusCell, url: String) {
+        
+        let v = MJWebViewController()
+        v.urlString = url
+        navigationController?.pushViewController(v, animated: true)
+        
     }
 }
 

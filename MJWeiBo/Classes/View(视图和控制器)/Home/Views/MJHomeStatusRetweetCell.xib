@@ -66,7 +66,7 @@
                             <constraint firstAttribute="width" constant="15" id="Wbq-r7-d4G"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwi-Wd-iUF" userLabel="正文">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwi-Wd-iUF" userLabel="正文" customClass="FFLabel" customModule="MJWeiBo" customModuleProvider="target">
                         <rect key="frame" x="12" y="66" width="38" height="65"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -76,8 +76,9 @@
                         <rect key="frame" x="0.0" y="143" width="370" height="204"/>
                         <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-PT-mPW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMw-PT-mPW" customClass="FFLabel" customModule="MJWeiBo" customModuleProvider="target">
                         <rect key="frame" x="12" y="155" width="35.5" height="17"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -222,7 +223,7 @@
                 <outlet property="toolBar" destination="zkD-cv-el9" id="5wy-Jh-z8Y"/>
                 <outlet property="vipIconView" destination="Edo-fu-B20" id="LKe-dT-yQ3"/>
             </connections>
-            <point key="canvasLocation" x="-250" y="-107"/>
+            <point key="canvasLocation" x="-163" y="-162"/>
         </tableViewCell>
     </objects>
     <resources>

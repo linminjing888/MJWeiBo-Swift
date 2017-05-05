@@ -8,8 +8,20 @@
 
 import UIKit
 
+
+/// 微博cell 的协议
+/// 需要设置可选的协议方法
+///-- 需要遵守 NSObjectProtocol 协议
+///-- 协议需要时 @objc的
+///-- 方法需要 @objc optional
+@objc protocol MJHomeStatusCellDelegate:NSObjectProtocol {
+    @objc optional func MJHomeStatusCellDidSelectedUrling(cell:MJHomeStatusCell,url:String)
+}
+
 class MJHomeStatusCell: UITableViewCell {
 
+    ///代理属性
+    weak var delegate: MJHomeStatusCellDelegate?
     /// 头像
     @IBOutlet weak var iconView: UIImageView!
     /// 名字
@@ -23,13 +35,13 @@ class MJHomeStatusCell: UITableViewCell {
     /// 来源
     @IBOutlet weak var sourceLabel: UILabel!
     /// 正文
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: FFLabel!
     ///
     @IBOutlet weak var toolBar: MJStatusToolBar!
     ///配图视图
     @IBOutlet weak var pictureView: MJStatusPictureView!
     ///转发微博文字  原创微博 无此字段 用 ？
-    @IBOutlet weak var retweetTerxtLab: UILabel?
+    @IBOutlet weak var retweetTerxtLab: FFLabel?
     
     var viewModel:MJStatusViewModel?{
         didSet{
@@ -48,6 +60,7 @@ class MJHomeStatusCell: UITableViewCell {
             retweetTerxtLab?.attributedText = viewModel?.retweetAttrText
             //微博来源
             sourceLabel.text = viewModel?.status.source
+
         }
     }
     
@@ -63,12 +76,22 @@ class MJHomeStatusCell: UITableViewCell {
         // 使用 栅格化 必须注意指定分辨率
         self.layer.rasterizationScale = UIScreen.main.scale
         
+        //设置微博文本代理
+        statusLabel.delegate = self
+        retweetTerxtLab?.delegate = self
+        
     }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+extension MJHomeStatusCell:FFLabelDelegate{
+    
+    func labelDidSelectedLinkText(_ label: FFLabel, text: String) {
+        print(text)
+        
+        if !text.hasPrefix("http") {
+            return
+        }
+        delegate?.MJHomeStatusCellDidSelectedUrling?(cell: self, url: text)
+        
     }
-
 }
