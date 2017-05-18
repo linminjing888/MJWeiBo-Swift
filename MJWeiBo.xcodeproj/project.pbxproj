@@ -217,6 +217,7 @@
 		AE58792A1EB09EF600A96FCF /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				AE724D7C1EB2EE8E002FEFA5 /* ComposeVC */,
 				AE58792B1EB09F1E00A96FCF /* MJComposeView.swift */,
 				AE5C3DC61EB198790016DA3C /* MJComposeBtn.swift */,
 				AE58792D1EB0A20200A96FCF /* MJComposeView.xib */,
@@ -336,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				AE58792A1EB09EF600A96FCF /* Compose */,
-				AE724D7C1EB2EE8E002FEFA5 /* ComposeVC */,
 				AEB197931E84F33300F46847 /* NewFeature */,
 				AE7037541E03C38B003F49D3 /* Main */,
 				AE7037521E03C38B003F49D3 /* Home */,
@@ -455,8 +455,9 @@
 				AE724D7D1EB2EEAE002FEFA5 /* MJComposeController.swift */,
 				AE5CF8E51EBC76B1005C610E /* MJComposeController.xib */,
 			);
-			path = ComposeVC;
-			sourceTree = "<group>";
+			name = ComposeVC;
+			path = "MJWeiBo/Classes/View(视图和控制器)/ComposeVC";
+			sourceTree = SOURCE_ROOT;
 		};
 		AEB197931E84F33300F46847 /* NewFeature */ = {
 			isa = PBXGroup;

@@ -25,7 +25,5 @@ class MJComposeBtn: UIControl {
         btn.imageView.image = UIImage(named: imageName)
         btn.titleLabel.text = title
         return btn
-        
     }
-
 }
