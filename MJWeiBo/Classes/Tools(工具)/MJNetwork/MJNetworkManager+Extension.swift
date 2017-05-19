@@ -107,3 +107,16 @@ extension MJNetworkManager{
         }
     }
 }
+
+extension MJNetworkManager{
+    
+    func composeWeiBo(text:String,completion:@escaping ( _ result:[String:AnyObject]?, _ isSuccess:Bool)->()) {
+        let urlStr = "https://api.weibo.com/2/statuses/update.json"
+        
+        let params = ["status":text]
+        
+        tokenRequest(method: .POST, URLString: urlStr, parameters: params) { (json, isSuccess) in
+            completion(json as? [String:AnyObject],isSuccess)
+        }
+    }
+}

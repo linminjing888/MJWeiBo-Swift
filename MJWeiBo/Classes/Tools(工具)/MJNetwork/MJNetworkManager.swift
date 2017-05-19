@@ -31,7 +31,10 @@ class MJNetworkManager: AFHTTPSessionManager {
         return userAccount.access_token != nil
     }
     
-    func tokenRequest(method:MJHTTPMethod = .GET,URLString:String,parameters:[String:Any]?,completion:@escaping (_ json: Any?,_ isSuccess:Bool)->()) {
+    // 专门负责拼接 token 的网络请求方法
+    // name 上传文件使用的字段名，默认为nil，不上传文件
+    // data 上传文件的二进制数据，默认为nil，不上传文件
+    func tokenRequest(method:MJHTTPMethod = .GET,URLString:String,parameters:[String:Any]?,name:String? = nil,data:Data? = nil,completion:@escaping (_ json: Any?,_ isSuccess:Bool)->()) {
         
         //判断token是否nil
         guard let token = userAccount.access_token else {
@@ -54,10 +57,46 @@ class MJNetworkManager: AFHTTPSessionManager {
         // 设置参数字典
         parameters!["access_token"] = token
         
-        request(method: method, URLString: URLString, parameters: parameters!, completion:completion)
+        if let name = name,let data = data {
+            //上传文件
+            upload(URLString: URLString, parameters: parameters!, name: name, data: data, completion: completion)
+        }else{
+            request(method: method, URLString: URLString, parameters: parameters!, completion:completion)
+        }
        
     }
     
+    /// 上传
+    ///
+    /// - Parameters:
+    ///   - URLString: URLString
+    ///   - parameters: 参数
+    ///   - name: 上传数据的服务器字段‘pic’
+    ///   - data: 要上传的二进制数据
+    ///   - completion: 完成回调
+    func upload(URLString:String,parameters:[String:Any],name:String,data:Data,completion:@escaping (_ json: Any?,_ isSuccess:Bool)->()) {
+        
+        post(URLString, parameters: parameters, constructingBodyWith: { (formData) in
+            //保存服务器的文件名，大多说服务器可以乱写
+            // mimeType :告诉服务器上传文件类型，如果不告诉，可以使用 application/octet-stream image/png  image/jpg image/gif
+            formData.appendPart(withFileData: data, name: name, fileName: "xxx", mimeType: "application/octet-stream")
+            
+        }, progress:nil, success: { (task, json) in
+            
+            completion(json, true)
+        }) { (task, error) in
+            
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("Token 过期了")
+                
+                //发送通知（本方法不知道被谁调用，谁接收到通知谁处理）
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: MJUserShouldLoginNotification), object:"bad token")
+            }
+            
+            print("网络请求失败 \(error)")
+            completion(nil, false)
+        }
+    }
     
     //option + command + /
     //@escaping(逃逸闭包)

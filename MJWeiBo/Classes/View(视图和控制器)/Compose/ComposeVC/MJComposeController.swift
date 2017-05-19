@@ -4,12 +4,13 @@
 //
 //  Created by YXCZ on 17/4/28.
 //  Copyright © 2017年 林民敬. All rights reserved.
-//  撰写微博控制器  15
+//  撰写微博控制器  24  https://upload.api.weibo.com/2/statuses/upload.json
 
 /**
  加载视图控制器的时候，如果XIB和控制器同名，默认的构造函数，优先加载XIB
  */
 import UIKit
+import SVProgressHUD
 
 class MJComposeController: UIViewController {
 
@@ -49,7 +50,27 @@ class MJComposeController: UIViewController {
     }
 
     @IBAction func sendBtnClick(_ sender: Any) {
-        print("22")
+        
+        guard let text = textView.text else {
+            return
+        }
+        
+        MJNetworkManager.shared.composeWeiBo(text: text) { (json, isSuccess) in
+            
+//            print(json)
+            
+            SVProgressHUD.setDefaultStyle(.dark)
+            let message = isSuccess ? "发布成功" : "网络不给力"
+            SVProgressHUD.showInfo(withStatus:message)
+            
+            if isSuccess{
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1, execute: {
+                    SVProgressHUD.setDefaultStyle(.light)
+                    self.close()
+                })
+            }
+            
+        }
     }
     
     func keyboardWillChange(n:NSNotification) {
@@ -86,6 +107,14 @@ class MJComposeController: UIViewController {
 //        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 35)
 //        return btn;
 //    }()
+}
+
+// xib 启用代理，需要吧textView delegate 连线   File‘s owner
+extension MJComposeController:UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        sendBtn.isEnabled = textView.hasText
+    }
 }
 
 private extension MJComposeController{
@@ -135,6 +164,6 @@ private extension MJComposeController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendBtn)
         
         navigationItem.titleView = titleLabel
-//        sendBtn.isEnabled = false
+        sendBtn.isEnabled = false
     }
 }
