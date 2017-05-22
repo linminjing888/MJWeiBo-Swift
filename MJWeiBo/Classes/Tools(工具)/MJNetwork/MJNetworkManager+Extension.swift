@@ -110,12 +110,25 @@ extension MJNetworkManager{
 
 extension MJNetworkManager{
     
-    func composeWeiBo(text:String,completion:@escaping ( _ result:[String:AnyObject]?, _ isSuccess:Bool)->()) {
-        let urlStr = "https://api.weibo.com/2/statuses/update.json"
+    func composeWeiBo(text:String,image:UIImage?,completion:@escaping ( _ result:[String:AnyObject]?, _ isSuccess:Bool)->()) {
         
+        let urlStr:String
+        
+        if image != nil {
+            urlStr = "https://upload.api.weibo.com/2/statuses/upload.json"
+        }else{
+            urlStr = "https://api.weibo.com/2/statuses/update.json"
+        }
         let params = ["status":text]
         
-        tokenRequest(method: .POST, URLString: urlStr, parameters: params) { (json, isSuccess) in
+        var name : String?
+        var data :Data?
+        if image != nil {
+            name = "pic"
+            data = UIImagePNGRepresentation(image!)
+        }
+        
+        tokenRequest(method: .POST, URLString: urlStr, parameters: params, name: name, data: data) { (json, isSuccess) in
             completion(json as? [String:AnyObject],isSuccess)
         }
     }

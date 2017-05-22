@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 17/4/28.
 //  Copyright © 2017年 林民敬. All rights reserved.
-//  撰写微博控制器  24  https://upload.api.weibo.com/2/statuses/upload.json
+//  撰写微博控制器  24
 
 /**
  加载视图控制器的时候，如果XIB和控制器同名，默认的构造函数，优先加载XIB
@@ -55,8 +55,9 @@ class MJComposeController: UIViewController {
             return
         }
         
-        MJNetworkManager.shared.composeWeiBo(text: text) { (json, isSuccess) in
-            
+        let image:UIImage? = nil // UIImage(named: "takeout_img_list_loading_pic1")
+        
+        MJNetworkManager.shared.composeWeiBo(text: text,image:image) { (json, isSuccess) in
 //            print(json)
             
             SVProgressHUD.setDefaultStyle(.dark)
