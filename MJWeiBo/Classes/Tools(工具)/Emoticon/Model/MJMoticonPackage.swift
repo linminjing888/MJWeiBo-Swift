@@ -13,6 +13,9 @@ class MJMoticonPackage: NSObject {
 
     ///表情包分组名
     var groupName: String?
+    ///toolBar 背景图
+    var bgImageName:String?
+    
     ///目录 从目录下加载 info.plist 可以创建表情模型数组
     var directory:String?{
         didSet{

@@ -26,6 +26,8 @@ class MJComposeController: UIViewController {
     
     @IBOutlet weak var bottomCons: NSLayoutConstraint!
     
+    lazy var emotionView:MJEmotionInputView = MJEmotionInputView.inputView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -92,6 +94,17 @@ class MJComposeController: UIViewController {
         
     }
     
+    @objc fileprivate func emotionKeyboard(){
+        
+        //视图的宽度可以随便，就是屏幕的宽度
+//        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 258))
+       
+        textView.inputView = (textView.inputView == nil) ? emotionView : nil
+       //刷新键盘视图!!
+        textView.reloadInputViews()
+    }
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -132,7 +145,7 @@ private extension MJComposeController{
         
         let itemSettings = [["imageName":"compose_toolbar_picture"],
                             ["imageName":"compose_mentionbutton_background"],
-                            ["imageName":"compose_emoticonbutton_background"],
+                            ["imageName":"compose_emoticonbutton_background","actionName":"emotionKeyboard"],
                             ["imageName":"compose_trendbutton_background"],
                             ["imageName":"compose_toolbar_more"]]
         var items = [UIBarButtonItem]()
@@ -146,8 +159,12 @@ private extension MJComposeController{
             let btn = UIButton()
             btn.setImage(image, for: [])
             btn.setImage(imageHL, for: .highlighted)
-            
             btn.sizeToFit()
+            
+            
+            if let actionName = s["actionName"] {
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
             
             items.append(UIBarButtonItem(customView: btn))
             //追加弹簧

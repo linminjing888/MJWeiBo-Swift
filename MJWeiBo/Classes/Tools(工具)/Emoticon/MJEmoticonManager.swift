@@ -15,6 +15,11 @@ class MJEmoticonManager {
     ///表情包懒加载数组
     lazy var packages = [MJMoticonPackage]()
     
+    lazy var bundle:Bundle = {
+        let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
+        return Bundle(path: path!)!
+    }()
+    
     /// 构造函数 ，如果在 init 之前增加 private修饰符，可以让调用着必须通过 shared 访问对象
     /// OC 要重写 allocWithZone 方法
     private init(){

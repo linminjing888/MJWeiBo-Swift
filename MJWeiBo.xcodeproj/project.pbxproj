@@ -76,6 +76,9 @@
 		AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB76551E111A010099BD32 /* MJNetworkManager.swift */; };
 		AED7B8801E8F5D0E00D27ECB /* MJStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED7B87F1E8F5D0E00D27ECB /* MJStatusPicture.swift */; };
 		AED7B8821E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED7B8811E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib */; };
+		AEDE311E1EE5511E002540E3 /* MJEmotionInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */; };
+		AEDE31201EE551AB002540E3 /* MJEmotionInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDE311F1EE551AB002540E3 /* MJEmotionInputView.xib */; };
+		AEDE31221EE5592A002540E3 /* MJEmotionToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE31211EE5592A002540E3 /* MJEmotionToolBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +168,9 @@
 		AECB76551E111A010099BD32 /* MJNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJNetworkManager.swift; sourceTree = "<group>"; };
 		AED7B87F1E8F5D0E00D27ECB /* MJStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusPicture.swift; sourceTree = "<group>"; };
 		AED7B8811E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJHomeStatusRetweetCell.xib; sourceTree = "<group>"; };
+		AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionInputView.swift; sourceTree = "<group>"; };
+		AEDE311F1EE551AB002540E3 /* MJEmotionInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJEmotionInputView.xib; sourceTree = "<group>"; };
+		AEDE31211EE5592A002540E3 /* MJEmotionToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionToolBar.swift; sourceTree = "<group>"; };
 		C7FB7A8DDD4F1314B29CF924 /* Pods-MJWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +248,9 @@
 				AE5B29261ECE9BB7008DD425 /* MJComposeView.swift */,
 				AE5B29271ECE9BB7008DD425 /* MJComposeView.xib */,
 				AE5B292C1ECE9BDE008DD425 /* MJComposeTextView.swift */,
+				AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */,
+				AEDE311F1EE551AB002540E3 /* MJEmotionInputView.xib */,
+				AEDE31211EE5592A002540E3 /* MJEmotionToolBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -566,6 +575,7 @@
 				AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */,
 				AE5879291EB06A1C00A96FCF /* MJMeiRefreshView.xib in Resources */,
 				AE5B29221ECE9B79008DD425 /* MJComposeController.xib in Resources */,
+				AEDE31201EE551AB002540E3 /* MJEmotionInputView.xib in Resources */,
 				AE7037401E03C293003F49D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +675,7 @@
 				AE7037611E03C38B003F49D3 /* MJNavigationController.swift in Sources */,
 				AEA219401E8D0F9400EF7249 /* MJStatusViewModel.swift in Sources */,
 				AE7037801E03C7BE003F49D3 /* NSObject+CZRuntime.m in Sources */,
+				AEDE311E1EE5511E002540E3 /* MJEmotionInputView.swift in Sources */,
 				AE7037631E03C38B003F49D3 /* MJPrefileViewController.swift in Sources */,
 				AE70373B1E03C293003F49D3 /* AppDelegate.swift in Sources */,
 				AE7037921E03FEB8003F49D3 /* MJDemoViewController.swift in Sources */,
@@ -672,6 +683,7 @@
 				AE7037831E03C7BE003F49D3 /* NSString+CZPath.m in Sources */,
 				AE4454C61EB9D78B0080A9F5 /* MJEmoticonManager.swift in Sources */,
 				AEA0DBC91E163CD2000927F8 /* MJCommon.swift in Sources */,
+				AEDE31221EE5592A002540E3 /* MJEmotionToolBar.swift in Sources */,
 				AE7037881E03C7BE003F49D3 /* UIView+CZAddition.m in Sources */,
 				AE5669F41E8E67FB00F2E5DF /* MJStatusPictureView.swift in Sources */,
 				AED7B8801E8F5D0E00D27ECB /* MJStatusPicture.swift in Sources */,
