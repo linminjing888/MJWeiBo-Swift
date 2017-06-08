@@ -42,6 +42,28 @@ class MJMoticonPackage: NSObject {
     ///使用懒加载可以避免后续的解包
     lazy var emoticons = [MJEmoticon]()
     
+    var numberOfPages:Int{
+        return (emoticons.count-1)/20 + 1
+    }
+    
+    func emoticons(page:Int) -> [MJEmoticon] {
+        
+        let count = 20
+        let location = page * count
+        var length = count
+        //判断数组是否越界
+        if location + length > emoticons.count{
+            length = emoticons.count - location
+        }
+        
+        let range = NSMakeRange(location, length)
+        //截取数组的子数组
+        let subArray = (emoticons as NSArray).subarray(with: range)
+        
+        return subArray as! [MJEmoticon]
+        
+    }
+    
     override var description: String{
         return yy_modelDescription()
     }

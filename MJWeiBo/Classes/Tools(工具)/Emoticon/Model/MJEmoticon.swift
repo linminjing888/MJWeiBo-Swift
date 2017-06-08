@@ -18,7 +18,24 @@ class MJEmoticon: NSObject {
     ///表情图片名称
     var png: String?
     ///emoji的十六进制编码
-    var code: String?
+    var code: String?{
+        didSet{
+            guard let code = code else {
+                return
+            }
+            //实例化字符串扫描
+            let scanner = Scanner(string: code)
+            //从code中扫描十六机制的数值
+            var result : UInt32 = 0
+            scanner.scanHexInt32(&result)
+            //使用 UInt32的数组，生成一个UTF8的字符
+            let c = Character(UnicodeScalar(result)!)
+            emoji = String(c)
+        }
+    }
+    
+    // emoji 的字符串
+    var emoji:String?
     /// 图片路径
     var directory:String?
     ///计算型属性

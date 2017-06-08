@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3C11427F49A18111DD4EDFFC /* Pods_MJWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */; };
+		AE3279811EE6AD3C009F1AE0 /* MJEmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3279801EE6AD3C009F1AE0 /* MJEmotionCell.swift */; };
 		AE4454BD1EB9C2B00080A9F5 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE4454BC1EB9C2B00080A9F5 /* HMEmoticon.bundle */; };
 		AE4454C11EB9C2C10080A9F5 /* MJEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4454BF1EB9C2C10080A9F5 /* MJEmoticon.swift */; };
 		AE4454C21EB9C2C10080A9F5 /* MJMoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4454C01EB9C2C10080A9F5 /* MJMoticonPackage.swift */; };
 		AE4454C61EB9D78B0080A9F5 /* MJEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4454C51EB9D78B0080A9F5 /* MJEmoticonManager.swift */; };
+		AE495DDB1EE6B1A9006B0C0A /* MJEmotionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE495DDA1EE6B1A9006B0C0A /* MJEmotionFlowLayout.swift */; };
 		AE5446F71E8B66BF00F7BF94 /* MJNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */; };
 		AE5669F01E8E378D00F2E5DF /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */; };
 		AE5669F21E8E4AA500F2E5DF /* MJStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */; };
@@ -84,10 +86,12 @@
 /* Begin PBXFileReference section */
 		0C55F939F214C9606670B002 /* Pods_MJWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5517D1DC9EEB328D398B7395 /* Pods-MJWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
+		AE3279801EE6AD3C009F1AE0 /* MJEmotionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionCell.swift; sourceTree = "<group>"; };
 		AE4454BC1EB9C2B00080A9F5 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		AE4454BF1EB9C2C10080A9F5 /* MJEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmoticon.swift; sourceTree = "<group>"; };
 		AE4454C01EB9C2C10080A9F5 /* MJMoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMoticonPackage.swift; sourceTree = "<group>"; };
 		AE4454C51EB9D78B0080A9F5 /* MJEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmoticonManager.swift; sourceTree = "<group>"; };
+		AE495DDA1EE6B1A9006B0C0A /* MJEmotionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionFlowLayout.swift; sourceTree = "<group>"; };
 		AE5446F61E8B66BF00F7BF94 /* MJNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJNewFeatureView.xib; sourceTree = "<group>"; };
 		AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		AE5669F11E8E4AA500F2E5DF /* MJStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusToolBar.swift; sourceTree = "<group>"; };
@@ -250,7 +254,9 @@
 				AE5B292C1ECE9BDE008DD425 /* MJComposeTextView.swift */,
 				AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */,
 				AEDE311F1EE551AB002540E3 /* MJEmotionInputView.xib */,
+				AE495DDA1EE6B1A9006B0C0A /* MJEmotionFlowLayout.swift */,
 				AEDE31211EE5592A002540E3 /* MJEmotionToolBar.swift */,
+				AE3279801EE6AD3C009F1AE0 /* MJEmotionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -645,6 +651,7 @@
 				AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */,
 				AE70375D1E03C38B003F49D3 /* MJDisCoverViewController.swift in Sources */,
 				AE7037861E03C7BE003F49D3 /* UILabel+CZAddition.m in Sources */,
+				AE495DDB1EE6B1A9006B0C0A /* MJEmotionFlowLayout.swift in Sources */,
 				AE5B292D1ECE9BDE008DD425 /* MJComposeTextView.swift in Sources */,
 				AE70377F1E03C7BE003F49D3 /* NSAttributedString+CZAdditon.m in Sources */,
 				AE4454C21EB9C2C10080A9F5 /* MJMoticonPackage.swift in Sources */,
@@ -661,6 +668,7 @@
 				AE5669F01E8E378D00F2E5DF /* UIimageView+WebImage.swift in Sources */,
 				AEA2193E1E8D0BC800EF7249 /* WBUser.swift in Sources */,
 				AEA219361E8CF40400EF7249 /* UIImage+Extensions.swift in Sources */,
+				AE3279811EE6AD3C009F1AE0 /* MJEmotionCell.swift in Sources */,
 				AEA0DBCB1E164300000927F8 /* MJOAuthViewController.swift in Sources */,
 				AE5B29281ECE9BB7008DD425 /* MJComposeBtn.swift in Sources */,
 				AE7037601E03C38B003F49D3 /* MJMainTabbarController.swift in Sources */,
