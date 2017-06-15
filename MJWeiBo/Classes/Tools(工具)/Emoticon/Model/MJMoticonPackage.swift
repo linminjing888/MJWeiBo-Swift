@@ -61,7 +61,6 @@ class MJMoticonPackage: NSObject {
         let subArray = (emoticons as NSArray).subarray(with: range)
         
         return subArray as! [MJEmoticon]
-        
     }
     
     override var description: String{

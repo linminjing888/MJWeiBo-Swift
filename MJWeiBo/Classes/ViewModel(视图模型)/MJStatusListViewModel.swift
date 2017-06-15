@@ -45,8 +45,10 @@ class MJStatusListViewModel {
         ///上啦刷新
         let max_id = !pullUp ? 0 :(statusList.last?.status.id ?? 0)
         
-        
-        MJNetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+        MJStatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+            
+//        }
+//        MJNetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             if !isSuccess{
                 completion(false,false)

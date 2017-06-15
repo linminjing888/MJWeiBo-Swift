@@ -4,7 +4,7 @@
 //
 //  Created by YXCZ on 17/4/28.
 //  Copyright © 2017年 林民敬. All rights reserved.
-//  撰写微博控制器  54
+//  撰写微博控制器  01
 
 /**
  加载视图控制器的时候，如果XIB和控制器同名，默认的构造函数，优先加载XIB
@@ -15,7 +15,7 @@ import SVProgressHUD
 class MJComposeController: UIViewController {
 
     ///文本编辑视图
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: MJComposeTextView!
     ///底部工具栏
     @IBOutlet weak var toolBar: UIToolbar!
     
@@ -28,39 +28,9 @@ class MJComposeController: UIViewController {
     //注意防止循环引用
     lazy var emotionView:MJEmotionInputView = MJEmotionInputView.inputView { [weak self](emoticon) in
 //        print(emoticon)
-        self?.insertEmotiicon(em: emoticon)
+        self?.textView.insertEmotiicon(em: emoticon)
     }
-    //向文本视图，插入表情符号
-    func insertEmotiicon(em:MJEmoticon?) {
-        //em==nil 是删除按钮
-        guard em != nil else {
-            textView.deleteBackward()
-            return
-        }
-        // emoji 字符串
-        if let emoji = em?.emoji,let textRange = textView.selectedTextRange {
-            // UITextRange 仅用于此处
-            textView.replace(textRange, withText: emoji)
-            return
-        }
-        
-        //获取表情中的图像属性文本
-        let imageText = em?.imageText(font: textView.font!)
-        //获取当前textView属性文本 可变的
-        let attrStrM = NSMutableAttributedString(attributedString: textView.attributedText)
-        //将图像的属性文本插入到当前的光标位置
-        attrStrM.replaceCharacters(in: textView.selectedRange, with: imageText!)
-        //记录光标位置
-        let range = textView.selectedRange
-        //设置文本
-        textView.attributedText = attrStrM
-        
-        //恢复光标位置，length是选中字符的长度，插入文本之后，应该为0
-        textView.selectedRange = NSMakeRange(range.location+1, 0)
-        
-        
-        
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,13 +53,12 @@ class MJComposeController: UIViewController {
     @objc fileprivate func close(){
         dismiss(animated: true, completion: nil)
     }
-
+    
+    
     @IBAction func sendBtnClick(_ sender: Any) {
         
-        guard let text = textView.text else {
-            return
-        }
-        
+        let text = textView.emoticonText
+     
         let image:UIImage? = nil // UIImage(named: "takeout_img_list_loading_pic1")
         
         MJNetworkManager.shared.composeWeiBo(text: text,image:image) { (json, isSuccess) in
@@ -105,7 +74,6 @@ class MJComposeController: UIViewController {
                     self.close()
                 })
             }
-            
         }
     }
     

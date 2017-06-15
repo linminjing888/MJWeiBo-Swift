@@ -72,6 +72,7 @@
 		AEA2193A1E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */; };
 		AEA2193E1E8D0BC800EF7249 /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA2193D1E8D0BC800EF7249 /* WBUser.swift */; };
 		AEA219401E8D0F9400EF7249 /* MJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */; };
+		AEA88FDA1EEA9B4800B3F770 /* MJEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA88FD91EEA9B4800B3F770 /* MJEmoticonAttachment.swift */; };
 		AEB197971E84F37300F46847 /* MJNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB197961E84F37300F46847 /* MJNewFeatureView.swift */; };
 		AEB197991E85059B00F46847 /* MJWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB197981E85059B00F46847 /* MJWelcomeView.xib */; };
 		AECB76531E10C42A0099BD32 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = AECB76521E10C42A0099BD32 /* main.json */; };
@@ -81,6 +82,9 @@
 		AEDE311E1EE5511E002540E3 /* MJEmotionInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */; };
 		AEDE31201EE551AB002540E3 /* MJEmotionInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDE311F1EE551AB002540E3 /* MJEmotionInputView.xib */; };
 		AEDE31221EE5592A002540E3 /* MJEmotionToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE31211EE5592A002540E3 /* MJEmotionToolBar.swift */; };
+		AEF0B8861EF2891C0052F19A /* MJSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0B8841EF2891C0052F19A /* MJSQLiteManager.swift */; };
+		AEF0B8871EF2891C0052F19A /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = AEF0B8851EF2891C0052F19A /* status.sql */; };
+		AEF0B8891EF28B410052F19A /* MJStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0B8881EF28B410052F19A /* MJStatusListDAL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +169,7 @@
 		AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJHomeStatusNormalCell.xib; sourceTree = "<group>"; };
 		AEA2193D1E8D0BC800EF7249 /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
 		AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MJStatusViewModel.swift; path = "MJWeiBo/Classes/ViewModel(视图模型)/MJStatusViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		AEA88FD91EEA9B4800B3F770 /* MJEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmoticonAttachment.swift; sourceTree = "<group>"; };
 		AEB197941E84F35D00F46847 /* MJWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJWelcomeView.swift; sourceTree = "<group>"; };
 		AEB197961E84F37300F46847 /* MJNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJNewFeatureView.swift; sourceTree = "<group>"; };
 		AEB197981E85059B00F46847 /* MJWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJWelcomeView.xib; sourceTree = "<group>"; };
@@ -175,6 +180,9 @@
 		AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionInputView.swift; sourceTree = "<group>"; };
 		AEDE311F1EE551AB002540E3 /* MJEmotionInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJEmotionInputView.xib; sourceTree = "<group>"; };
 		AEDE31211EE5592A002540E3 /* MJEmotionToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionToolBar.swift; sourceTree = "<group>"; };
+		AEF0B8841EF2891C0052F19A /* MJSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJSQLiteManager.swift; sourceTree = "<group>"; };
+		AEF0B8851EF2891C0052F19A /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
+		AEF0B8881EF28B410052F19A /* MJStatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusListDAL.swift; sourceTree = "<group>"; };
 		C7FB7A8DDD4F1314B29CF924 /* Pods-MJWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJWeiBo/Pods-MJWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +230,7 @@
 			children = (
 				AE4454BF1EB9C2C10080A9F5 /* MJEmoticon.swift */,
 				AE4454C01EB9C2C10080A9F5 /* MJMoticonPackage.swift */,
+				AEA88FD91EEA9B4800B3F770 /* MJEmoticonAttachment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 		AE70374E1E03C38B003F49D3 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				AEF0B8831EF2891C0052F19A /* SQLite */,
 				AE5CF8E01EBC1F38005C610E /* FFLabel */,
 				AE4454BB1EB9C2900080A9F5 /* Emoticon */,
 				AE6E66671E973D7900EBEBF6 /* MJRefreshControl */,
@@ -436,6 +446,7 @@
 			children = (
 				AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */,
 				AE67A2651E14DE7E00201256 /* MJStatusListViewModel.swift */,
+				AEF0B8881EF28B410052F19A /* MJStatusListDAL.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -503,6 +514,15 @@
 				AE67A2611E14B0A700201256 /* MJNetworkManager+Extension.swift */,
 			);
 			path = MJNetwork;
+			sourceTree = "<group>";
+		};
+		AEF0B8831EF2891C0052F19A /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				AEF0B8841EF2891C0052F19A /* MJSQLiteManager.swift */,
+				AEF0B8851EF2891C0052F19A /* status.sql */,
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +598,7 @@
 				AED7B8821E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib in Resources */,
 				AE5B292B1ECE9BB7008DD425 /* MJComposeView.xib in Resources */,
 				AECB76531E10C42A0099BD32 /* main.json in Resources */,
+				AEF0B8871EF2891C0052F19A /* status.sql in Resources */,
 				AE7037421E03C293003F49D3 /* Assets.xcassets in Resources */,
 				AE5879291EB06A1C00A96FCF /* MJMeiRefreshView.xib in Resources */,
 				AE5B29221ECE9B79008DD425 /* MJComposeController.xib in Resources */,
@@ -647,6 +668,7 @@
 				AE5E04001E83D07C004C78CE /* MJTitleButton.swift in Sources */,
 				AE7037851E03C7BE003F49D3 /* UIColor+CZAddition.m in Sources */,
 				AEA219381E8CF78D00EF7249 /* MJHomeStatusCell.swift in Sources */,
+				AEF0B8861EF2891C0052F19A /* MJSQLiteManager.swift in Sources */,
 				AE70377E1E03C7BE003F49D3 /* NSArray+Log.m in Sources */,
 				AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */,
 				AE70375D1E03C38B003F49D3 /* MJDisCoverViewController.swift in Sources */,
@@ -676,6 +698,8 @@
 				AE67A2641E14D9DE00201256 /* MJStatus.swift in Sources */,
 				AE70375F1E03C38B003F49D3 /* MJBaseViewController.swift in Sources */,
 				AE6E66691E973D9900EBEBF6 /* MJRefreshControl.swift in Sources */,
+				AEF0B8891EF28B410052F19A /* MJStatusListDAL.swift in Sources */,
+				AEA88FDA1EEA9B4800B3F770 /* MJEmoticonAttachment.swift in Sources */,
 				AE5B292A1ECE9BB7008DD425 /* MJComposeView.swift in Sources */,
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
 				AE69CF721EB83128001119F2 /* String+Extension.swift in Sources */,

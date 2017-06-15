@@ -62,12 +62,18 @@ class MJEmoticon: NSObject {
             return NSAttributedString(string: "")
         }
         //创建文本附件
-        let attachment = NSTextAttachment()
+        let attachment = MJEmoticonAttachment()
+        attachment.chs = chs
         attachment.image = image
         let height = font.lineHeight
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
         //返回图片文本属性
-        return NSAttributedString(attachment: attachment)
+        let attriStrM = NSMutableAttributedString(attributedString:NSAttributedString(attachment: attachment))
+        //插入字符的显示，跟随前一个字符的属性，但是本身没有属性
+        //设置图像文字的属性
+        attriStrM.addAttributes([NSFontAttributeName:font], range: NSMakeRange(0, 1))
+        
+        return attriStrM
         
     }
     
