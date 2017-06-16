@@ -67,7 +67,7 @@ class MJStatusListViewModel {
                 
                 array.append(MJStatusViewModel(model: model))
             }
-             print(array)
+//             print(array)
 //            print("刷新 \(array.count) 条数据")
             
             if pullUp{

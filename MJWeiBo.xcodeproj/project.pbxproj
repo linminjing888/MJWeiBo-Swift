@@ -27,6 +27,7 @@
 		AE5B292A1ECE9BB7008DD425 /* MJComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5B29261ECE9BB7008DD425 /* MJComposeView.swift */; };
 		AE5B292B1ECE9BB7008DD425 /* MJComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5B29271ECE9BB7008DD425 /* MJComposeView.xib */; };
 		AE5B292D1ECE9BDE008DD425 /* MJComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5B292C1ECE9BDE008DD425 /* MJComposeTextView.swift */; };
+		AE5B483A1EF3C0E900133346 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5B48391EF3C0E900133346 /* Date+Extensions.swift */; };
 		AE5CF8E21EBC1F3E005C610E /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5CF8E11EBC1F3E005C610E /* FFLabel.swift */; };
 		AE5CF8E41EBC47ED005C610E /* MJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5CF8E31EBC47ED005C610E /* MJWebViewController.swift */; };
 		AE5E04001E83D07C004C78CE /* MJTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */; };
@@ -109,6 +110,7 @@
 		AE5B29261ECE9BB7008DD425 /* MJComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJComposeView.swift; sourceTree = "<group>"; };
 		AE5B29271ECE9BB7008DD425 /* MJComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJComposeView.xib; sourceTree = "<group>"; };
 		AE5B292C1ECE9BDE008DD425 /* MJComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJComposeTextView.swift; sourceTree = "<group>"; };
+		AE5B48391EF3C0E900133346 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AE5CF8E11EBC1F3E005C610E /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		AE5CF8E31EBC47ED005C610E /* MJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJWebViewController.swift; sourceTree = "<group>"; };
 		AE5E03FF1E83D07C004C78CE /* MJTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTitleButton.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				AE76F3E91E08D830002FE936 /* UIBarButtonItem+Extension.swift */,
 				AEA219351E8CF40400EF7249 /* UIImage+Extensions.swift */,
 				AE5669EF1E8E378D00F2E5DF /* UIimageView+WebImage.swift */,
+				AE5B48391EF3C0E900133346 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 			files = (
 				AE6E425E1E28D18B001C0268 /* MJUserAccount.swift in Sources */,
 				AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */,
+				AE5B483A1EF3C0E900133346 /* Date+Extensions.swift in Sources */,
 				AE67A2661E14DE7E00201256 /* MJStatusListViewModel.swift in Sources */,
 				AE5E04001E83D07C004C78CE /* MJTitleButton.swift in Sources */,
 				AE7037851E03C7BE003F49D3 /* UIColor+CZAddition.m in Sources */,

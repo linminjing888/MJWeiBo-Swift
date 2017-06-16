@@ -9,6 +9,9 @@
 import Foundation
 import FMDB
 
+///最大数据库缓存时间，以s 为单位
+private let maxDBCacheTime:TimeInterval = -60 //-5 * 24 * 60 * 60
+
 /// SQLite 管理器
 class MJSQLiteManager {
     ///单例
@@ -41,9 +44,17 @@ class MJSQLiteManager {
     }
     
     @objc fileprivate func clearDBCache(){
-        print("清理数据缓存")
+        
+        let dateString = Date.mj_dataString(delta:maxDBCacheTime )
+//        print("清理数据缓存 - \(dateString)")
+        let sql = "DELETE FROM T_STATUS WHERE createtime < ?;"
+        quene.inDatabase { (db) in
+            
+            if db?.executeUpdate(sql, withArgumentsIn: [dateString]) == true{
+                print("删除了 \(db?.changes())条数据")
+            }
+        }
     }
-    
 }
 
 
