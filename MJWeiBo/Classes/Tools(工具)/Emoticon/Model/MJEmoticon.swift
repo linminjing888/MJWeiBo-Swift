@@ -56,6 +56,9 @@ class MJEmoticon: NSObject {
         
     }
     
+    /// 表情使用次数
+    var times: Int = 0
+    
     func imageText(font:UIFont) -> NSAttributedString {
         //判断图像是否存在
         guard let image = image else {

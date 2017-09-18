@@ -25,6 +25,30 @@ class MJEmoticonManager {
     private init(){
         loadPackages()
     }
+    
+    
+    /// 提价最近使用的表情
+    ///
+    /// - Parameter em: 选中的表情
+    func recentEmoticon(em:MJEmoticon) {
+        
+        em.times += 1
+        
+        if !packages[0].emoticons.contains(em) {
+            packages[0].emoticons.append(em)
+        }
+        // 根据使用的次数 排序
+        packages[0].emoticons.sort { (em1, em2) -> Bool in
+            return em1.times > em2.times
+        }
+        
+        // 判断表情数组是否超出20 删除超出的部分
+        if packages[0].emoticons.count > 20 {
+            packages[0].emoticons.removeSubrange(20..<packages[0].emoticons.count
+            )
+        }
+        
+    }
 }
 
 // MARK: -- 表情字符串的处理

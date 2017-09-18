@@ -15,7 +15,13 @@ class MJStatus: NSObject {
     ///如果不写 Int64 在ipad2、iphone4/4s/5/5c 都无法运行
     var id:Int64 = 0
     ///创建时间
-    var created_at:String?
+    var created_at:String?{
+        didSet{
+            createDate = Date.mj_sinaDate(string: created_at ?? "")
+        }
+    }
+    var createDate:Date?
+    
     ///微博来源
     var source:String?{
         didSet{

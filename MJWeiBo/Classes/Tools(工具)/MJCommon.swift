@@ -22,6 +22,8 @@ let MJUserShouldLoginNotification = "MJUserShouldLoginNotification"
 ///用户登录成功通知
 let MJUserLoginSuccessNotification = "MJUserLoginSuccessNotification"
 
+///图片浏览通知
+let MJStatusCellBrowserPhotosNotification = "MJStatusCellBrowserPhotosNotification"
 
 // MARK : 微博配图视图常量
 //外部间距

@@ -26,8 +26,14 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="SuF-hB-Xrh" id="ra8-ko-Dzv"/>
+                        <outlet property="delegate" destination="SuF-hB-Xrh" id="Bxb-ag-Qme"/>
                     </connections>
                 </collectionView>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="pgy-N1-Y7b">
+                    <rect key="frame" x="160" y="181" width="49" height="37"/>
+                    <color key="pageIndicatorTintColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-Bs-pn9" customClass="MJEmotionToolBar" customModule="MJWeiBo" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="218" width="375" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,10 +44,12 @@
             </subviews>
             <constraints>
                 <constraint firstItem="dFj-le-J76" firstAttribute="leading" secondItem="SuF-hB-Xrh" secondAttribute="leading" id="5GK-wr-Zg4"/>
+                <constraint firstItem="ftt-Bs-pn9" firstAttribute="top" secondItem="pgy-N1-Y7b" secondAttribute="bottom" id="UEw-0U-FDL"/>
                 <constraint firstItem="dFj-le-J76" firstAttribute="top" secondItem="SuF-hB-Xrh" secondAttribute="top" id="ZWV-Zl-UvE"/>
                 <constraint firstAttribute="trailing" secondItem="dFj-le-J76" secondAttribute="trailing" id="cPk-lv-N6t"/>
                 <constraint firstItem="ftt-Bs-pn9" firstAttribute="leading" secondItem="SuF-hB-Xrh" secondAttribute="leading" id="d05-Ks-n9z"/>
                 <constraint firstAttribute="trailing" secondItem="ftt-Bs-pn9" secondAttribute="trailing" id="jsZ-P4-tDO"/>
+                <constraint firstItem="pgy-N1-Y7b" firstAttribute="centerX" secondItem="SuF-hB-Xrh" secondAttribute="centerX" id="lqS-Il-Ha7"/>
                 <constraint firstItem="ftt-Bs-pn9" firstAttribute="top" secondItem="dFj-le-J76" secondAttribute="bottom" id="mtF-sI-H6L"/>
                 <constraint firstAttribute="bottom" secondItem="ftt-Bs-pn9" secondAttribute="bottom" id="ofG-GE-qCr"/>
             </constraints>
@@ -49,9 +57,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="dFj-le-J76" id="eS0-Xc-IrB"/>
+                <outlet property="pageControl" destination="pgy-N1-Y7b" id="uy0-Ag-w2k"/>
                 <outlet property="toolBar" destination="ftt-Bs-pn9" id="XPD-59-c7B"/>
             </connections>
-            <point key="canvasLocation" x="53" y="35"/>
+            <point key="canvasLocation" x="52.5" y="35"/>
         </view>
     </objects>
 </document>

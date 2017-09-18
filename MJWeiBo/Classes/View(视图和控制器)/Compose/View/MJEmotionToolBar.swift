@@ -7,9 +7,26 @@
 //
 
 import UIKit
+
+@objc protocol MJEmotionToolBarDelegate:NSObjectProtocol{
+    
+    func MJEmotionToolBarDidSelectedWithIndex(toolBar:MJEmotionToolBar, index:Int)
+}
 //表情键盘 底部工具栏
 class MJEmotionToolBar: UIView {
 
+    weak var delegate:MJEmotionToolBarDelegate?
+    
+    /// 选中分组索引
+    var selectedIndex:Int = 0{
+        didSet{
+            for btn in subviews as! [UIButton] {
+                btn.isSelected = false
+            }
+            (subviews[selectedIndex] as! UIButton).isSelected = true
+        }
+    }
+    
     override func awakeFromNib() {
         
         setupUI()
@@ -26,6 +43,12 @@ class MJEmotionToolBar: UIView {
             btn.frame = rect.offsetBy(dx: CGFloat(i) * w, dy: 0)
         }
     }
+    
+    /// 点击分组按钮
+    @objc fileprivate func clickButton(btn:UIButton)  {
+        
+        delegate?.MJEmotionToolBarDidSelectedWithIndex(toolBar: self, index: btn.tag)
+    }
 }
 
 private extension MJEmotionToolBar{
@@ -33,7 +56,7 @@ private extension MJEmotionToolBar{
     func setupUI() {
         
         let manager = MJEmoticonManager.shared
-        for p in manager.packages {
+        for (i,p) in manager.packages.enumerated() {
             let btn = UIButton()
             btn.setTitle(p.groupName, for: .normal)
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -61,6 +84,12 @@ private extension MJEmotionToolBar{
             
             btn.sizeToFit()
             addSubview(btn)
+            
+            btn.tag = i
+            btn.addTarget(self, action: #selector(clickButton(btn:)), for: .touchUpInside)
+            // 默认选中第0组
+            (subviews[0] as! UIButton).isSelected = true
+            
         }
     }
 }

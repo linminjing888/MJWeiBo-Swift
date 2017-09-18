@@ -20,6 +20,7 @@ import UIKit
 class MJEmotionCell: UICollectionViewCell {
     ///代理
     weak var delegate:MJEmotionCellDelegate?
+    
     var emoticons:[MJEmoticon]? {
         didSet{
             print("表情包\(emoticons?.count)")
@@ -41,6 +42,9 @@ class MJEmotionCell: UICollectionViewCell {
         }
     }
     
+    
+    /// 表情选择提示图
+    fileprivate lazy var tipView = MJEmotionTipView()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -62,6 +66,60 @@ class MJEmotionCell: UICollectionViewCell {
 //        print(em)
         delegate?.MJEmotionCellDidSelectedEmoticon(cell: self, em: em)
         
+    }
+    
+    @objc fileprivate func longPress(gesture:UILongPressGestureRecognizer){
+        //获取触摸位置
+        let location = gesture.location(in: self)
+        guard let button = buttonWithLocation(location: location) else {
+            tipView.isHidden = true
+            return
+        }
+        switch gesture.state {
+        case .began,.changed:
+            
+            tipView.isHidden = false
+            //坐标系转换->将按钮参照cell的坐标系，转换到window的坐标系
+            let center = self.convert(button.center, to: window)
+            tipView.center = center
+            
+            if button.tag < (emoticons?.count)! {
+                tipView.emoticon = emoticons?[button.tag]
+            }
+        case .ended:
+            tipView.isHidden = true
+            
+            //执行选中按钮的函数
+            selectedBtnEmoticon(button: button)
+        case .cancelled, .failed:
+            tipView.isHidden = true
+        
+        default:
+            break
+        }
+//        print(button)
+        
+    }
+    
+    func buttonWithLocation(location:CGPoint) -> UIButton? {
+        
+        for btn in contentView.subviews as! [UIButton]{
+            if btn.frame.contains(location) && !btn.isHidden && btn != contentView.subviews.last {
+                return btn
+            }
+        }
+        return nil
+    }
+    
+    //当视图从界面上删除，同样会调用此方法，newWindow == nil
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        guard let w = newWindow else {
+            return
+        }
+        
+        w.addSubview(tipView)
+        tipView.isHidden = true
     }
 //    override func awakeFromNib() {
 //        setupUI()
@@ -102,6 +160,11 @@ extension MJEmotionCell{
         let btn = contentView.subviews.last as! UIButton
         let image = UIImage(named: "compose_emotion_delete_highlighted", in: MJEmoticonManager.shared.bundle, compatibleWith: nil)
         btn.setImage(image, for: [])
+        
+        // 长按手势
+        let ges = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        ges.minimumPressDuration = 0.2
+        addGestureRecognizer(ges)
         
     }
 }

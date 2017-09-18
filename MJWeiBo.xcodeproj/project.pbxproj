@@ -73,11 +73,17 @@
 		AEA2193A1E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */; };
 		AEA2193E1E8D0BC800EF7249 /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA2193D1E8D0BC800EF7249 /* WBUser.swift */; };
 		AEA219401E8D0F9400EF7249 /* MJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */; };
+		AEA48D0C1EF7A761001CEB89 /* MJEmotionTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA48D0B1EF7A761001CEB89 /* MJEmotionTipView.swift */; };
 		AEA88FDA1EEA9B4800B3F770 /* MJEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA88FD91EEA9B4800B3F770 /* MJEmoticonAttachment.swift */; };
 		AEB197971E84F37300F46847 /* MJNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB197961E84F37300F46847 /* MJNewFeatureView.swift */; };
 		AEB197991E85059B00F46847 /* MJWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB197981E85059B00F46847 /* MJWelcomeView.xib */; };
 		AECB76531E10C42A0099BD32 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = AECB76521E10C42A0099BD32 /* main.json */; };
 		AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB76551E111A010099BD32 /* MJNetworkManager.swift */; };
+		AECC1A921F6F73DD00B6EBBB /* HMPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC1A891F6F73DD00B6EBBB /* HMPhotoBrowserAnimator.m */; };
+		AECC1A931F6F73DD00B6EBBB /* HMPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC1A8B1F6F73DD00B6EBBB /* HMPhotoBrowserController.m */; };
+		AECC1A941F6F73DD00B6EBBB /* HMPhotoBrowserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC1A8D1F6F73DD00B6EBBB /* HMPhotoBrowserPhotos.m */; };
+		AECC1A951F6F73DD00B6EBBB /* HMPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC1A8F1F6F73DD00B6EBBB /* HMPhotoProgressView.m */; };
+		AECC1A961F6F73DD00B6EBBB /* HMPhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC1A911F6F73DD00B6EBBB /* HMPhotoViewerController.m */; };
 		AED7B8801E8F5D0E00D27ECB /* MJStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED7B87F1E8F5D0E00D27ECB /* MJStatusPicture.swift */; };
 		AED7B8821E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED7B8811E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib */; };
 		AEDE311E1EE5511E002540E3 /* MJEmotionInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */; };
@@ -171,12 +177,23 @@
 		AEA219391E8CF7A900EF7249 /* MJHomeStatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJHomeStatusNormalCell.xib; sourceTree = "<group>"; };
 		AEA2193D1E8D0BC800EF7249 /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
 		AEA2193F1E8D0F9400EF7249 /* MJStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MJStatusViewModel.swift; path = "MJWeiBo/Classes/ViewModel(视图模型)/MJStatusViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		AEA48D0B1EF7A761001CEB89 /* MJEmotionTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionTipView.swift; sourceTree = "<group>"; };
 		AEA88FD91EEA9B4800B3F770 /* MJEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmoticonAttachment.swift; sourceTree = "<group>"; };
 		AEB197941E84F35D00F46847 /* MJWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJWelcomeView.swift; sourceTree = "<group>"; };
 		AEB197961E84F37300F46847 /* MJNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJNewFeatureView.swift; sourceTree = "<group>"; };
 		AEB197981E85059B00F46847 /* MJWelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJWelcomeView.xib; sourceTree = "<group>"; };
 		AECB76521E10C42A0099BD32 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		AECB76551E111A010099BD32 /* MJNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJNetworkManager.swift; sourceTree = "<group>"; };
+		AECC1A881F6F73DD00B6EBBB /* HMPhotoBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserAnimator.h; sourceTree = "<group>"; };
+		AECC1A891F6F73DD00B6EBBB /* HMPhotoBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserAnimator.m; sourceTree = "<group>"; };
+		AECC1A8A1F6F73DD00B6EBBB /* HMPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserController.h; sourceTree = "<group>"; };
+		AECC1A8B1F6F73DD00B6EBBB /* HMPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserController.m; sourceTree = "<group>"; };
+		AECC1A8C1F6F73DD00B6EBBB /* HMPhotoBrowserPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserPhotos.h; sourceTree = "<group>"; };
+		AECC1A8D1F6F73DD00B6EBBB /* HMPhotoBrowserPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserPhotos.m; sourceTree = "<group>"; };
+		AECC1A8E1F6F73DD00B6EBBB /* HMPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoProgressView.h; sourceTree = "<group>"; };
+		AECC1A8F1F6F73DD00B6EBBB /* HMPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoProgressView.m; sourceTree = "<group>"; };
+		AECC1A901F6F73DD00B6EBBB /* HMPhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoViewerController.h; sourceTree = "<group>"; };
+		AECC1A911F6F73DD00B6EBBB /* HMPhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoViewerController.m; sourceTree = "<group>"; };
 		AED7B87F1E8F5D0E00D27ECB /* MJStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJStatusPicture.swift; sourceTree = "<group>"; };
 		AED7B8811E8FB01900D27ECB /* MJHomeStatusRetweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJHomeStatusRetweetCell.xib; sourceTree = "<group>"; };
 		AEDE311D1EE5511E002540E3 /* MJEmotionInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJEmotionInputView.swift; sourceTree = "<group>"; };
@@ -268,6 +285,7 @@
 				AE495DDA1EE6B1A9006B0C0A /* MJEmotionFlowLayout.swift */,
 				AEDE31211EE5592A002540E3 /* MJEmotionToolBar.swift */,
 				AE3279801EE6AD3C009F1AE0 /* MJEmotionCell.swift */,
+				AEA48D0B1EF7A761001CEB89 /* MJEmotionTipView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,6 +386,7 @@
 		AE70374E1E03C38B003F49D3 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				AECC1A871F6F73DD00B6EBBB /* PhotoBrowser */,
 				AEF0B8831EF2891C0052F19A /* SQLite */,
 				AE5CF8E01EBC1F38005C610E /* FFLabel */,
 				AE4454BB1EB9C2900080A9F5 /* Emoticon */,
@@ -519,6 +538,23 @@
 			path = MJNetwork;
 			sourceTree = "<group>";
 		};
+		AECC1A871F6F73DD00B6EBBB /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AECC1A881F6F73DD00B6EBBB /* HMPhotoBrowserAnimator.h */,
+				AECC1A891F6F73DD00B6EBBB /* HMPhotoBrowserAnimator.m */,
+				AECC1A8A1F6F73DD00B6EBBB /* HMPhotoBrowserController.h */,
+				AECC1A8B1F6F73DD00B6EBBB /* HMPhotoBrowserController.m */,
+				AECC1A8C1F6F73DD00B6EBBB /* HMPhotoBrowserPhotos.h */,
+				AECC1A8D1F6F73DD00B6EBBB /* HMPhotoBrowserPhotos.m */,
+				AECC1A8E1F6F73DD00B6EBBB /* HMPhotoProgressView.h */,
+				AECC1A8F1F6F73DD00B6EBBB /* HMPhotoProgressView.m */,
+				AECC1A901F6F73DD00B6EBBB /* HMPhotoViewerController.h */,
+				AECC1A911F6F73DD00B6EBBB /* HMPhotoViewerController.m */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		AEF0B8831EF2891C0052F19A /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECC1A921F6F73DD00B6EBBB /* HMPhotoBrowserAnimator.m in Sources */,
 				AE6E425E1E28D18B001C0268 /* MJUserAccount.swift in Sources */,
 				AE78D3901E0A30EB00B577E9 /* MJVisitorView.swift in Sources */,
 				AE5B483A1EF3C0E900133346 /* Date+Extensions.swift in Sources */,
@@ -674,6 +711,7 @@
 				AEA219381E8CF78D00EF7249 /* MJHomeStatusCell.swift in Sources */,
 				AEF0B8861EF2891C0052F19A /* MJSQLiteManager.swift in Sources */,
 				AE70377E1E03C7BE003F49D3 /* NSArray+Log.m in Sources */,
+				AECC1A931F6F73DD00B6EBBB /* HMPhotoBrowserController.m in Sources */,
 				AECB76561E111A010099BD32 /* MJNetworkManager.swift in Sources */,
 				AE70375D1E03C38B003F49D3 /* MJDisCoverViewController.swift in Sources */,
 				AE7037861E03C7BE003F49D3 /* UILabel+CZAddition.m in Sources */,
@@ -686,6 +724,7 @@
 				AE5CF8E41EBC47ED005C610E /* MJWebViewController.swift in Sources */,
 				AE70378F1E03D18D003F49D3 /* Bundle+Extensions.swift in Sources */,
 				AE5CF8E21EBC1F3E005C610E /* FFLabel.swift in Sources */,
+				AECC1A951F6F73DD00B6EBBB /* HMPhotoProgressView.m in Sources */,
 				AE7037811E03C7BE003F49D3 /* NSString+CZBase64.m in Sources */,
 				AE5879271EB069FA00A96FCF /* MJMeiRefreshView.swift in Sources */,
 				AE8DC4C91E8A6C5400582735 /* MJWelcomeView.swift in Sources */,
@@ -708,6 +747,7 @@
 				AE7037841E03C7BE003F49D3 /* UIButton+CZAddition.m in Sources */,
 				AE69CF721EB83128001119F2 /* String+Extension.swift in Sources */,
 				AE7037871E03C7BE003F49D3 /* UIScreen+CZAddition.m in Sources */,
+				AEA48D0C1EF7A761001CEB89 /* MJEmotionTipView.swift in Sources */,
 				AE7037611E03C38B003F49D3 /* MJNavigationController.swift in Sources */,
 				AEA219401E8D0F9400EF7249 /* MJStatusViewModel.swift in Sources */,
 				AE7037801E03C7BE003F49D3 /* NSObject+CZRuntime.m in Sources */,
@@ -721,7 +761,9 @@
 				AEA0DBC91E163CD2000927F8 /* MJCommon.swift in Sources */,
 				AEDE31221EE5592A002540E3 /* MJEmotionToolBar.swift in Sources */,
 				AE7037881E03C7BE003F49D3 /* UIView+CZAddition.m in Sources */,
+				AECC1A961F6F73DD00B6EBBB /* HMPhotoViewerController.m in Sources */,
 				AE5669F41E8E67FB00F2E5DF /* MJStatusPictureView.swift in Sources */,
+				AECC1A941F6F73DD00B6EBBB /* HMPhotoBrowserPhotos.m in Sources */,
 				AED7B8801E8F5D0E00D27ECB /* MJStatusPicture.swift in Sources */,
 				AE7037821E03C7BE003F49D3 /* NSString+CZHash.m in Sources */,
 				AE5B29211ECE9B79008DD425 /* MJComposeController.swift in Sources */,

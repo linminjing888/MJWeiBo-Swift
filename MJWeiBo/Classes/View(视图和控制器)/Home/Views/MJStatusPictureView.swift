@@ -63,6 +63,9 @@ class MJStatusPictureView: UIView {
                 v.mj_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
                 v.isHidden = false
                 
+                // 判断是否是gif  根据扩展名
+//                let type = (((url.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif")
+                
                 index += 1
             }
         }
@@ -73,6 +76,36 @@ class MJStatusPictureView: UIView {
     
     override func awakeFromNib() {
         setupUI()
+    }
+    
+    @objc fileprivate func tapImageView(ges:UIGestureRecognizer) {
+        
+        
+        guard let iv = ges.view,
+            let picURLs = viewModel?.picUrls else {
+            return
+        }
+        var selectedIndex = iv.tag
+        if picURLs.count == 4 && selectedIndex > 1 {
+            selectedIndex -= 1
+        }
+        let urls = (picURLs as NSArray).value(forKey: "largePic") as! [String]
+        //处理可见的图像视图数组
+        var imageViewList = [UIImageView]()
+        for vi in subviews as! [UIImageView] {
+            if !vi.isHidden {
+                imageViewList.append(vi)
+            }
+        }
+        
+        NotificationCenter.default.post(
+            name:NSNotification.Name(rawValue: MJStatusCellBrowserPhotosNotification) ,
+            object: self,
+            userInfo: ["urlKey":urls,
+                       "selectedIndexKey":selectedIndex,
+                       "imageViewKey":imageViewList
+            ])
+        
     }
 }
 
@@ -107,6 +140,12 @@ extension MJStatusPictureView{
             iv.frame = rect.offsetBy(dx: xOffset, dy: yOffset)
             
             addSubview(iv)
+            
+            // 手势识别
+            iv.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
+            iv.tag = i
+            iv.addGestureRecognizer(tap)
             
         }
     }

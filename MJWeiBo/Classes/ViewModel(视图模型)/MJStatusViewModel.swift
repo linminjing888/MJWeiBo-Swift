@@ -142,7 +142,7 @@ class MJStatusViewModel:CustomStringConvertible{
         
         var size = image.size
         
-        let maxWidth:CGFloat = 300
+        let maxWidth:CGFloat = 200
         let minWidth:CGFloat = 30
         
         //过宽图像处理
@@ -156,6 +156,10 @@ class MJStatusViewModel:CustomStringConvertible{
             size.width = minWidth
             //图片太长，特殊处理
             size.height = size.width * image.size.height / image.size.width / 4
+        }
+        //图片过高处理
+        if size.height > 200 {
+            size.height = 200
         }
         
         size.height += WBStatusPictureOutterMargin

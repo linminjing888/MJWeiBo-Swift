@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 // 定义全局变量，尽量使用 private 修饰，否则到处都可以访问
 
 /// 正常微博 cell id
@@ -20,6 +19,31 @@ class MJHomeViewController: MJBaseViewController {
     ///列表视图模型
     fileprivate lazy var listViewModel = MJStatusListViewModel()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(browserPhoto), name: NSNotification.Name(rawValue: MJStatusCellBrowserPhotosNotification), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    ///浏览图片通知的监听方法
+    @objc fileprivate func browserPhoto(n:NSNotification){
+        
+        guard let urls = n.userInfo?["urlKey"] as? [String],
+            let selectedIndex = n.userInfo?["selectedIndexKey"] as? Int,
+            let imageviewList = n.userInfo?["imageViewKey"] as? [UIImageView]
+            else {
+                return
+        }
+        //展现照片浏览控制器
+        let vc = HMPhotoBrowserController.photoBrowser(withSelectedIndex: selectedIndex, urls: urls, parentImageViews: imageviewList)
+        present(vc, animated: true, completion: nil)
+    
+        
+    }
     ///加载数据
     override func loadData() {
     

@@ -88,7 +88,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MJWeiBo/FMDB.framework"
   install_framework "Pods-MJWeiBo/SDWebImage.framework"
   install_framework "Pods-MJWeiBo/SVProgressHUD.framework"
+  install_framework "Pods-MJWeiBo/YYCache.framework"
+  install_framework "Pods-MJWeiBo/YYImage.framework"
   install_framework "Pods-MJWeiBo/YYModel.framework"
+  install_framework "Pods-MJWeiBo/YYWebImage.framework"
   install_framework "Pods-MJWeiBo/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -96,6 +99,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MJWeiBo/FMDB.framework"
   install_framework "Pods-MJWeiBo/SDWebImage.framework"
   install_framework "Pods-MJWeiBo/SVProgressHUD.framework"
+  install_framework "Pods-MJWeiBo/YYCache.framework"
+  install_framework "Pods-MJWeiBo/YYImage.framework"
   install_framework "Pods-MJWeiBo/YYModel.framework"
+  install_framework "Pods-MJWeiBo/YYWebImage.framework"
   install_framework "Pods-MJWeiBo/pop.framework"
 fi

@@ -60,7 +60,10 @@ class MJHomeStatusCell: UITableViewCell {
             retweetTerxtLab?.attributedText = viewModel?.retweetAttrText
             //微博来源
             sourceLabel.text = viewModel?.status.source
-
+            
+            //时间
+//            timeLabel.text = viewModel?.status.createDate?.description
+            timeLabel.text = viewModel?.status.createDate?.dateDescription
         }
     }
     
