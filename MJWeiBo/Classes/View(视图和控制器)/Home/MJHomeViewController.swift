@@ -66,7 +66,7 @@ class MJHomeViewController: MJBaseViewController {
         
     }
     
-    func showFriends() {
+    @objc func showFriends() {
         print("friend")
         
         let vc = MJDemoViewController()
@@ -151,7 +151,7 @@ extension MJHomeViewController{
         
     }
     
-    func clickTitleBtn(btn:UIButton)  {
+    @objc func clickTitleBtn(btn:UIButton)  {
         btn.isSelected = !btn.isSelected
     }
 }

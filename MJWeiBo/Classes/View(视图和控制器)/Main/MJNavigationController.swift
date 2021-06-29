@@ -22,15 +22,15 @@ class MJNavigationController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         //不是栈底控制器才需要隐藏，根控制器不需要处理
-        if childViewControllers.count > 0 {
+        if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
             
             if let vc = viewController as? MJBaseViewController {
                 
                 var title = "返回"
                 
-                if childViewControllers.count == 1  {
-                    title = childViewControllers.first?.title ?? "返回"
+                if children.count == 1  {
+                    title = children.first?.title ?? "返回"
                 }
                 vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToParent),isBack:true)
             }
@@ -40,7 +40,7 @@ class MJNavigationController: UINavigationController {
         super.pushViewController(viewController, animated: true)
     }
     
-    func popToParent(){
+    @objc func popToParent(){
         popViewController(animated: true)
     }
     

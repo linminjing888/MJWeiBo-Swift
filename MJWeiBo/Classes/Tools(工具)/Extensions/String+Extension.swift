@@ -20,14 +20,14 @@ extension String{
         
         //1.创建正则表达式，如果pattern失败，抛出异常
         //2.进行查找，匹配第一项
-        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) , let result = regx.firstMatch(in:self , options: [], range: NSRange(location: 0, length: characters.count)) else {
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) , let result = regx.firstMatch(in:self , options: [], range: NSRange(location: 0, length: count)) else {
             print("没有找到匹配项")
             return nil
         }
         
       
-        let link = (self as NSString).substring(with: result.rangeAt(1))
-        let text = (self as NSString).substring(with: result.rangeAt(2))
+        let link = (self as NSString).substring(with: result.range(at: 1))
+        let text = (self as NSString).substring(with: result.range(at: 2))
         
 //        print(link + "---" + text)
         return(link,text)

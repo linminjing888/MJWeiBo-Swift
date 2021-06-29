@@ -75,7 +75,7 @@ extension MJEmoticonManager{
         // 遍历所有匹配结果  倒序替换属性文本
         for m in matches.reversed() {
             
-            let r = m.rangeAt(0)
+            let r = m.range(at: 0)
 //            print(r.location)
 //            print(r.length)
             let subStr = (attrString.string as NSString).substring(with: r)
@@ -86,7 +86,7 @@ extension MJEmoticonManager{
             }
 //            print(subStr)
             //统一设置一遍字符串的属性:字体 颜色
-            attrString.addAttributes([NSFontAttributeName:font], range: NSRange(location: 0, length: attrString.length))
+            attrString.addAttributes([NSAttributedString.Key.font:font], range: NSRange(location: 0, length: attrString.length))
             
         }
         

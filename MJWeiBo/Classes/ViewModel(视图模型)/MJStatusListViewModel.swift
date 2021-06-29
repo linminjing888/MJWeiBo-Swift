@@ -121,7 +121,7 @@ class MJStatusListViewModel {
             
                 //将图像转换为二进制数据
                 if let image = image,
-                    let data = UIImagePNGRepresentation(image){
+                   let data = image.pngData(){
                     // NSdata 是 length属性
                     length += data.count
                     

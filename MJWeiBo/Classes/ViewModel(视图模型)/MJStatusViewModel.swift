@@ -85,7 +85,9 @@ class MJStatusViewModel:CustomStringConvertible{
         let retweetFont = UIFont.systemFont(ofSize: 14)
         let originFont = UIFont.systemFont(ofSize: 15)
         
-        let rText = "@" + (status.user?.screen_name ?? "") + "：" + (status.retweeted_status?.text ?? "")
+        let text = status.retweeted_status?.text ?? ""
+        
+        let rText = "@" + (status.user?.screen_name ?? "") + "：" + text
         
         retweetAttrText = MJEmoticonManager.shared.emoticonString(string: rText, font: retweetFont)
         statusAttrText = MJEmoticonManager.shared.emoticonString(string:model.text ?? "",font:originFont)

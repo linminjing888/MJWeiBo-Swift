@@ -38,7 +38,7 @@ class MJComposeTextView: UITextView {
             //            print(dict)
             //            print(range.location)
             //            print(range.length)
-            if let attachment = dict["NSAttachment"] as? MJEmoticonAttachment{
+            if let attachment = dict[NSAttributedString.Key(rawValue: "NSAttachment")] as? MJEmoticonAttachment{
                 result += attachment.chs ?? ""
             }else{
                 let subStr = (attrStr.string as NSString).substring(with: range)
@@ -87,7 +87,7 @@ extension MJComposeTextView{
     
     func setupUI() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: nil)
         
         textLabel.text = "分享新鲜事..."
         textLabel.font = self.font

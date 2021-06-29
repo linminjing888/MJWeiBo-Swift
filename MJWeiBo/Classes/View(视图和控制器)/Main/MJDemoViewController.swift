@@ -14,11 +14,11 @@ class MJDemoViewController: MJBaseViewController {
         super.viewDidLoad()
 
         
-        self.title = "第\(navigationController?.childViewControllers.count ?? 0)页"
+        self.title = "第\(navigationController?.children.count ?? 0)页"
         // Do any additional setup after loading the view.
     }
 
-    func showNext() {
+    @objc func showNext() {
         let vc = MJDemoViewController()
         navigationController?.pushViewController(vc, animated: true)
         

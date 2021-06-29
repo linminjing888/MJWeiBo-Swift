@@ -24,11 +24,11 @@ class MJBaseViewController: UIViewController {
     var tableView: UITableView?
     ///刷新控件
     var refreshControl: MJRefreshControl?
-    ///上拉刷新标记
+    ///上拉刷新标@objc 记
     var isPullUp = false
     
     ///自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: status_bar_h, width: UIScreen.cz_screenWidth(), height: 44))
     ///自定义导航条目
     lazy var navItem = UINavigationItem()
     
@@ -59,7 +59,7 @@ class MJBaseViewController: UIViewController {
     }
     
     ///加载数据 具体实现由子类控制
-    func loadData() {
+    @objc func loadData() {
         //如果子类不实现此方法，默认关闭刷新控件
         refreshControl?.endRefreshing()
     }
@@ -111,7 +111,7 @@ extension MJBaseViewController{
         
     }
     ///表格视图 -- 用户登录之后执行
-    func setUpTableView(){
+    @objc func setUpTableView(){
         tableView = UITableView(frame: view.bounds, style: .plain)
         
         view.insertSubview(tableView!, belowSubview: navigationBar)
@@ -155,7 +155,7 @@ extension MJBaseViewController{
         //设置 navBar 的渲染颜色
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         //设置 navBar 的字体颜色
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.darkGray]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray]
         //
         navigationBar.tintColor = UIColor.orange 
     }

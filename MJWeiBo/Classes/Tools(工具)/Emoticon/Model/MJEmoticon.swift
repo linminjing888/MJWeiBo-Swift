@@ -74,7 +74,7 @@ class MJEmoticon: NSObject {
         let attriStrM = NSMutableAttributedString(attributedString:NSAttributedString(attachment: attachment))
         //插入字符的显示，跟随前一个字符的属性，但是本身没有属性
         //设置图像文字的属性
-        attriStrM.addAttributes([NSFontAttributeName:font], range: NSMakeRange(0, 1))
+        attriStrM.addAttributes([NSAttributedString.Key.font:font], range: NSMakeRange(0, 1))
         
         return attriStrM
         

@@ -125,7 +125,7 @@ extension MJNetworkManager{
         var data :Data?
         if image != nil {
             name = "pic"
-            data = UIImagePNGRepresentation(image!)
+            data = image!.pngData()
         }
         
         tokenRequest(method: .POST, URLString: urlStr, parameters: params, name: name, data: data) { (json, isSuccess) in

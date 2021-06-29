@@ -43,12 +43,12 @@ class MJMainTabbarController: UITabBarController {
         DispatchQueue.main.asyncAfter(deadline:time) {
             SVProgressHUD.setDefaultMaskType(.clear)
             let nav = UINavigationController(rootViewController: MJOAuthViewController())
-            
+            nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true, completion: nil)
         }
     }
     ///撰写微博
-    func composeStatus()  {
+    @objc func composeStatus()  {
         
         let v = MJComposeView.composeView()
         //显示视图 注意闭包的循环引用
@@ -62,6 +62,7 @@ class MJMainTabbarController: UITabBarController {
             let nav = UINavigationController(rootViewController: vc)
             /// 让导航控制器强行更新约束--会更新所有子视图的约束
             nav.view.layoutIfNeeded()
+            nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true, completion: { 
                 v?.removeFromSuperview()
             })
@@ -144,13 +145,13 @@ extension MJMainTabbarController:UITabBarControllerDelegate{
         
         
         print(" 切换到 \(viewController)")
-        let idx = (childViewControllers as NSArray).index(of: viewController)
+        let idx = (children as NSArray).index(of: viewController)
         
         //当前索引是首页，同时idx 也是首页，重复点击首页按钮
         if selectedIndex == 0 && idx == selectedIndex {
             
-            let nav = childViewControllers[0] as! MJNavigationController
-            let vc = nav.childViewControllers[0] as! MJHomeViewController
+            let nav = children[0] as! MJNavigationController
+            let vc = nav.children[0] as! MJHomeViewController
             //表格滚动到原点
             vc.tableView?.setContentOffset(CGPoint(x:0,y:-64), animated: true)
             //刷新数据
@@ -175,7 +176,7 @@ extension MJMainTabbarController{
     func setUpcomposeButton()  {
         tabBar.addSubview(composeBtn)
         
-        let count = CGFloat(childViewControllers.count)
+        let count = CGFloat(children.count)
         //将向内缩进的宽度减小，能够让按钮的宽度变大，盖住容错点
         //用代理方法的话 可以不减少宽度
         let w = tabBar.bounds.width / count - 1
@@ -204,7 +205,7 @@ extension MJMainTabbarController{
         
         //反序列化转换成数组  throw 抛出异常
         //try ? 如果解析成功，就有值，否则，为nil
-        guard let array = try? JSONSerialization.jsonObject(with: data as! Data, options: []) as? [[String:AnyObject]]
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String:AnyObject]]
             else {
             return
         }
@@ -230,7 +231,7 @@ extension MJMainTabbarController{
 //        (data as NSData).write(toFile: "/Users/lmj/Desktop/demo.json", atomically: true)
         
         var arrM = [UIViewController]()
-        for dict in array! {
+        for dict in array {
            arrM.append(controller(dict: dict as [String : AnyObject]))
         }
         
@@ -264,9 +265,9 @@ extension MJMainTabbarController{
         vc.tabBarItem.selectedImage = UIImage(named:"tabbar_" + imageName + "_selected" )?.withRenderingMode(.alwaysOriginal)
         
         //设置字体颜色（大小）
-        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.orange], for: .highlighted)
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.orange], for: .highlighted)
         //默认为 ：12
-        vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 13)], for: UIControlState(rawValue: 0))
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 13)], for: UIControl.State(rawValue: 0))
         let nav = MJNavigationController(rootViewController: vc)
         return nav
         

@@ -56,10 +56,10 @@ class MJOAuthViewController: UIViewController {
 
 extension MJOAuthViewController:UIWebViewDelegate{
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         
         //请求地址是否包含MJREDIRECTURL
-        print("url链接-- \(request.url?.absoluteString)")
+        print("url链接-- \(request.url?.absoluteString ?? "")")
         
         if request.url?.absoluteString.hasPrefix(MJREDIRECTURL) == false {
             return true

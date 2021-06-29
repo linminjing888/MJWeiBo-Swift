@@ -34,3 +34,16 @@ let WBStatusPictureInnerMargin = CGFloat(3)
 let WBStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * WBStatusPictureOutterMargin
 //图片Item默认宽度
 let WBstatusPictureItemWidth = (WBStatusPictureViewWidth - 2 * WBStatusPictureInnerMargin)/3
+
+let status_bar_h:CGFloat = isiPhoneXScreen() ? 44 : 20;
+let nav_bar_h:CGFloat = isiPhoneXScreen() ? 88 : 64;
+
+func isiPhoneXScreen() -> Bool {
+   guard #available(iOS 11.0, *) else {
+       return false
+   }
+   
+   let isX = UIApplication.shared.windows[0].safeAreaInsets.bottom > 0
+   print("是不是刘海屏呢--->\(isX)")
+   return isX
+}

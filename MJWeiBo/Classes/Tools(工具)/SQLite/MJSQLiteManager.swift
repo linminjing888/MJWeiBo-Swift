@@ -35,7 +35,7 @@ class MJSQLiteManager {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(clearDBCache),
-            name: NSNotification.Name.UIApplicationDidEnterBackground,
+            name: UIApplication.didEnterBackgroundNotification,
             object: nil)
     }
     
