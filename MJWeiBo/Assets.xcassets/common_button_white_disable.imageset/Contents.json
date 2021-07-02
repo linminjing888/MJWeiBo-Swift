@@ -5,19 +5,19 @@
       "scale" : "1x"
     },
     {
+      "filename" : "common_button_white_disable@2x.png",
+      "idiom" : "universal",
       "resizing" : {
-        "mode" : "3-part-horizontal",
+        "cap-insets" : {
+          "left" : 5,
+          "right" : 11
+        },
         "center" : {
           "mode" : "tile",
           "width" : 6
         },
-        "cap-insets" : {
-          "right" : 11,
-          "left" : 5
-        }
+        "mode" : "3-part-horizontal"
       },
-      "idiom" : "universal",
-      "filename" : "common_button_white_disable@2x.png",
       "scale" : "2x"
     },
     {
@@ -26,7 +26,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
